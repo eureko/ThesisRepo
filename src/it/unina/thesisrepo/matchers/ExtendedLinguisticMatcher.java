@@ -6,6 +6,4 @@ public class ExtendedLinguisticMatcher
 	{
 		// TODO Auto-generated constructor stub   
 	}
-	
-	
 }
