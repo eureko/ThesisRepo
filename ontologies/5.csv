@@ -1,0 +1,7 @@
+#LIRMM Food Ontology by LIRMM Laboratoire: This ontology models the Food domain. It allows to describe ingredients and food products. Some classes are: food:Recipe, food:Food, food:FoodProduct, food:Dish, food:Ingredient, etc.
+Ingredient
+Recipe
+Product
+Person
+Dish
+Manufactured food product

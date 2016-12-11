@@ -1,0 +1,14 @@
+1National Cancer Institute Thesaurus. Available online, https://ncit.nci.nih.gov/ncitbrowser/
+2AGROVOC Multilingual agricultural thesaurus. Available online, http://aims.fao.org/vestregistry/
+vocabularies/agrovoc-multilingual-agricultural-thesaurus
+3Linked Recipe Schema. Available online, http://aims.fao.org/vest-registry/vocabularies/agrovocmultilingual-
+agricultural-thesaurus
+4BBC Food Ontology. Available online, http://www.bbc.co.uk/ontologies/fo
+5LIRMM Food Ontology. Available online, http://data.lirmm.fr/ontologies/food
+6The Product Types Ontology. Available online, http://www.productontology.org/
+7Oregon State Food Glossary. Available online, http://icbo.cgrb.oregonstate.edu/node/282
+8Eurocode 2 Food Coding System. Available online, http://www.danfood.info/eurocode/
+9WAND Food and Beverage Taxonomy . Available online, http://www.wandinc.com/wand-food-andbeverage-
+taxonomy.aspx
+10International classification for Standards (ISC). Available online,
+http://www.iso.org/iso/home/store/catalogue_ics.htm
