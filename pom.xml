@@ -4,12 +4,22 @@
   <artifactId>ThesisRepo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-	  	<dependency>
-	  		<groupId>edu.mit</groupId>
-	  		<artifactId>jwi</artifactId>
-	  		<version>2.2.3</version>
-	  	</dependency>
-  	</dependencies>
+  	<dependency>
+  		<groupId>edu.mit</groupId>
+  		<artifactId>jwi</artifactId>
+  		<version>2.2.3</version>
+  	</dependency>
+  	<dependency>
+    <groupId>com.github.mpkorstanje</groupId>
+    <artifactId>simmetrics-core</artifactId>
+    <version>3.0.4</version>
+	</dependency>
+	<dependency>
+    <groupId>me.xdrop</groupId>
+    <artifactId>fuzzywuzzy</artifactId>
+    <version>1.1.6</version>
+	</dependency>
+	</dependencies>
 	<build>
 	  <sourceDirectory>src</sourceDirectory>
 	  <plugins>
