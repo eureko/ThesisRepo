@@ -16,6 +16,8 @@ import edu.cmu.lti.lexical_db.NictWordNet;
 import edu.cmu.lti.lexical_db.data.Concept;
 import edu.cmu.lti.ws4j.Relatedness;
 import edu.cmu.lti.ws4j.RelatednessCalculator;
+import edu.cmu.lti.ws4j.util.DepthFinder;
+import edu.cmu.lti.ws4j.util.DepthFinder.Depth;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
 import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
@@ -67,8 +69,29 @@ public class LinguisticMatcher
 		
 		System.out.println(getPolysemy("book"));
 		
-		
-		//System.out.println(linguisticMatching("dog", "cat"));
+		/* List<Concept> synsets1 = (List<Concept>)db.getAllConcepts("sea", "n");
+		 List<Concept> synsets2 = (List<Concept>)db.getAllConcepts("lake", "n");
+		 
+		 DepthFinder depthFinder = new DepthFinder(db);
+		 
+		 System.out.println(synsets1.size());
+		 System.out.println(synsets2.size());
+		 
+		 for (Concept src:synsets1)
+		 {
+			 for (Concept dst:synsets2)
+			 {
+				 System.out.println("src depth: " + depthFinder.getShortestDepth(src));
+				 System.out.println("dst depth: " + depthFinder.getShortestDepth(dst));
+				 
+				 List<Depth> lcsList = depthFinder.getRelatedness( src, dst, null );
+				 int depth = lcsList.get(0).depth; // sorted by depth (asc)
+				 
+				 System.out.println("lcs depth: " + depth);
+			 }
+			
+		 }
+		 */
 		
 	}
 	

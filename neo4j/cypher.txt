@@ -1,0 +1,12 @@
+MATCH (src:Word { lemma:"light_diet" }),(dst:Word { lemma:"comfort_food" }), p = shortestPath((src)-[*]-(dst))
+RETURN p
+
+MATCH (src:Word { lemma:"light_diet" }),(dst:Word { lemma:"comfort_food" }), p = shortestPath((src)-[*]-(dst))
+RETURN p AS shortestPath,
+                reduce(w=0, r in relationships(p) |  w+r.w) AS totalDistance
+                ORDER BY totalDistance ASC
+                LIMIT 1;
+                
+                
+                
+EXTRACT(r in FILTER(s in relationships(p): s.type = 'semantic'))

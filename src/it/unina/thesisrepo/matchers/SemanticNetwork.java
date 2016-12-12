@@ -7,15 +7,25 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.Vector;
 
+import org.neo4j.graphalgo.GraphAlgoFactory;
+import org.neo4j.graphalgo.PathFinder;
+import org.neo4j.graphalgo.WeightedPath;
 import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
+import org.neo4j.graphdb.Path;
+import org.neo4j.graphdb.PathExpander;
+import org.neo4j.graphdb.PathExpanders;
 import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.RelationshipType;
+import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.neo4j.kernel.Traversal;
 
+import edu.cmu.lti.ws4j.RelatednessCalculator;
+import edu.cmu.lti.ws4j.util.DepthFinder;
 import edu.mit.jwi.Dictionary;
 import edu.mit.jwi.IDictionary;
 import edu.mit.jwi.item.IIndexWord;
@@ -39,6 +49,9 @@ public class SemanticNetwork
 	
 	Label synsetLabel = DynamicLabel.label("Synset");;
 	Label wordLabel = DynamicLabel.label("Word");
+	
+	double sg_alpha = 0.5;
+	double sg_beta = 0.5;
 	
 	public static void main(String[] args) 
 	{
@@ -78,9 +91,37 @@ public class SemanticNetwork
 		try ( Transaction tx = graphDb.beginTx() )
 		{
 			addTerm("food");
+			//addTerm("foodstuff");
 			System.out.println("Before commit");
 			tx.success();
 			System.out.println("After commit");
+			
+			// Read Access
+			System.out.println("Traversing the graph...");
+			
+			ResourceIterator<Node> src_iter = graphDb.findNodes(wordLabel, "lemma", "food");
+			ResourceIterator<Node> dst_iter = graphDb.findNodes(wordLabel, "lemma", "water");
+			
+			
+			while(src_iter.hasNext())
+			{
+				Node current_src = src_iter.next();
+				while(dst_iter.hasNext())
+				{
+					Node current_dst = dst_iter.next();
+					
+					PathFinder<WeightedPath> shortestPathFinder = GraphAlgoFactory.dijkstra(PathExpanders.allTypesAndDirections(), "w");
+					Iterable<WeightedPath> paths = shortestPathFinder.findAllPaths( current_src, current_dst );
+					
+					//System.out.println(paths);
+					Iterator<WeightedPath> iter_path = paths.iterator();
+					while(iter_path.hasNext())
+					{
+						WeightedPath p = iter_path.next();
+						System.out.print(p + "\n");
+					}
+				}
+			}
 		}
 		graphDb.shutdown();
 		System.out.println("OK!");
@@ -114,10 +155,9 @@ public class SemanticNetwork
 				Node s_node = graphDb.createNode();
 				long nodeId = s_node.getId();	
 				
-				s_node.setProperty("synsetLabel", synset.getWords().toString());
+				s_node.setProperty("label", synset.getWords().toString());
 				s_node.setProperty("type", "synset");
 				s_node.addLabel(synsetLabel);
-				
 				
 				addTermsFromSynsetHyponymyHierarchy(synset, s_node);
 			}
@@ -148,6 +188,7 @@ public class SemanticNetwork
 				Relationship relationship = s_node.createRelationshipTo(w_node, RelTypes.hasWord);
 				relationship.setProperty("type", "meta");
 				relationship.setProperty("name", "hasWord");
+				relationship.setProperty("w", 0);
 				
 				
 				if (!terms.contains(current_term))
@@ -167,7 +208,7 @@ public class SemanticNetwork
 				Node hypo_node = graphDb.createNode();
 				long hypo_nodeId = hypo_node.getId();	
 					
-				hypo_node.setProperty("synsetLabel", hyponym.getWords().toString());
+				hypo_node.setProperty("label", hyponym.getWords().toString());
 				hypo_node.setProperty("type", "synset");
 				hypo_node.addLabel(synsetLabel);
 				
@@ -179,6 +220,11 @@ public class SemanticNetwork
 				addTermsFromSynsetHyponymyHierarchy(hyponym, hypo_node);
 			 }
 		}
+	}
+	
+	double SemanticGradeCalc(double l, int d)
+	{
+		return Math.exp(-sg_alpha*l)*(Math.exp(sg_beta*d) - Math.exp(-sg_beta*d))/(Math.exp(sg_beta*d) + Math.exp(-sg_beta*d));
 	}
 	
 	private static void registerShutdownHook( final GraphDatabaseService graphDb )
