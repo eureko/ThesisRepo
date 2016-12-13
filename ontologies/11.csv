@@ -1,0 +1,686 @@
+# Foodon  is a new ontology built to interoperate with the OBO Library and to represent entities which bear a “food role”.  It encompasses materials in natural ecosystems and food webs as well as human- centric categorization and handling of food. The latter will be the initial focus of the ontology, and we aim to develop semantics for food safety, food security, the agricultural and animal husbandry practices linked to food production, culinary, nutritional and chemical ingredients and processes.
+post-embryonic organism 
+dermis adipose tissue 
+subdivision of tube 
+nerve of thoracic segment 
+entire pharyngeal arch endoderm 
+head paraxial mesoderm 
+regional part of brain 
+digestive system duct 
+mandibular prominence 
+pair of lungs 
+right lung associated mesenchyme 
+medulla oblongata 
+organ cavity 
+thoracic skeleton 
+exocrine gland 
+presumptive hindbrain 
+hypodermis 
+regional part of nervous system 
+fibrous membrane of synovial tendon sheath 
+neural tube marginal layer 
+body proper 
+presumptive midbrain 
+epiblast (generic) 
+craniocervical region musculature 
+submucosa 
+musculature of trunk 
+life cycle stage 
+unilaminar epithelium 
+synovial membrane of synovial tendon sheath 
+epithelial sac 
+primary subdivision of skull 
+developing anatomical structure 
+future spinal cord 
+mucosa 
+membrane bone 
+presumptive neural plate 
+respiratory system 
+subdivision of head 
+endoderm 
+mesenchyme 
+multi-tissue structure 
+nucleus of brain 
+gray matter of hindbrain 
+digestive tract diverticulum 
+cranial nerve nucleus 
+facial bone 
+central nervous system 
+non-neural ectoderm 
+dense irregular connective tissue 
+inner ear epithelium 
+muscle tissue 
+midbrain nucleus 
+ectodermal part of digestive tract 
+future metencephalon 
+anatomical boundary 
+myelencephalon 
+skin epidermis 
+immaterial anatomical entity 
+axial mesoderm 
+anatomical conduit space 
+mucosa of oral region 
+gustatory system 
+facial muscle 
+ear 
+tissue 
+articulation 
+notochordal process 
+dorsolateral placode 
+ciliated columnar epithelium 
+sensory system 
+oral epithelium from ectoderm 
+neural tube lumen 
+proliferating neuroepithelium 
+spinal neuromere 
+multi cell part structure 
+olfactory system 
+mesothelium 
+brainstem 
+rhombomere boundary 
+pseudostratified ciliated columnar epithelium 
+splanchnocranium 
+mesencephalic neural crest 
+lower respiratory tract epithelium 
+endoderm of foregut 
+2nd arch mesenchyme from neural crest 
+nasal muscle 
+respiratory system epithelium 
+embryonic structure 
+chemical entity 
+respiratory tract 
+prechordal mesoderm 
+lower respiratory tract 
+regional part of spinal cord 
+zone of organ 
+skin epithelium 
+pair of nares 
+cranial neuron projection bundle 
+1st arch mesenchyme 
+cleaving embryo 
+cartilage of respiratory system 
+somite 
+skeletal musculature 
+mixed ectoderm/mesoderm/endoderm-derived structure 
+somite boundary epithelium 
+neurocranium 
+back nerve 
+head mesenchyme 
+spinal nerve 
+organ part 
+geniculate placode 
+pre-cartilage condensation 
+left lung associated mesenchyme 
+myelencephalon sulcus limitans 
+metencephalon 
+chondrocranium 
+cleavage stage 
+ectodermal placode 
+jaw mesenchyme 
+somite border 
+proximo-distal subdivision of respiratory tract 
+posterior region of body 
+trunk paraxial mesoderm 
+facial nerve 
+cartilage element of chondrocranium 
+neural tube mantle layer 
+pharynx 
+midbrain hindbrain boundary neural plate 
+neural keel 
+brainstem nucleus 
+1st arch mandibular mesenchyme from head mesenchyme 
+pharyngeal arch 
+pneumatized bone 
+continuant 
+cranial skeletal system 
+protuberance 
+skeletal muscle tissue of trunk 
+life cycle 
+oral cavity 
+serous cavity 
+subcutaneous adipose tissue 
+hindbrain-spinal cord boundary 
+neural tissue 
+musculature of thorax 
+dorsal trunk 
+lip 
+process 
+pharyngeal region of foregut 
+neural tube ventricular layer 
+nucleus of midbrain tegmentum 
+anatomical surface 
+digestive tract 
+pharyngeal arch mesenchyme from head mesenchyme 
+oral gland 
+ectoderm 
+internal ear 
+simple squamous epithelium 
+compound organ 
+presomitic mesoderm 
+skin gland 
+intramuscular adipose tissue 
+facial skeleton 
+olfactory organ 
+endodermal part of digestive tract 
+geniculate ganglion 
+facial mesenchyme 
+future lower lip 
+irregular connective tissue 
+connective tissue 
+neural plate 
+skin fluid/secretion 
+nucleus of spinal cord 
+zone of skin 
+processual entity 
+lip skeletal muscle 
+head somite 
+presumptive segmental plate 
+material anatomical entity 
+foramen of skull 
+neurocranium bone 
+ear epithelium 
+germ layer 
+multilaminar epithelium 
+external naris 
+tendon collagen fibril 
+thoracic segment of trunk 
+nasal cavity epithelium 
+perichordal bone 
+serous sac 
+thoracic segment bone 
+epithelium of lower jaw 
+epithelial bud 
+gland of integumental system 
+foodon 
+notochordal plate 
+tendon 
+anatomical space 
+pharyngeal arch 2 
+midbrain-hindbrain boundary 
+developing neuroepithelium 
+cell cluster 
+midbrain neuromere 
+neural nucleus 
+nervous system 
+neural tube lateral wall 
+skin of trunk 
+subdivision of organism along main body axis 
+myotome 
+skin of lower lip 
+face 
+serous membrane 
+ganglion of central nervous system 
+dermal skeletal element 
+upper respiratory tract epithelium 
+neural crest 
+dorsal region element 
+stomodeal lumen 
+skeletal joint 
+trunk connective tissue 
+sense organ 
+lateral plate mesoderm 
+skeletal muscle tissue 
+trunk 
+basal plate metencephalon 
+musculoskeletal system 
+ectoderm-derived structure 
+organ component layer 
+craniocervical region 
+notochord 
+oral epithelium 
+blastula 
+neural rod 
+synovial joint 
+entire sense organ system 
+muscle organ 
+respiratory system mucosa 
+organ subunit 
+embryonic head 
+pseudostratified columnar epithelium 
+spinal cord neural plate 
+biological_process 
+orifice 
+zygote stage 
+skull 
+respiratory system submucosa 
+thoracic cavity connective tissue 
+anterior region of body 
+foregut epithelium 
+integumentary system layer 
+neuron 
+nonsynovial joint 
+ectoderm of buccopharyngeal membrane 
+bone of craniocervical region 
+trunk ganglion 
+organogenesis stage 
+axial muscle 
+oral opening 
+gut wall 
+associated mesenchyme of otocyst 
+thoracic cavity 
+mixed endoderm/mesoderm-derived structure 
+dermomyotome 
+air in respiratory system 
+nuclear complex of neuraxis 
+cranial nerve 
+vestibulo-auditory system 
+skeleton of lower jaw 
+metencephalon sulcus limitans 
+spinal cord 
+bodily secretion 
+autonomic nervous system 
+pharyngeal arch mesenchymal region 
+cartilage tissue 
+bone foramen 
+integumentary adnexa 
+external naris epithelium 
+striated muscle tissue 
+hindbrain neural plate 
+skeleton 
+dense mesenchyme tissue 
+musculature of head 
+dense regular connective tissue 
+gland 
+head external integument structure 
+embryo stage 
+cranial muscle 
+future dermis 
+anatomical junction 
+postcranial axial cartilage 
+embryo 
+simple columnar epithelium 
+skeletal system 
+bone collagen fibril 
+gray matter of midbrain 
+parietal serous membrane 
+lung mesenchyme 
+gland lumen 
+synovial cavity of joint 
+future myelencephalon 
+regular connective tissue 
+trunk mesenchyme 
+temporal bone 
+gastrula 
+digestive system 
+surface structure 
+pharyngeal mucosa 
+multi organ part structure 
+future facial nucleus 
+mandibular process mesenchyme 
+visceral serous membrane 
+pharyngeal arch mesenchyme from neural crest 
+musculature 
+skin of head 
+skin of body 
+hindbrain 
+circulatory system 
+dermal skeleton 
+thoracic segment organ 
+ganglion of peripheral nervous system 
+hyoid neural crest 
+skeletal tissue 
+endo-epithelium 
+neural fold 
+left lung 
+mesenchyme of lower jaw 
+epithelium of otic placode 
+pharyngeal arch 1 
+anatomical cluster 
+autonomic ganglion 
+dermis connective tissue 
+anterior neural tube 
+jaw epithelium 
+nasal skeleton 
+body external integument structure 
+mesoderm-derived structure 
+nose 
+nose epithelium 
+left ear 
+layer of muscle tissue 
+myocoele 
+facial nerve canal 
+articular capsule 
+germ layer / neural crest 
+bone of lower jaw 
+lower respiratory tract cartilage 
+neural groove 
+mesenchyme from rhombencephalic neural crest 
+neural tube derived brain 
+musculature of body 
+epithelial fold 
+presumptive ganglion 
+epibranchial placode 
+spinal cord sulcus limitans 
+back connective tissue 
+entire pharyngeal arch associated mesenchyme 
+subdivision of trunk 
+bodily fluid 
+spinal cord neural crest 
+articular system 
+1st arch mandibular component 
+head 
+skin muscle 
+nasal cavity mucosa 
+respiratory tract epithelium 
+germinal neuroepithelium 
+hindbrain marginal layer 
+jaw region 
+presumptive mesoderm 
+central nervous system cell part cluster 
+bone of jaw 
+muscle structure 
+replacement bone 
+rhombencephalon neural crest 
+developing mesenchymal condensation 
+midbrain tegmentum 
+pharyngeal ectoderm 
+tube lumen 
+musculature of back 
+external ectoderm 
+nerve of trunk region 
+neurectoderm 
+neurula embryo 
+skeletal muscle organ 
+endoderm of buccopharyngeal membrane 
+epithelial layer of duct 
+1st arch mandibular mesenchyme 
+bone tissue 
+organ 
+bodily gas 
+organism substance 
+transitional anatomical structure 
+neural tube 
+cranial ganglion 
+ear vesicle 
+subdivision of skeletal system 
+neural crest-derived structure 
+endochondral bone 
+rhombomere lateral wall 
+nasal cartilage 
+neural tube basal plate 
+notochordal canal 
+postcranial axial skeleton 
+2nd arch mesenchyme from head mesenchyme 
+stomatodeum gland 
+presumptive gut 
+mandibular process mesenchyme from head mesenchyme 
+neurula stage 
+presumptive midbrain hindbrain boundary 
+anatomical entity 
+lung bud 
+presumptive endoderm 
+rhombomere 
+mouth 
+brain gray matter 
+viscus 
+meso-epithelium 
+mucosa of lower lip 
+loose connective tissue 
+post-cranial axial skeletal system 
+cartilage element 
+trunk somite 
+lung epithelium 
+serous gland 
+segmental subdivision of hindbrain 
+serous fluid 
+bone of dorsum 
+pneumatic cavity of bone 
+dermatome 
+2nd arch endoderm 
+chordal neural plate 
+columnar epithelium 
+pons 
+head mesenchyme from mesoderm 
+lower jaw opening 
+fibrous connective tissue 
+migrating mesenchyme population 
+serous acinus 
+ecto-epithelium 
+lung primordium 
+cranial cavity 
+pit 
+multicellular organism 
+segmental subdivision of nervous system 
+submucosa of pharynx 
+anatomical conduit 
+endochondral element 
+epidermis gland 
+membrane organ 
+nerve 
+pre-chordal neural plate 
+synovial fluid 
+pulmonary collagen fibril 
+lung 
+1st arch mandibular mesenchyme from neural crest 
+main body axis 
+subdivision of skeleton 
+dermal bone 
+musculature of face 
+tube 
+cell 
+respiratory system muscle 
+acellular anatomical structure 
+adipose tissue 
+otic pit 
+layer of synovial tissue 
+head bone 
+pharyngeal gland 
+embryonic facial prominence 
+respiratory system connective tissue 
+entire surface of organism 
+cartilaginous neurocranium 
+mesoderm 
+cavitated compound organ 
+thoracic cavity element 
+cranial neural crest 
+thoracic segment muscle 
+skeletal muscle connective tissue 
+epimysium 
+hindbrain nucleus 
+epithelial vesicle 
+paraxial mesoderm 
+medulla oblongata sulcus limitans 
+gland of foregut 
+gas in respiratory system 
+cell cluster organ 
+mouth-foregut junction 
+hypodermis skeletal muscle layer 
+cranium 
+chordate pharynx 
+muscle of back 
+submucosa of digestive tract 
+facio-acoustic neural crest 
+mandibular neural crest 
+sensory nerve 
+cranial or facial muscle 
+right lung 
+otocyst lumen 
+right ear 
+exocrine gland of integumental system 
+acoustico-facial VII-VIII ganglion complex 
+replacement element 
+midbrain neural tube 
+brain 
+embryo stage part 
+cartilaginous condensation 
+epibranchial ganglion 
+ganglion 
+subdivision of digestive tract 
+gland of gut 
+coelemic cavity lumen 
+jaw skeleton 
+future central nervous system 
+surface of epithelium 
+gray matter of spinal cord 
+cranial placode 
+epithelium of mucosa 
+squamous epithelium 
+septum 
+dermis 
+spinal cord mantle layer 
+respiratory system basement membrane 
+anatomical structure 
+respiratory system skeletal muscle 
+digestive tract epithelium 
+gastrula stage 
+lower respiratory tract connective tissue 
+primordium 
+neurogenic placode 
+post-hyoid pharyngeal arch 
+intraembryonic coelom 
+entire embryonic mesenchyme 
+hyoid arch skeleton 
+lumen of central nervous system 
+lumen of epithelial sac 
+skin of thorax 
+associated mesenchyme of otic placode 
+respiratory primordium 
+olfactory pit 
+anatomical wall 
+mandibular process mesenchyme from neural crest 
+respiratory tube 
+independent continuant 
+surface groove 
+outer epithelium 
+material anatomical entity 
+embryonic skin basal layer 
+primary subdivision of cranial skeletal system 
+neuron projection bundle 
+developing mesenchymal structure 
+digestive system element 
+lower lip 
+spinal cord ventricular layer 
+buccopharyngeal membrane 
+otocyst epithelium 
+naris epithelium 
+head or neck skin 
+dermatological-muscosal system 
+axial skeletal system 
+craniocervical muscle 
+1st arch mesenchyme from head mesenchyme 
+midbrain neural plate 
+glandular acinus 
+upper respiratory tract 
+endoderm-derived structure 
+acellular membrane 
+coelom 
+sulcus limitans of neural tube 
+cell condensation 
+naris 
+future brain 
+preplacodal ectoderm 
+thoracic cavity nerve 
+cavity of bone organ 
+olfactory placode 
+anatomical structure 
+integument 
+pharyngeal arch cartilage 
+integumental system 
+material entity in digestive tract 
+organism subdivision 
+dense connective tissue 
+nerve of head region 
+basement membrane of epithelium 
+embryonic tissue 
+death stage 
+prechordal plate 
+anatomical system 
+neuromere 
+gray matter 
+visceral fat 
+enclosed anatomical space 
+lower jaw region 
+epithelium 
+future mouth 
+periderm 
+anatomical collection 
+1st arch mesenchyme from neural crest 
+sac 
+skeletal muscle tissue of pharynx 
+lumen of digestive tract 
+surface of cartilage 
+axial musculature 
+respiratory system fluid/secretion 
+ciliated epithelium 
+peripheral nervous system 
+lung connective tissue 
+presumptive paraxial mesoderm 
+respiratory airway 
+material entity 
+external integument structure 
+lateral structure 
+post-embryonic stage 
+differentiating neuroepithelium 
+mesenchyme derived from head neural crest 
+collection of collagen fibrils 
+presumptive ectoderm 
+facial nucleus 
+trunk bone 
+organ system subdivision 
+thoracic segment connective tissue 
+cranial cartilage 
+2nd arch ectoderm 
+chordamesoderm 
+skin of lip 
+pharyngeal arch system 
+multicellular anatomical structure 
+otic placode 
+presumptive structure 
+splanchnic layer of lateral plate mesoderm 
+mouth mucosa 
+dermatocranium 
+endoskeleton 
+olfactory apparatus chamber 
+bone element 
+gland of nasal mucosa 
+axial skeleton plus cranial skeleton 
+2nd arch mesenchyme 
+exocrine system 
+sensory organ epithelium 
+mesenchyme derived from neural crest 
+anatomical cavity 
+midbrain 
+sensory ganglion 
+tracheal mucosa 
+nasal cavity 
+nucleus of medulla oblongata 
+acinus of exocrine gland 
+early pharyngeal endoderm 
+head connective tissue 
+lip epithelium 
+cranial bone 
+structure with developmental contribution from neural crest 
+skin of face 
+upper respiratory conduit 
+trunk region element 
+tendon sheath 
+epithelium of left lung 
+chemosensory system 
+cavity of pharynx 
+posterior neural tube 
+dorsum 
+epithelial tube 
+pharyngeal epithelium 
+future nervous system 
+blastula stage 
+nasal vestibule 
+foregut 
+stomodeum 
+skeletal element 
+internal naris 
+future coelemic cavity lumen 
+skin of back 
+cartilaginous joint 
+epithelium of right lung 
+midbrain basal plate 
+midbrain mantle layer 
+fully formed stage 
+sclerotome 
+autonomic nerve 
+skeletal muscle of trunk 
+respiration organ 
+space surrounding organism 
+facio-acoustic VII-VIII preganglion complex 
+enveloping layer of ectoderm 
+occurrent 
+duct 

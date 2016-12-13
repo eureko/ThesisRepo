@@ -1,7 +1,58 @@
 #LIRMM Food Ontology by LIRMM Laboratoire: This ontology models the Food domain. It allows to describe ingredients and food products. Some classes are: food:Recipe, food:Food, food:FoodProduct, food:Dish, food:Ingredient, etc.
-Ingredient
-Recipe
-Product
-Person
-Dish
-Manufactured food product
+FoodProduct|A manufactured food product null
+Dish|A dish is a food item with a recipe null
+Recipe|Recipe A recipe as a set of ingredients together with the protocol to prepare the resulting food
+Food|Anything that can be eaten: a basic Food item (e.g. salt), a Dish made with a recipe, a manufactured Food Product null
+Ingredient|An ingredient : a certain quantity of food that is part of another food Represents an ingredient line in a recipe (for a Dish) or an ingredient listed in the ingredient list (for a Product).We need to specify a quantity and unit, so the relation is not binary. So the value for the containsIngredient property of a Food object is an object of the IngredientAmount class (instead of a Food object or string directly). See http://www.w3.org/TR/swbp-n-aryRelations/ for details.
+NutritionData|Nutrition data for a food item (recipe, product or ingredient) null
+polyunsaturatedFatPer100g|Nutrition data: polyunsaturated fat (in g) per 100g (or 100ml for liquids) null
+omega6FatPer100g|Nutrition data: omega 6 fat (in g) per 100g (or 100ml for liquids) null
+carbonFootprintPer100g|Carbon foorprint (in g) per 100g (or 100ml for liquids) null
+unit|Unit for the specified quantity e.g. 1 clove of garlic -> quantity = 1, unit = clove, ingredient = garlic (or Food object for garlic)
+copperPer100g|Nutrition data: copper (in g) per 100g (or 100ml for liquids) null
+pantothenicAcidPer100g|Nutrition data: pantothenic acid (in g) per 100g (or 100ml for liquids) Note that pantothenic acid is also known as vitamin B5
+molybdenumPer100g|Nutrition data: molybdenum (in g) per 100g (or 100ml for liquids) null
+vitaminDPer100g|Nutrition data: vitamin D (in g) per 100g (or 100ml for liquids) null
+rank|Rank of an ingredient in an ingredient list ordered by quantity (e.g. food products) null
+vitaminB3Per100g|Nutrition data: vitamin B3 (in g) per 100g (or 100ml for liquids) Note that vitamin B3 is also known as vitamin Pp or niacin or nicotinic acid
+saltEquivalentPer100g|Nutrition data: equivalent in salt (in g) per 100g (or 100ml for liquids) null
+transFatPer100g|Nutrition data: trans fat (in g) per 100g (or 100ml for liquids) null
+vitaminEPer100g|Nutrition data: vitamin E (in g) per 100g (or 100ml for liquids) null
+saturatedFatPer100g|Nutrition data: saturated fat (in g) per 100g (or 100ml for liquids) null
+vitaminAPer100g|Nutrition data: vitamin A (in g) per 100g (or 100ml for liquids) null
+starchPer100g|Nutrition data: starch (in g) per 100g (or 100ml for liquids) null
+vitaminB2Per100g|Nutrition data: vitamin B2 (in g) per 100g (or 100ml for liquids) Note that vitamin B2 is also known as riboflavin
+polyolsPer100g|Nutrition data: polyols (in g) per 100g (or 100ml for liquids) null
+potassiumPer100g|Nutrition data: potassium (in g) per 100g (or 100ml for liquids) null
+vitaminCPer100g|Nutrition data: vitamin C (in g) per 100g (or 100ml for liquids) Note that vitamin C is also known as L-ascorbic acid
+vitaminKPer100g|Nutrition data: vitamin K (in g) per 100g (or 100ml for liquids) null
+iodinePer100g|Nutrition data: iodine (in g) per 100g (or 100ml for liquids) null
+sugarsPer100g|Nutrition data: sugars (in g) per 100g (or 100ml for liquids) null
+biotinPer100g|Nutrition data: biotin (in g) per 100g (or 100ml for liquids) Note that biotin is also known as vitamin H or vitamin B7
+fluoridePer100g|Nutrition data: fluoride (in g) per 100g (or 100ml for liquids) null
+omega3Fatper100g|Nutrition data: omega 3 fat (in g) per 100g (or 100ml for liquids) null
+quantity|quantity of ingredient in any unit (unit specified in unit) e.g. 1 clove of garlic -> quantity = 1, unit = clove, ingredient = garlic (or Food object for garlic)
+sodiumPer100g|Nutrition data: sodium (in g) per 100g (or 100ml for liquids) null
+vitaminB12Per100g|Nutrition data: vitamin B12 (in g) per 100g (or 100ml for liquids) null
+vitaminB9Per100g|Nutrition data: vitamin B9 (in g) per 100g (or 100ml for liquids) Note that vitamin B9 is also known as folacin or folic acid or vitamin M
+proteinsPer100g|Nutrition data: proteins (in g) per 100g (or 100ml for liquids) null
+vitaminB1Per100g|Nutrition data: vitamin B1 (in g) per 100g (or 100ml for liquids) Note that vitamin B1 is also known as thiamin
+ironPer100g|Nutrition data: ironPer100g (in g) per 100g (or 100ml for liquids) null
+cholesterolPer100g|Nutrition data: cholesterol (in g) per 100g (or 100ml for liquids) null
+monounsaturatedFatPer100g|Nutrition data: monounsaturated fat (in g) per 100g (or 100ml for liquids) null
+carbohydratesPer100g|Nutrition data: carbohydrates (in g) per 100g (or 100ml for liquids)  null
+phosphorusPer100g|Nutrition data: phosphorus (in g) per 100g (or 100ml for liquids) null
+manganesePer100g|Nutrition data: manganese (in g) per 100g (or 100ml for liquids) null
+fatPer100g|Nutrition data: fat (in g) per 100g (or 100ml for liquids) null
+fiberPer100g|Nutrition data: fiber (in g) per 100g (or 100ml for liquids) null
+calciumPer100g|Nutrition data: calcium (in g) per 100g (or 100ml for liquids) null
+magnesiumPer100g|Nutrition data: magnesium (in g) per 100g (or 100ml for liquids) null
+seleniumPer100g|Nutrition data: selenium (in g) per 100g (or 100ml for liquids) null
+zincPer100g|Nutrition data: zinc (in g) per 100g (or 100ml for liquids) null
+bicarbonatePer100g|Nutrition data: bicarbonate (in g) per 100g (or 100ml for liquids) null
+vitaminB6Per100g|Nutrition data: vitamin B6 (in g) per 100g (or 100ml for liquids) null
+silicaPer100g|Nutrition data: silica (in g) per 100g (or 100ml for liquids) null
+netWeight|net weight of a food product (g)  null
+ingredientListAsText|Text of the list of ingredients Full text of the list of ingredients of a Food item (Product or Dish). May contain more details than what can be listed in the containsIngredient properties.
+chromiumPer100g|Nutrition data: chromium (in g) per 100g (or 100ml for liquids) null
+chloridePer100g|Nutrition data: chloride (in g) per 100g (or 100ml for liquids) null

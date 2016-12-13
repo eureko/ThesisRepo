@@ -1,0 +1,175 @@
+1	Milk and Milk Products
+1.1	Milk
+1.2	Cream
+1.3	Kefir
+1.4	Yogurt
+1.5	Whey
+1.6	Other fermented milk products
+1.7	Cheese
+1.8	Cheese substitutes
+1.9	Ice cream
+2	Egg and Egg Products
+2.1	Chicken eggs
+2.2	Duck eggs
+2.3	Quail eggs
+2.5	Turkey eggs
+2.6	Goose eggs
+2.7	Other bird eggs
+2.8	Other eggs
+3	Meat and Meat Products
+3.1	Beef, carcase meat
+3.2	Veal, carcase meat
+3.3	Pork, carcase meat
+3.4	Lamb, carcase meat
+3.9	Other birds
+3.10	Other mammals
+3.11.5	Restructured meat and meat analogues
+3.11	Meat products
+3.11.3	Dry, smoked sausages (Rohwurst)
+3.11.4	Fresh and lightly cooked sausages (Bratwurst)
+3.11.7	Cooked sausages (Kochwurst)
+3.11.8	Pastes, pâtés and terrines
+3.11.9	Other meat products
+3.13	Chicken
+3.14	Turkey
+3.15	Duck
+3.16	Goose
+3.17	Beef offal
+3.18	Veal offal
+3.19	Pork offal
+3.20	Lamb offal
+3.21	Poultry offal
+3.22	Preserved meats, ham and bacon
+3.22.1	Ham
+3.22.2	Bacon
+3.22.3	Preserved beef
+3.22.4	Tongue (preserved)
+3.22.5	Preserved poultry
+4	Fish and Fish Products
+4.1	Other fish and marine mammals
+4.2	Clupeiformes
+4.3	Perciformes
+4.4	Gadiformes
+4.5	Pleuronectiformes
+4.7	Cypriniformes
+4.9	Crustaceans
+4.10	Molluscs
+4.11	Insects
+4.12	Reptiles
+4.13	Frogs
+4.14	Fish products
+4.16	Miscellaneous marine and aquatic foods
+4.17	Preserved fish
+4.17.1	Smoked fish
+4.17.2	Canned fish
+4.17.3	Salted and pickled fish
+4.17.4	Restructured fish and fish analogues
+5	Fats and Oils
+5.1	Butter
+5X.2	Margarine
+5X.2.1	Margarine, >25% saturates
+5X.2.2	Margarine, <25% saturates
+5.3	Animal fats
+5.4	Marine oils
+5.5	Vegetable fats and oils
+5X.5.23	Compound fats and oils
+5X.7	Fat spread
+5X.7.1	Fat spread, >65% fat, >25% saturates
+5X.7.2	Fat spread, >65% fat, <25% saturates
+5X.7.3	Fat spread, 45-65% fat, >25% saturates
+5X.7.4	Fat spread, 45-65% fat, <25% saturates
+5X.7.5	Fat spread, 30-45% fat
+5X.7.6	Fat spread, <30% fat
+6	Grains and Grain Products
+6.1	Wheat flours
+6X.1	Wheat breads
+6.3	Rye products
+6.4	Barley products
+6.5	Oat products
+6.6	Maize products
+6.7	Rice products and dishes
+6.8	Millet products
+6.9	Buckwheat products
+6.10	Unripe spelt products
+6.11	Breakfast cereals
+6X.12	Mixed grain products
+6.14	Pasta and noodles
+6.15	Pastry and pies
+6.16	Savoury products and dishes
+6.17	Sweet products and dishes
+7	Pulses, Seeds, Nuts and Products
+7.1	Pulses
+7.2	Seeds and kernals
+7.4	Nuts
+7.6	Pulse products
+7.7	Nut and seed products
+8	Vegetables and Vegetable Products
+8.1	Leaf vegetables
+8.2	Brassicas
+8.3	Bulb vegetables
+8.4	Tubers
+8.5	Fruiting vegetables
+8.6	Edible fungi
+8X.8	Vegetable mixtures
+8.9	Stalk vegetables
+8.10	Shoot vegetables
+8.11	Root vegetables
+ 
+9	Fruit and Fruit Products
+9.1	Miscellaneous fruit
+9.2	Malaceous fruit
+9.3	Stone fruit
+9.4	Berries
+9.5	Citrus fruit
+9X.7	Fruit mixtures
+10	Sugar, Chocolate and Related Products
+10.1	Sugar
+10.2	Sugar substitutes
+10.3	Honey
+10.4	Syrups
+10X.5	Jelly
+10X.6	Fruit jams, jellies and marmalades
+10X.7	Non-chocolate dessert topping
+10X.8	Chocolate and chocolate products
+10X.9	Confectionery bars
+10X.20	Non-chocolate confectionery
+10X.21	Sugar products
+11	Beverages (Non-Milk)
+11.1	Beer
+11.2	Wine
+11.3	Dessert wine
+11.4	Liqueur/fortified wine
+11.5	Cocktails
+11.6	Liqueurs
+11.7	Spirits and brandy
+11.8	Dilution drinks
+11.9	Non-dilution drinks
+11.11	Water
+11.13	Infusion drinks
+11.16	Vegetable juice
+11.17	Fruit juice
+11.18	Vegetable nectar
+11.19	Fruit nectar
+11.21	Other alcoholic long drinks
+11.22	Other juices
+12	Miscellaneous Foods
+12X.1	Non dairy coffee creamer
+12X.2	Spices and herbs
+12X.3	Salad dressing
+12.6	Baking goods and other ingredients
+12X.9	Soups
+12X.10	Sauces
+12X.11	Mayonnaise
+12X.15	Savoury snacks
+12.16	Condiments, seasoning and extracts
+12X.17	Prepared salads
+13	Products for Special Nutritional Use
+13.1	Enteral foods
+13.2	Fat-modified foods
+13.3	Protein-enriched foods
+13.4	High-carbohydrate products
+13.5	High-energy products
+13.6	Low-energy products
+13.7	Carbohydrate, protein or fat-rich products
+13.8	Vitamin/mineral products/tonics
+13.9	Baby foods
