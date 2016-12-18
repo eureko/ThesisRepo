@@ -17,7 +17,6 @@ public class RDFTBOXExtractor
 		rdftboxExtractor.extractNamedClasses();
 		rdftboxExtractor.extractDatatypeProperties();
 		rdftboxExtractor.extractObjectProperties();
-		
 	}
 	
 	public RDFTBOXExtractor(String modelFile) 

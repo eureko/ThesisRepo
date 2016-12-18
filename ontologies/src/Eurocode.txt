@@ -1,3 +1,4 @@
+#8Eurocode 2 Food Coding System Taxonomy exceprt. Available online, http://www.danfood.info/eurocode/
 1	Milk and Milk Products
 1.1	Milk
 1.2	Cream
@@ -114,7 +115,6 @@
 8.9	Stalk vegetables
 8.10	Shoot vegetables
 8.11	Root vegetables
- 
 9	Fruit and Fruit Products
 9.1	Miscellaneous fruit
 9.2	Malaceous fruit

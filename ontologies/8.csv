@@ -1,18 +1,167 @@
 #Eurocode Food Coding System 8 by European FLAIR Eurofoods-Enfant Project: The Eurocode 2 Food Coding System was originally developed within the European FLAIR Eurofoods-Enfant Project to serve as a standard instrument for nutritional surveys in Europe and to serve the need for food intake comparisons. 
-Beef 
-carcass meat	
-Liver
-Veal, carcass meat
-Kidney
-Pork piglet, 
-carcass meat
-Other offal
-Mutton lamb, 
-Preserved meats
-Mammals, other
+Milk and Milk Products
+Milk
+Cream
+Kefir
+Yogurt
+Whey
+Other fermented milk products
+Cheese
+Cheese substitutes
+Ice cream
+Egg and Egg Products
+Chicken eggs
+Duck eggs
+Quail eggs
+Turkey eggs
+Goose eggs
+Other bird eggs
+Other eggs
+Meat and Meat Products
+Beef carcase meat
+Veal carcase meat
+Pork carcase meat
+Lamb carcase meat
+Other birds
+Other mammals
 Restructured meat and meat analogues
-Chicken	
 Meat products
+Dry smoked sausages (Rohwurst)
+Fresh and lightly cooked sausages (Bratwurst)
+Cooked sausages (Kochwurst)
+Pastes pâtés and terrines
+Other meat products
+Chicken
 Turkey
-Meat dishes
-Birds, other
+Duck
+Goose
+Beef offal
+Veal offal
+Pork offal
+Lamb offal
+Poultry offal
+Preserved meats ham and bacon
+Ham
+Bacon
+Preserved beef
+Tongue (preserved)
+Preserved poultry
+Fish and Fish Products
+Other fish and marine mammals
+Clupeiformes
+Perciformes
+Gadiformes
+Pleuronectiformes
+Cypriniformes
+Crustaceans
+Molluscs
+Insects
+Reptiles
+Frogs
+Fish products
+Miscellaneous marine and aquatic foods
+Preserved fish
+Smoked fish
+Canned fish
+Salted and pickled fish
+Restructured fish and fish analogues
+Fats and Oils
+Butter
+Margarine
+Animal fats
+Marine oils
+Vegetable fats and oils
+Compound fats and oils
+Fat spread
+Grains and Grain Products
+Wheat flours
+Wheat breads
+Rye products
+Barley products
+Oat products
+Maize products
+Rice products and dishes
+Millet products
+Buckwheat products
+Unripe spelt products
+Breakfast cereals
+Mixed grain products
+Pasta and noodles
+Pastry and pies
+Savoury products and dishes
+Sweet products and dishes
+Pulses Seeds Nuts and Products
+Pulses
+Seeds and kernals
+Nuts
+Pulse products
+Nut and seed products
+Vegetables and Vegetable Products
+Leaf vegetables
+Brassicas
+Bulb vegetables
+Tubers
+Fruiting vegetables
+Edible fungi
+Vegetable mixtures
+Stalk vegetables
+Shoot vegetables
+Root vegetables
+Fruit and Fruit Products
+Miscellaneous fruit
+Malaceous fruit
+Stone fruit
+Berries
+Citrus fruit
+Fruit mixtures
+Sugar Chocolate and Related Products
+Sugar
+Sugar substitutes
+Honey
+Syrups
+Jelly
+Fruit jams jellies and marmalades
+Non-chocolate dessert topping
+Chocolate and chocolate products
+Confectionery bars
+Non-chocolate confectionery
+Sugar products
+Beverages (Non-Milk)
+Beer
+Wine
+Dessert wine
+Liqueur/fortified wine
+Cocktails
+Liqueurs
+Spirits and brandy
+Dilution drinks
+Non-dilution drinks
+Water
+Infusion drinks
+Vegetable juice
+Fruit juice
+Vegetable nectar
+Fruit nectar
+Other alcoholic long drinks
+Other juices
+Miscellaneous Foods
+Non dairy coffee creamer
+Spices and herbs
+Salad dressing
+Baking goods and other ingredients
+Soups
+Sauces
+Mayonnaise
+Savoury snacks
+Condiments seasoning and extracts
+Prepared salads
+Products for Special Nutritional Use
+Enteral foods
+Fat-modified foods
+Protein-enriched foods
+High-carbohydrate products
+High-energy products
+Low-energy products
+Carbohydrate protein or fat-rich products
+Vitamin/mineral products/tonics
+Baby foods

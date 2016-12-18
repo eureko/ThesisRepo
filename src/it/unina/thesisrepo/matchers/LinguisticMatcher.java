@@ -67,7 +67,7 @@ public class LinguisticMatcher
 		
 		//lexicographicMatcher.visualizeResults(alignment);
 		
-		System.out.println(getPolysemy("book"));
+		//System.out.println(getPolysemy("book"));
 		
 		/* List<Concept> synsets1 = (List<Concept>)db.getAllConcepts("sea", "n");
 		 List<Concept> synsets2 = (List<Concept>)db.getAllConcepts("lake", "n");
@@ -92,6 +92,8 @@ public class LinguisticMatcher
 			
 		 }
 		 */
+		
+		System.out.println("****" + linguisticMatching("food", "butter"));
 		
 	}
 	
@@ -226,7 +228,7 @@ public class LinguisticMatcher
 		         for (Concept synset2: synsets2) {
 		             Relatedness relatedness = rc.calcRelatednessOfSynset(synset1, synset2);
 		             double score = relatedness.getScore();
-		             //System.out.println(synset1.toString() + " vs " + synset2.toString() + " -> " + score);
+		             System.out.println(synset1.toString() + " vs " + synset2.toString() + " -> " + score);
 		             if (score > maxScore) { 
 		                 maxScore = score;
 		             }

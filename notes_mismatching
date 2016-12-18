@@ -1,0 +1,16 @@
+#Notes on mismatchnig
+1: Diet ->	Artificial food additives (0.0)
+2: food -> food (è opportuno aggiungere la centralità del termine coincidente)
+3: Food ->	Artificial food additives (tutto zero)?
+4: Food	-> Boxes (0 semantiche perché va lemmatizzato)
+5 Food	->Canning
+6: Food	-> Dietary supplement (non riconosce multiword oppure versione wn obsoleta)
+7: Food	->Drying Verbo?
+8:Food ->	Fish processing (quest'ultima non è presente in wn)
+9: Food	food_for_thought
+
+
+
+
+
+

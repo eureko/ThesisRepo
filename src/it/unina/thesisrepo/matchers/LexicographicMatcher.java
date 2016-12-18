@@ -40,13 +40,14 @@ public class LexicographicMatcher
 		
 	public static void main(String[] args) 
 	{
-		LexicographicMatcher lexicographicMatcher = new LexicographicMatcher("ontologies/10.csv", targetOntoFile);
+		//LexicographicMatcher lexicographicMatcher = new LexicographicMatcher("ontologies/10.csv", targetOntoFile);
 			
-		//System.out.println(Jaccard("Enrico Caldarola", "Caldarola Enrico", regex1));
-		lexicographicMatcher.performMatching(LexicographicMatcher.FUZZY);
-		lexicographicMatcher.visualizeResults(exactStringAlignment);
+		System.out.println(Jaccard("Food", "comfort_food", regex1, regex1));
+		//lexicographicMatcher.performMatching(LexicographicMatcher.FUZZY);
+		//lexicographicMatcher.visualizeResults(exactStringAlignment);
 		
-		
+			
+
 	}
 	
 	public LexicographicMatcher(String src, String dst) 
@@ -123,7 +124,7 @@ public class LexicographicMatcher
 				else if (type == LexicographicMatcher.LEVENSHTEIN)
 					exactStringAlignment[i][j] = levSim.compare(src_item, dst_item);
 				else if (type == LexicographicMatcher.JACCARD)
-					exactStringAlignment[i][j] = Jaccard(src_item, dst_item, regex1);
+					exactStringAlignment[i][j] = Jaccard(src_item, dst_item, regex1, regex1);
 				else if (type == LexicographicMatcher.FUZZY)
 					exactStringAlignment[i][j] = FuzzySearch.tokenSetPartialRatio(src_item, dst_item);
 					
@@ -171,15 +172,27 @@ public class LexicographicMatcher
 		return (double)(2*((double)counter/(words1.length + words2.length)));
 	}
 	
-	static double Jaccard(String s1, String s2, String regex)
+	static double Jaccard(String s1, String s2, String regex1, String regex2)
 	{
-		String[] words1 = s1.split(regex);
-		String[] words2 = s2.split(regex);
+		String[] words1 = s1.split(regex1);
+		String[] words2 = s2.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
 		
 		Set<String> set1 = new HashSet<String>(Arrays.asList(words1));
 		Set<String> set2 = new HashSet<String>(Arrays.asList(words2));
 		
 		return jaccardSim.compare(set1, set2);
+	}
+	
+	static String[]  toLowerCase(String[] array)
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			array[i] = array[i].toLowerCase();
+		}
+		return array;
 	}
 	
 	void visualizeResults(double[][] results)

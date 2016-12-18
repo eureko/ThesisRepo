@@ -1,27 +1,12 @@
 #The Product Types Ontology by E-Business and Web Science Research Group at Bundeswehr University Munich: This ontology contains 300,000 precise definitions for types of product or services that extend the schema.org and GoodRelations standards for e-commerce markup.;Product Ontology is application level ontology
-Shower|Shower 
-Motorcycle|Motorcycle 
-Sago|Sago 
-Amenity|Amenity 
-Bollard|Bollard 
-Isinglass|Isinglass 
-Baumkuchen|Baumkuchen 
 Toast_Hawaii|Toast Hawaii 
-Solar_panel|Solar panel 
 Bundt_cake|Bundt cake 
 Bun|Bun 
 Bread_bowl|Bread bowl 
 Schupfnudel|Schupfnudel 
 Dinner|Dinner 
-Automotive_battery|Automotive battery 
-Roulade|Roulade 
-Flat_panel_display|Flat panel display 
-|Mole (architecture) 
 Sapphire|Sapphire 
-Finance|Finance 
 Schwenker|Schwenker 
-Rokpol|Rokpol 
-Trumpet|Trumpet 
 Bamboo_shoot|Bamboo shoot 
 Pest_control|Pest control 
 Circuit_breaker|Circuit breaker 
@@ -116,8 +101,8 @@ Vulcanization|Vulcanization
 Bacon_and_cabbage|Bacon and cabbage 
 Fixed_ladder|Fixed ladder 
 Pippo_Baudo|Pippo Baudo 
-|Tieback (geotechnical) 
-|Lamp (electrical component) 
+Tieback|Tieback (geotechnical) 
+Lamp|Lamp (electrical component) 
 Resistor|Resistor 
 Ceramic_capacitor|Ceramic capacitor 
 Hand_fan|Hand fan 
@@ -130,7 +115,7 @@ Action_film|Action film
 Sushi|Sushi 
 Moka_pot|Moka pot 
 Laundry_ball|Laundry ball 
-|Printer (computing) 
+Printer|Printer (computing) 
 Kuchen|Kuchen 
 Wedding_dress|Wedding dress 
 Camcorder|Camcorder 
