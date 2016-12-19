@@ -20,7 +20,6 @@ public class AlignmentHandler
 	static HashSet<Alignment> allAlignments = new HashSet<Alignment>();
 	static Measure M;
 	
-	static int[][] confusion_matrix = new int[4][4];
 	
 	public static void main(String[] args) 
 	{
@@ -74,7 +73,7 @@ public class AlignmentHandler
 					measures[8] = Double.parseDouble(tokens[11]);
 					String result = tokens[12];
 					
-					Alignment a = new Alignment(src, dst, measures, result);
+					Alignment a = new Alignment(src, dst, measures, result, null);
 					allAlignments.add(a);
 				}
 				catch(Exception ex)
@@ -145,12 +144,13 @@ public class AlignmentHandler
 		String result;
 		String ground;
 		
-		Alignment(String src, String dst, double[] measures, String result)
+		Alignment(String src, String dst, double[] measures, String result, String ground)
 		{
 			this.src = src;
 			this.dst = dst;
 			this.measures = measures;
 			this.result = result;
+			this.ground = ground;
 		}
 		
 		@Override

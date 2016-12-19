@@ -1,6 +1,7 @@
 package it.unina.thesisrepo.testset.manager;
 
 import it.unina.thesisrepo.matchers.SynsetUtility;
+import it.unina.thesisrepo.utilities.Inflector;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,6 +17,7 @@ import java.util.TreeSet;
 
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 
+import org.atteo.evo.inflector.English;
 import org.simmetrics.metrics.JaccardSimilarity;
 import org.simmetrics.metrics.Levenshtein;
 
@@ -32,7 +34,7 @@ import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 
-public class TermsSetHandler 
+public class TestSetHandler 
 {
 	static 
 	{
@@ -56,172 +58,136 @@ public class TermsSetHandler
 	static final String regex1 = "[-_\\s]";
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
+	static final double wup_t = 0.4;
+	static final double ext_t = 0.7;
+	
+	static final Stemmer stemmer = new Stemmer();
+	static final Inflector inflactor = new Inflector();
+	
 	
 	public static void main(String[] args) 
 	{
-		WS4JConfiguration.getInstance().setMFS(true);
+
+		//System.out.println(Jaccard("Food Product", "canned_food", regex1, regex1));
+		//Apple_cake	food
+		//Cheese_bun	foodstuff
+		//Chocolate_Crunchies	food
+		//Food Product	whiskey_neat
+
+
+		//Food Product	whiskey_neat
+		//Berries	food
+		//Pasta	food
+
 		
+		//System.out.println(getStem("Berries"));
+		
+		/*System.out.println(inflactor.singularize("Focaccia"));
+		System.out.println(extendedLinguisticMatching("Focaccia", "food", regex1, regex1));
+		System.out.println(WuPalmerMatching("Focaccia", "food"));*/
+
+		WS4JConfiguration.getInstance().setMFS(true);
+		String line = "";
 		try
 		{
-			TermsSetHandler termsSetHAndler = new TermsSetHandler();
-			for (int i = 0; i < 11 ; i++)
+			System.out.println("Starting alignment...");
+			BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/groundtruth.csv"));
+			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment.csv"));
+			
+			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,ext,fun,exp,grd\n");
+		    
+			
+			//line = file_buffer.readLine(); // Read comment line
+			
+			while((line = file_buffer.readLine()) != null)
 			{
-				System.out.println("Handling file: " + "./ontologies/"+(i+1)+".csv");
-				TreeSet<String> current_set = new TreeSet<String>();
-				termsSetHAndler.addSet("./ontologies/"+(i+1) + ".csv", current_set);
-				terms_sets.add(current_set);
-			}
-			
-			//for (TreeSet<String> set:terms_sets)
-				//termsSetHAndler.visualizeSet(set);
-			
-			termsSetHAndler.createTargetSet("./ontologies/target.csv");
-			//termsSetHAndler.visualizeSet(target_terms_set);
-			
-			// Start alignment
-			int i = 0;
-			
-			for (TreeSet<String> current_set:terms_sets)
-			{
-				try
+				String[] tokens = line.split(";");
+				String src = tokens[0];
+				String dst = tokens[1];
+				String ground = tokens[2];
+				
+				
+				double exactMatch = 0.0;
+				//double levMatch = 0.0;
+				double jaccardMatch = 0.0;
+				double fuzzyMatch = 0.0;
+				double syno_g = 0.0;
+				double cosyno_g = 0.0;
+				double wupalm = 0.0;
+				double path = 0.0;
+				double ext = 0.0;
+				
+				
+				
+				exactMatch = exactMatching(src, dst);
+				file_buffer_writer.write(src + "," + dst + "," + exactMatch + "," + levSim.compare(src.toLowerCase(), dst.toLowerCase()) + ",");
+				if (src.contains("_") || src.contains("-") || src.contains(" "))
 				{
-					BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/" + (i+1)+".alignment"));
-					System.out.println("Aligning "+ alignmentFolder + "/" + (i+1)+".alignment");
-					file_buffer.write("#Alignment " + (i+1) + ". Total number of terms: " + current_set.size() + "src,dst,str,lev,jac,fuz,syn,cos,wup,path,ext,fun,exp,grd\n");
-					double exactMatch = 0.0;
-					double levMatch = 0.0;
-					double jaccardMatch = 0.0;
-					double fuzzyMatch = 0.0;
-					double syno_g = 0.0;
-					double cosyno_g = 0.0;
-					double wupalm = 0.0;
-					double path = 0.0;
-					
-					
-					for (String src:current_set)
+					jaccardMatch = Jaccard(src, dst, regex1, regex1);
+					file_buffer_writer.write("" + jaccardMatch + ",");
+				}
+				else
+				{
+					jaccardMatch = Jaccard(src, dst, regex2, regex1);
+					file_buffer_writer.write("" + jaccardMatch + ",");
+				}
+				
+				ext = extendedLinguisticMatching(src, dst, regex1, regex1);
+				
+				src = inflactor.singularize(src);
+				dst = inflactor.singularize(dst);
+				
+				fuzzyMatch = fuzzyMatching(src.toLowerCase(),dst.toLowerCase());
+				syno_g = SynonymyGrade(src, dst);
+				cosyno_g = cosynonymGrade(src, dst);
+				wupalm = WuPalmerMatching(src, dst);
+				path = pathSimilarity(src, dst);
+				
+				
+				file_buffer_writer.write("" + fuzzyMatch + ",");
+				file_buffer_writer.write("" + syno_g + ",");
+				file_buffer_writer.write("" + cosyno_g + ",");
+				file_buffer_writer.write("" + wupalm + ",");
+				file_buffer_writer.write("" + path + "," + ext + ",0.0,");
+				
+				if (exactMatch == 1.0 || syno_g == 1.0)
+				{
+					file_buffer_writer.write("eqv,");
+				}
+				else
+				{
+					if ((wupalm > wup_t) || (ext > ext_t)) // Compensate WS4J error on wupalm measure
 					{
-						for (String dst:target_terms_set)
-						{
-							exactMatch = exactMatching(src, dst);
-							file_buffer.write(src + "," + dst + "," + exactMatch + "," + levSim.compare(src.toLowerCase(), dst.toLowerCase()) + ",");
-							if (i == 4 || i == 5)
-							{
-								jaccardMatch = Jaccard(src, dst, regex2, regex1);
-								file_buffer.write("" + jaccardMatch + ",");
-							}
-							else
-							{
-								jaccardMatch = Jaccard(src, dst, regex1, regex1);
-								file_buffer.write("" + jaccardMatch + ",");
-							}
-							
-							fuzzyMatch = fuzzyMatching(src.toLowerCase(),dst.toLowerCase());
-							syno_g = SynonymyGrade(src, dst);
-							cosyno_g = cosynonymGrade(src, dst);
-							wupalm = WuPalmerMatching(src, dst);
-							path = pathSimilarity(src, dst);
-							
-							file_buffer.write("" + fuzzyMatch + ",");
-							file_buffer.write("" + syno_g + ",");
-							file_buffer.write("" + cosyno_g + ",");
-							file_buffer.write("" + wupalm + ",");
-							file_buffer.write("" + path + ",0.0,0.0,");
-							
-							if (exactMatch == 1.0 || syno_g == 1.0)
-							{
-								file_buffer.write("eqv,?\n");
-							}
-							else if ((wupalm > 0.6 && wupalm < 1.0) || (wupalm > 1.0 && path < 1.0)) // Compensate WS4J error on wupalm measure
-							{
-								file_buffer.write("hypo,?\n");
-							}
-							else if ((wupalm < 0.6) && wupalm > 0.3)
-							{
-								file_buffer.write("rel,?\n");
-							}
-							else
-								file_buffer.write("dsj,?\n");
-						}
+						file_buffer_writer.write("hypo,");
 					}
-					i++;
-					file_buffer.close();
-					
+					else if ((wupalm > 0.0 && wupalm <= wup_t) || (ext > 0.0 && ext < ext_t))
+					{
+						file_buffer_writer.write("rel,");
+					}
+					else
+					{
+						if (jaccardMatch > 0.0)
+							file_buffer_writer.write("hypo,");
+						else						
+							file_buffer_writer.write("dsj,");
+					}
 				}
-				catch(Exception ex)
-				{
-					ex.printStackTrace();
-				}
+				
+				file_buffer_writer.write(ground+"\n");
+				
 			}
 			
+			file_buffer_writer.close();
+			file_buffer.close();
 					
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
+			System.out.println(line);
 		}
 	}
 	
-	
-	
-	void addSet(String file, TreeSet<String> set) throws IOException
-	{
-		BufferedReader file_buffer = new BufferedReader(new FileReader(file));
-	    
-		String line;
-		line = file_buffer.readLine(); // Read comment line
-		
-		while((line = file_buffer.readLine()) != null)
-		{
-			if (line.contains("|"))
-			{
-				String[] pair = line.split("\\|");
-				set.add(pair[0]);
-			}
-			else
-			{
-				line.trim();
-				set.add(line.trim());
-			}
-		}
-		file_buffer.close();
-	}
-	
-	void createTargetSet(String file) throws IOException
-	{
-		BufferedReader file_buffer = new BufferedReader(new FileReader(file));
-	    
-		String line;
-		line = file_buffer.readLine(); // Read comment line
-		
-		while((line = file_buffer.readLine()) != null)
-		{
-			if (line.contains("|"))
-			{
-				String[] pair = line.split("\\|");
-				target_terms_set.add(pair[0]);
-			}
-			else
-			{
-				line.trim();
-				target_terms_set.add(line.trim());
-			}
-		}
-		file_buffer.close();
-	}
-	
-	void visualizeSet(Set<String> set)
-	{
-		System.out.println("********************************* The set contains " + set.size() + " elements *****************************");
-		for (String s:set)
-			System.out.println(s);
-	}
-	
-	void visualizeAlignmentSet(Set<Alignment> set)
-	{
-		System.out.println("********************************* The set contains " + set.size() + " elements *****************************");
-		for (Alignment a:set)
-			System.out.println(a);
-	}
 	
 	static double exactMatching(String src, String dst)
 	{
@@ -266,10 +232,28 @@ public class TermsSetHandler
 		toLowerCase(words1);
 		toLowerCase(words2);
 		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		/*for (String s:words1)
+			System.out.println(s);
+		
+		for(String s:words2)
+			System.out.println(s);*/
+		
+		
+		
 		Set<String> set1 = new HashSet<String>(Arrays.asList(words1));
 		Set<String> set2 = new HashSet<String>(Arrays.asList(words2));
 		
 		return jaccardSim.compare(set1, set2);
+	}
+	
+	static String getStem(String s)
+	{
+		stemmer.add(s.toCharArray(), s.length());
+		stemmer.stem();
+		return new String(stemmer.getResultBuffer(), 0, stemmer.getResultLength());
 	}
 	
 	static String[]  toLowerCase(String[] array)
@@ -277,6 +261,24 @@ public class TermsSetHandler
 		for (int i = 0; i < array.length; i++)
 		{
 			array[i] = array[i].toLowerCase();
+		}
+		return array;
+	}
+	
+	static String[] stemArrayofString(String[] array)
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			array[i] = getStem(array[i]);
+		}
+		return array;
+	}
+	
+	static String[] singolarizeArrayofString(String[] array)
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			array[i] = inflactor.singularize(array[i]);
 		}
 		return array;
 	}
@@ -355,6 +357,36 @@ public class TermsSetHandler
 		 }
 
 		 return maxScore;
+	}
+	
+	static double extendedLinguisticMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1 = src.split(regex1);
+		String[] words2 = dst.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		double max = 0.0;
+		for (String s1:words1)
+		{
+			for(String s2:words2)
+			{
+				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
+				double v = WuPalmerMatching(s1, s2);
+				if (v>max)
+				{
+					max = v;
+				}
+			}
+		}
+		return max;
+		
+		//stemArrayofString(words1);
+		//stemArrayofString(words2);
 	}
 	
 	class Alignment implements Comparable<Alignment>
