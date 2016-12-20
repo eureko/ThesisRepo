@@ -141,6 +141,8 @@ public class TermsSetHandler
 							}
 							else
 								file_buffer.write("dsj,?\n");
+							
+							file_buffer.write("eqv,?\n");
 						}
 					}
 					i++;

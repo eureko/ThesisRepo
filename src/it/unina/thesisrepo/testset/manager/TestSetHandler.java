@@ -58,8 +58,10 @@ public class TestSetHandler
 	static final String regex1 = "[-_\\s]";
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
-	static final double wup_t = 0.4;
-	static final double ext_t = 0.7;
+	static final double eqv_t = 1.0;
+	static final double hyp1_t = 0.6;
+	static final double hyp2_t = 0.7;
+	static final double dsj_t = 0.2;
 	
 	static final Stemmer stemmer = new Stemmer();
 	static final Inflector inflactor = new Inflector();
@@ -150,29 +152,28 @@ public class TestSetHandler
 				file_buffer_writer.write("" + wupalm + ",");
 				file_buffer_writer.write("" + path + "," + ext + ",0.0,");
 				
-				if (exactMatch == 1.0 || syno_g == 1.0)
+				if (exactMatch == eqv_t || syno_g == eqv_t)
 				{
 					file_buffer_writer.write("eqv,");
 				}
 				else
 				{
-					if ((wupalm > wup_t) || (ext > ext_t)) // Compensate WS4J error on wupalm measure
+					if (wupalm >= hyp1_t) // Compensate WS4J error on wupalm measure
 					{
 						file_buffer_writer.write("hypo,");
 					}
-					else if ((wupalm > 0.0 && wupalm <= wup_t) || (ext > 0.0 && ext < ext_t))
-					{
-						file_buffer_writer.write("rel,");
-					}
 					else
 					{
-						if (jaccardMatch > 0.0)
+						if (ext >= hyp2_t)
 							file_buffer_writer.write("hypo,");
-						else						
+						else if ((ext > dsj_t) && (ext < hyp2_t))
+							file_buffer_writer.write("rel,");
+						else
 							file_buffer_writer.write("dsj,");
 					}
 				}
 				
+				//file_buffer_writer.write("rel,");
 				file_buffer_writer.write(ground+"\n");
 				
 			}

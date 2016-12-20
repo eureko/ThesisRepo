@@ -229,10 +229,15 @@ public class TestSetEvaluator
 	
 	void getStatistics()
 	{
-		double eqv_accuracy = (double)((double)confusionMatrix[0][0] / (double)(confusionMatrix[0][0] + confusionMatrix[0][1] + confusionMatrix[0][2] + confusionMatrix[0][3]));
-		double hyp_accuracy = (double)((double)confusionMatrix[1][1] / (double)(confusionMatrix[1][0] + confusionMatrix[1][1] + confusionMatrix[1][2] + confusionMatrix[1][3]));
-		double rel_accuracy = (double)(double)(confusionMatrix[2][2] / (double)(confusionMatrix[2][0] + confusionMatrix[2][1] + confusionMatrix[2][2] + confusionMatrix[2][3]));
-		double dsj_accuracy = (double)((double)confusionMatrix[3][3] / (double)(confusionMatrix[3][0] + confusionMatrix[3][1] + confusionMatrix[3][2] + confusionMatrix[3][3]));
+		double eqv_recall = (double)((double)confusionMatrix[0][0] / (double)(confusionMatrix[0][0] + confusionMatrix[0][1] + confusionMatrix[0][2] + confusionMatrix[0][3]));
+		double hyp_recall = (double)((double)confusionMatrix[1][1] / (double)(confusionMatrix[1][0] + confusionMatrix[1][1] + confusionMatrix[1][2] + confusionMatrix[1][3]));
+		double rel_recall = (double)(double)(confusionMatrix[2][2] / (double)(confusionMatrix[2][0] + confusionMatrix[2][1] + confusionMatrix[2][2] + confusionMatrix[2][3]));
+		double dsj_recall = (double)((double)confusionMatrix[3][3] / (double)(confusionMatrix[3][0] + confusionMatrix[3][1] + confusionMatrix[3][2] + confusionMatrix[3][3]));
+		
+		double eqv_accuracy = (double)((double)confusionMatrix[0][0] / (double)(confusionMatrix[0][0] + confusionMatrix[1][0] + confusionMatrix[2][0] + confusionMatrix[3][0]));
+		double hyp_accuracy = (double)((double)confusionMatrix[1][1] / (double)(confusionMatrix[0][1] + confusionMatrix[1][1] + confusionMatrix[2][1] + confusionMatrix[3][1]));
+		double rel_accuracy = (double)(double)(confusionMatrix[2][2] / (double)(confusionMatrix[0][2] + confusionMatrix[1][2] + confusionMatrix[2][2] + confusionMatrix[3][2]));
+		double dsj_accuracy = (double)((double)confusionMatrix[3][3] / (double)(confusionMatrix[0][3] + confusionMatrix[1][3] + confusionMatrix[2][3] + confusionMatrix[3][3]));
 		
 		int sum = 0;
 		
@@ -245,8 +250,11 @@ public class TestSetEvaluator
 			}
 		}
 		
+		System.out.println("specific accuracy(recall): " );
+		System.out.println("eqv" + "\t" + "hypo" + "\t" + "rel" + "\t" + "dsj");
+		System.out.print(eqv_accuracy + "(" + eqv_recall + ")"+ "\t" + hyp_accuracy + "(" + hyp_recall + ")"+ "\t" + 
+				rel_accuracy + "(" + rel_recall + ")"+ "\t" +  dsj_accuracy + "(" + dsj_recall + ")"+ "\n");
 		double totalAccuracy = ((double)(confusionMatrix[0][0] + confusionMatrix[1][1] + confusionMatrix[2][2] + confusionMatrix[3][3])/(double)sum);
-		System.out.println("eqv_accuracy: " + eqv_accuracy + " hyp_accuracy: " + hyp_accuracy + " rel_accuracy: " + rel_accuracy + " dsj_accuracy: " + dsj_accuracy);
 		System.out.println("Total accuracy: " + totalAccuracy);
 	}
 }

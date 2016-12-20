@@ -1,0 +1,45 @@
+#Approccio ON/OFF EQV vs DSJ
+Confusion Matrix:
+99	0	0	4	
+1	0	0	850	
+0	0	0	23	
+0	0	0	79	
+eqv_accuracy: 0.9611650485436893 hyp_accuracy: 0.0 rel_accuracy: 0.0 dsj_accuracy: 1.0
+Total accuracy: 0.16856060606060605
+
+#Approccio con soglia al 60% Wup per hypo/hyper
+Confusion Matrix:
+99	2	0	2	
+1	174	0	676	
+0	5	0	18	
+0	7	0	72	
+eqv_accuracy: 0.9611650485436893 hyp_accuracy: 0.2044653349001175 rel_accuracy: 0.0 dsj_accuracy: 0.9113924050632911
+Total accuracy: 0.32670454545454547
+
+#Approccio con soglia al 60% Wup per hypo/hyper e nel caso path == 0 approccio fuzzy string math
+Confusion Matrix:
+99	2	0	2	
+1	204	0	646	
+0	6	0	17	
+0	7	0	72	
+eqv_accuracy: 0.9611650485436893 hyp_accuracy: 0.23971797884841364 rel_accuracy: 0.0 dsj_accuracy: 0.9113924050632911
+Total accuracy: 0.35511363636363635
+
+#Approccio con soglia al 50% Wup per hypo/hyper e nel caso path == 0 approccio fuzzy string math
+Confusion Matrix:
+99	2	0	2	
+1	204	0	646	
+0	6	0	17	
+0	7	0	72	
+eqv_accuracy: 0.9611650485436893 hyp_accuracy: 0.23971797884841364 rel_accuracy: 0.0 dsj_accuracy: 0.9113924050632911
+Total accuracy: 0.35511363636363635
+
+#Approccio con soglia al 20% Wup per hypo/hyper e nel caso path == 0 approccio fuzzy string math
+Confusion Matrix:
+99	2	0	2	
+1	271	0	579	
+0	6	0	17	
+0	25	0	54	
+eqv_accuracy: 0.9611650485436893 hyp_accuracy: 0.318448883666275 rel_accuracy: 0.0 dsj_accuracy: 0.6835443037974683
+Total accuracy: 0.4015151515151515
+
