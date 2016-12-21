@@ -59,9 +59,9 @@ public class TestSetHandler
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
 	static final double eqv_t = 1.0;
-	static final double hyp1_t = 0.6;
-	static final double hyp2_t = 0.7;
-	static final double dsj_t = 0.2;
+	static final double hyp1_t = 0.5;
+	static final double hyp2_t = 0.8;
+	static final double dsj_t = 0.3;
 	
 	static final Stemmer stemmer = new Stemmer();
 	static final Inflector inflactor = new Inflector();
@@ -158,10 +158,17 @@ public class TestSetHandler
 				}
 				else
 				{
-					if (wupalm >= hyp1_t) // Compensate WS4J error on wupalm measure
+					if (path > 0.0) // i termini (normalizzati) sono presenti in  WN
 					{
-						file_buffer_writer.write("hypo,");
-					}
+						if (wupalm >= hyp1_t) // Compensate WS4J error on wupalm measure
+						{
+							file_buffer_writer.write("hypo,");
+						}
+						else
+						{
+							file_buffer_writer.write("rel,");
+						}
+					}					
 					else
 					{
 						if (ext >= hyp2_t)
