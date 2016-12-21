@@ -65,7 +65,7 @@ Fruit;food;hypo
 Juice;food;hypo
 Lamb;food;hypo
 Melizame;food;hypo
-Popcor;food;hypo
+Popcorn;food;hypo
 Pork;food;hypo
 Food Product;canned_food;hyper
 Food Product;canned_foods;hyper
@@ -123,7 +123,7 @@ Aachener_Printen;food;dsj
 Absorption_wavemeter;food;dsj
 Academic_dress;food;dsj
 Accordion;food;dsj
-Acetic_acid;food;dsj
+Acetic_acid;food;hypo
 Action_film;food;dsj
 ActualProductOrServiceInstance;food;dsj
 Advocacy;food;dsj

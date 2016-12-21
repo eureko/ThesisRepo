@@ -10,10 +10,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Vector;
 
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 
@@ -27,6 +29,8 @@ import edu.cmu.lti.lexical_db.NictWordNet;
 import edu.cmu.lti.lexical_db.data.Concept;
 import edu.cmu.lti.ws4j.Relatedness;
 import edu.cmu.lti.ws4j.RelatednessCalculator;
+import edu.cmu.lti.ws4j.impl.HirstStOnge;
+import edu.cmu.lti.ws4j.impl.Lesk;
 import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
@@ -44,6 +48,8 @@ public class TestSetHandler
 	static ILexicalDatabase db = new NictWordNet();
 	static RelatednessCalculator wprc =  new WuPalmer(db);
 	static RelatednessCalculator pathrc =  new Path(db);
+	static RelatednessCalculator leskrc = new Lesk(db);
+	static RelatednessCalculator hsorc = new HirstStOnge(db);
 	
 	static ArrayList<TreeSet<String>> terms_sets = new ArrayList<TreeSet<String>>(11);
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
@@ -55,39 +61,34 @@ public class TestSetHandler
 	
 	static final String alignmentFolder = "./alignments";
 	
-	static final String regex1 = "[-_\\s]";
+	static final String regex1 = "[-_/\\s]";
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
 	static final double eqv_t = 1.0;
 	static final double hyp1_t = 0.5;
 	static final double hyp2_t = 0.8;
-	static final double dsj_t = 0.3;
+	static final double dsj_t = 0.4;
 	
 	static final Stemmer stemmer = new Stemmer();
 	static final Inflector inflactor = new Inflector();
 	
+	static final String[] singularizerStoWordList = {"pasta", "sangria", "ricotta", "focaccia"};
+	static final Vector<String> singularizedStopWordListObj = new Vector<String>();
+	
 	
 	public static void main(String[] args) 
 	{
-
-		//System.out.println(Jaccard("Food Product", "canned_food", regex1, regex1));
-		//Apple_cake	food
-		//Cheese_bun	foodstuff
-		//Chocolate_Crunchies	food
-		//Food Product	whiskey_neat
-
-
-		//Food Product	whiskey_neat
-		//Berries	food
-		//Pasta	food
-
+		for (int i = 0; i < singularizerStoWordList.length; i++)
+			singularizedStopWordListObj.add(singularizerStoWordList[i]);
 		
-		//System.out.println(getStem("Berries"));
+		//Method	Canning
 		
-		/*System.out.println(inflactor.singularize("Focaccia"));
-		System.out.println(extendedLinguisticMatching("Focaccia", "food", regex1, regex1));
-		System.out.println(WuPalmerMatching("Focaccia", "food"));*/
-
+		
+		System.out.println(getStem("emulsification"));
+		System.out.println(leskSimilarity("method", "emulsion"));
+		System.out.println(HirstSimilarity("method", "emulsion"));
+		System.out.println(WuPalmerMatching("method", "emulsion"));
+		
 		WS4JConfiguration.getInstance().setMFS(true);
 		String line = "";
 		try
@@ -96,93 +97,155 @@ public class TestSetHandler
 			BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/groundtruth.csv"));
 			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment.csv"));
 			
-			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,ext,fun,exp,grd\n");
+			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,exp,grd\n");
 		    
 			
 			//line = file_buffer.readLine(); // Read comment line
 			
 			while((line = file_buffer.readLine()) != null)
 			{
-				String[] tokens = line.split(";");
-				String src = tokens[0];
-				String dst = tokens[1];
-				String ground = tokens[2];
-				
-				
 				double exactMatch = 0.0;
-				//double levMatch = 0.0;
+				double levMatch = 0.0;
 				double jaccardMatch = 0.0;
 				double fuzzyMatch = 0.0;
 				double syno_g = 0.0;
 				double cosyno_g = 0.0;
 				double wupalm = 0.0;
+				double lesk = 0.0;
+				double hso = 0.0;
 				double path = 0.0;
-				double ext = 0.0;
+				double extWup = 0.0;  
 				
 				
+				String[] tokens = line.split(";");
+				String src = tokens[0];
+				String dst = tokens[1];
+				String ground = tokens[2];
 				
-				exactMatch = exactMatching(src, dst);
-				file_buffer_writer.write(src + "," + dst + "," + exactMatch + "," + levSim.compare(src.toLowerCase(), dst.toLowerCase()) + ",");
-				if (src.contains("_") || src.contains("-") || src.contains(" "))
-				{
+				file_buffer_writer.write(src + "," + dst + ","); 
+				exactMatch = exactMatching(src.toLowerCase(), dst.toLowerCase());
+				levMatch = levSim.compare(src.toLowerCase(), dst.toLowerCase());
+				fuzzyMatch = fuzzyMatching(src.toLowerCase(),dst.toLowerCase());
+				
+				file_buffer_writer.write(exactMatch + ",");
+				file_buffer_writer.write(levMatch + ",");
+				file_buffer_writer.write(fuzzyMatch + ",");
+				
+				if (src.split(regex1).length > 1)
 					jaccardMatch = Jaccard(src, dst, regex1, regex1);
-					file_buffer_writer.write("" + jaccardMatch + ",");
+				if (src.split(regex2).length > 1)
+					jaccardMatch = Jaccard(src, dst, regex2, regex1);
+				
+				file_buffer_writer.write(jaccardMatch + ",");
+				
+				// Normalization
+				src = src.toLowerCase();
+				dst = dst.toLowerCase();
+				
+				boolean srcMulti = false;
+				boolean dstMulti = false;
+				
+				boolean srcUnknown = false;
+				boolean dstUnknown = false;
+				
+				if (db.getAllConcepts(src, "n").size() == 0) // src not in WN
+				{
+					if (src.split(regex1).length == 1) // Single Word
+					{
+						if (!singularizedStopWordListObj.contains(src.toLowerCase()))
+							src = inflactor.singularize(src);
+						
+						if (db.getAllConcepts(src, "n").size() == 0) // new src not in WN
+						{
+							src = getStem(src);
+							
+							if (db.getAllConcepts(src, "n").size() == 0) // new src not in WN
+							{
+								srcUnknown = true;
+							}
+						}
+					}
+					else
+						srcMulti = true;
+				}
+				
+				if (db.getAllConcepts(dst, "n").size() == 0) // src not in WN
+				{
+					if (dst.split(regex1).length == 1)
+					{
+						if (!singularizedStopWordListObj.contains(dst.toLowerCase()))
+							dst = inflactor.singularize(dst);
+						
+						if (db.getAllConcepts(dst, "n").size() == 0) // new src not in WN
+						{
+							dst = getStem(dst);
+							if (db.getAllConcepts(dst, "n").size() == 0) // new src not in WN
+							{
+								dstUnknown = true;
+							}
+						}
+					}
+					else
+						dstMulti = true;
+				}
+				
+				if (srcMulti || dstMulti)
+				{
+					extWup = extendedWuPalmerMatching(src, dst, regex1, regex1);
+					file_buffer_writer.write(syno_g + ",");
+					file_buffer_writer.write(cosyno_g + ",");
+					file_buffer_writer.write(wupalm + ",");
+					file_buffer_writer.write(path + ",");
 				}
 				else
 				{
-					jaccardMatch = Jaccard(src, dst, regex2, regex1);
-					file_buffer_writer.write("" + jaccardMatch + ",");
+					if (srcUnknown || dstUnknown)
+					{
+						file_buffer_writer.write(syno_g + ",");
+						file_buffer_writer.write(cosyno_g + ",");
+						file_buffer_writer.write(wupalm + ",");
+						file_buffer_writer.write(path + ",");
+					}
+					else
+					{
+						syno_g = SynonymyGrade(src, dst);
+						cosyno_g = cosynonymGrade(src,dst);
+						path = pathSimilarity(src, dst);
+						wupalm = WuPalmerMatching(src, dst);
+						
+						file_buffer_writer.write(syno_g + ",");
+						file_buffer_writer.write(cosyno_g + ",");
+						file_buffer_writer.write(wupalm + ",");
+						file_buffer_writer.write(path + ",");
+					}
 				}
 				
-				ext = extendedLinguisticMatching(src, dst, regex1, regex1);
+				file_buffer_writer.write(extWup + ",");
 				
-				src = inflactor.singularize(src);
-				dst = inflactor.singularize(dst);
-				
-				fuzzyMatch = fuzzyMatching(src.toLowerCase(),dst.toLowerCase());
-				syno_g = SynonymyGrade(src, dst);
-				cosyno_g = cosynonymGrade(src, dst);
-				wupalm = WuPalmerMatching(src, dst);
-				path = pathSimilarity(src, dst);
-				
-				
-				file_buffer_writer.write("" + fuzzyMatch + ",");
-				file_buffer_writer.write("" + syno_g + ",");
-				file_buffer_writer.write("" + cosyno_g + ",");
-				file_buffer_writer.write("" + wupalm + ",");
-				file_buffer_writer.write("" + path + "," + ext + ",0.0,");
-				
+				// Classifier decision tree
 				if (exactMatch == eqv_t || syno_g == eqv_t)
 				{
 					file_buffer_writer.write("eqv,");
 				}
 				else
 				{
-					if (path > 0.0) // i termini (normalizzati) sono presenti in  WN
-					{
-						if (wupalm >= hyp1_t) // Compensate WS4J error on wupalm measure
-						{
-							file_buffer_writer.write("hypo,");
-						}
-						else
-						{
-							file_buffer_writer.write("rel,");
-						}
-					}					
+					if (srcUnknown || dstUnknown)
+						file_buffer_writer.write("unknown,");
 					else
 					{
-						if (ext >= hyp2_t)
+						if (wupalm >= hyp1_t || extWup >= hyp1_t) // Compensate WS4J error on wupalm measure
+						{
 							file_buffer_writer.write("hypo,");
-						else if ((ext > dsj_t) && (ext < hyp2_t))
+						}
+						else if ((wupalm > dsj_t && wupalm < hyp1_t) || (extWup > dsj_t && extWup < hyp1_t))
+						{
 							file_buffer_writer.write("rel,");
+						}
 						else
 							file_buffer_writer.write("dsj,");
 					}
 				}
-				
-				//file_buffer_writer.write("rel,");
 				file_buffer_writer.write(ground+"\n");
-				
 			}
 			
 			file_buffer_writer.close();
@@ -286,7 +349,8 @@ public class TestSetHandler
 	{
 		for (int i = 0; i < array.length; i++)
 		{
-			array[i] = inflactor.singularize(array[i]);
+			if (!singularizedStopWordListObj.contains(array[i].toLowerCase()))
+				array[i] = inflactor.singularize(array[i]);
 		}
 		return array;
 	}
@@ -310,11 +374,12 @@ public class TestSetHandler
 	
 	static double pathSimilarity(String word1, String word2)
 	 {
-		 	 
 		 List<POS[]> posPairs = pathrc.getPOSPairs();
 		 double maxScore = -1D;
 
 		 for(POS[] posPair: posPairs) {
+			 
+			  //System.out.println(posPairs.size() + ": " + posPair[0].toString() + "," + posPair[1].toString());
 		     List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(word1, posPair[0].toString());
 		     List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(word2, posPair[1].toString());
 
@@ -337,16 +402,83 @@ public class TestSetHandler
 		 return maxScore;
 		 
 	 }
+	
+	static double leskSimilarity(String word1, String word2)
+	 {
+		 	 
+		 List<POS[]> posPairs = leskrc.getPOSPairs();
+		 double maxScore = -1D;
+
+		 for(POS[] posPair: posPairs) {
+			 
+			 //System.out.println(posPairs.size() + ": " + posPair[0].toString() + "," + posPair[1].toString());
+		     List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(word1, posPair[0].toString());
+		     List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(word2, posPair[1].toString());
+
+		     for(Concept synset1: synsets1) {
+		         for (Concept synset2: synsets2) {
+		             Relatedness relatedness = leskrc.calcRelatednessOfSynset(synset1, synset2);
+		             double score = relatedness.getScore();
+		             //System.out.println(synset1.toString() + " vs " + synset2.toString() + " -> " + score);
+		             if (score > maxScore) { 
+		                 maxScore = score;
+		             }
+		         }
+		     }
+		 }
+
+		 /*if (maxScore == -1D) {
+		     maxScore = 0.0;
+		 }*/
+
+		 return maxScore;
+		 
+	 }
+	
+	static double HirstSimilarity(String word1, String word2)
+	 {
+		 	 
+		 List<POS[]> posPairs = hsorc.getPOSPairs();
+		 double maxScore = -1D;
+
+		 for(POS[] posPair: posPairs) {
+			 
+			 //System.out.println(posPairs.size() + ": " + posPair[0].toString() + "," + posPair[1].toString());
+		     List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(word1, posPair[0].toString());
+		     List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(word2, posPair[1].toString());
+
+		     for(Concept synset1: synsets1) {
+		         for (Concept synset2: synsets2) {
+		             Relatedness relatedness = hsorc.calcRelatednessOfSynset(synset1, synset2);
+		             double score = relatedness.getScore();
+		             //System.out.println(synset1.toString() + " vs " + synset2.toString() + " -> " + score);
+		             if (score > maxScore) { 
+		                 maxScore = score;
+		             }
+		         }
+		     }
+		 }
+
+		/* if (maxScore == -1D) {
+		     maxScore = 0.0;
+		 }*/
+
+		 return maxScore;
+	 }
+	
 	static double WuPalmerMatching(String word1, String word2)
 	{
 		List<POS[]> posPairs = wprc.getPOSPairs();
 		 double maxScore = -1D;
 		 
 		 //System.out.println("posPairs :" + posPairs.size());
+		
 
-		// for(POS[] posPair: posPairs) {
-		     List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(word1, "n");
-		     List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(word2, "n");
+		 for(POS[] posPair: posPairs) {
+		    
+			 //System.out.println(posPairs.size() + ": " + posPair[0].toString() + "," + posPair[1].toString());
+			 List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(word1,  posPair[0].toString());
+		     List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(word2,  posPair[1].toString());
 
 		     for(Concept synset1: synsets1) {
 		         for (Concept synset2: synsets2) {
@@ -358,7 +490,7 @@ public class TestSetHandler
 		             }
 		         }
 		     }
-		 //}
+		 }
 
 		 if (maxScore == -1D) {
 		     maxScore = 0.0;
@@ -367,7 +499,7 @@ public class TestSetHandler
 		 return maxScore;
 	}
 	
-	static double extendedLinguisticMatching(String src, String dst, String regex1, String regex2)
+	static double extendedWuPalmerMatching(String src, String dst, String regex1, String regex2)
 	{
 		String[] words1 = src.split(regex1);
 		String[] words2 = dst.split(regex2);

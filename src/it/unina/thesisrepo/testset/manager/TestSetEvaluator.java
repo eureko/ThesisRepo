@@ -197,15 +197,13 @@ public class TestSetEvaluator
 			
 			while((line = file_buffer.readLine()) != null)
 			{
-				
-				
 				try
 				{
 					String[] tokens = line.split(",");
 					String src = tokens[0];
 					String dst = tokens[1];
-					String exp = tokens[12];
-					String ground = tokens[13];
+					String exp = tokens[11];
+					String ground = tokens[12];
 					
 					Alignment a = new Alignment(src, dst, null, exp, null);
 					allAlignments.add(a);
