@@ -66,8 +66,7 @@ public class TestSetHandler
 	
 	static final double eqv_t = 1.0;
 	static final double hyp1_t = 0.5;
-	static final double hyp2_t = 0.8;
-	static final double dsj_t = 0.4;
+	static final double dsj_t = 0.3;
 	
 	static final Stemmer stemmer = new Stemmer();
 	static final Inflector inflactor = new Inflector();
@@ -83,11 +82,9 @@ public class TestSetHandler
 		
 		//Method	Canning
 		
+
+		System.out.println(extendedRestrictedWuPalmerMatching("canned dried", "food", regex1, regex1));
 		
-		System.out.println(getStem("emulsification"));
-		System.out.println(leskSimilarity("method", "emulsion"));
-		System.out.println(HirstSimilarity("method", "emulsion"));
-		System.out.println(WuPalmerMatching("method", "emulsion"));
 		
 		WS4JConfiguration.getInstance().setMFS(true);
 		String line = "";
@@ -111,10 +108,10 @@ public class TestSetHandler
 				double syno_g = 0.0;
 				double cosyno_g = 0.0;
 				double wupalm = 0.0;
-				double lesk = 0.0;
-				double hso = 0.0;
 				double path = 0.0;
-				double extWup = 0.0;  
+				double extWup = 0.0;
+				double extlesk = 0.0;
+				double exthso = 0.0;
 				
 				
 				String[] tokens = line.split(";");
@@ -129,14 +126,18 @@ public class TestSetHandler
 				
 				file_buffer_writer.write(exactMatch + ",");
 				file_buffer_writer.write(levMatch + ",");
-				file_buffer_writer.write(fuzzyMatch + ",");
+				
 				
 				if (src.split(regex1).length > 1)
+				{
 					jaccardMatch = Jaccard(src, dst, regex1, regex1);
+				}
 				if (src.split(regex2).length > 1)
+				{
 					jaccardMatch = Jaccard(src, dst, regex2, regex1);
-				
+				}
 				file_buffer_writer.write(jaccardMatch + ",");
+				file_buffer_writer.write(fuzzyMatch + ",");
 				
 				// Normalization
 				src = src.toLowerCase();
@@ -148,18 +149,31 @@ public class TestSetHandler
 				boolean srcUnknown = false;
 				boolean dstUnknown = false;
 				
-				if (db.getAllConcepts(src, "n").size() == 0) // src not in WN
+				boolean srcisNoun = false;
+				boolean srcisVerb = false;
+				boolean srcisAdj = false;
+				boolean srcisAdverb = false;
+				
+				boolean dstisNoun = false;
+				boolean dstisVerb = false;
+				boolean dstisAdj = false;
+				boolean dstisAdverb = false;
+				
+				if (db.getAllConcepts(src, "n").size() == 0 && db.getAllConcepts(src, "v").size() == 0
+						&& db.getAllConcepts(src, "a").size() == 0) // src not in WN
 				{
 					if (src.split(regex1).length == 1) // Single Word
 					{
 						if (!singularizedStopWordListObj.contains(src.toLowerCase()))
 							src = inflactor.singularize(src);
 						
-						if (db.getAllConcepts(src, "n").size() == 0) // new src not in WN
+						if (db.getAllConcepts(src, "n").size() == 0 && db.getAllConcepts(src, "v").size() == 0
+								&& db.getAllConcepts(src, "a").size() == 0) // new src not in WN
 						{
 							src = getStem(src);
 							
-							if (db.getAllConcepts(src, "n").size() == 0) // new src not in WN
+							if (db.getAllConcepts(src, "n").size() == 0 && db.getAllConcepts(src, "v").size() == 0
+									&& db.getAllConcepts(src, "a").size() == 0) // new src not in WN
 							{
 								srcUnknown = true;
 							}
@@ -169,17 +183,20 @@ public class TestSetHandler
 						srcMulti = true;
 				}
 				
-				if (db.getAllConcepts(dst, "n").size() == 0) // src not in WN
+				if (db.getAllConcepts(dst, "n").size() == 0 && db.getAllConcepts(dst, "v").size() == 0 
+						&& db.getAllConcepts(dst, "a").size() == 0) // src not in WN
 				{
 					if (dst.split(regex1).length == 1)
 					{
 						if (!singularizedStopWordListObj.contains(dst.toLowerCase()))
 							dst = inflactor.singularize(dst);
 						
-						if (db.getAllConcepts(dst, "n").size() == 0) // new src not in WN
+						if (db.getAllConcepts(dst, "n").size() == 0 && db.getAllConcepts(dst, "v").size() == 0
+								&& db.getAllConcepts(dst, "a").size() == 0) // new src not in WN
 						{
 							dst = getStem(dst);
-							if (db.getAllConcepts(dst, "n").size() == 0) // new src not in WN
+							if (db.getAllConcepts(dst, "n").size() == 0 && db.getAllConcepts(dst, "v").size() == 0
+									&& db.getAllConcepts(dst, "a").size() == 0) // new src not in WN
 							{
 								dstUnknown = true;
 							}
@@ -191,7 +208,10 @@ public class TestSetHandler
 				
 				if (srcMulti || dstMulti)
 				{
-					extWup = extendedWuPalmerMatching(src, dst, regex1, regex1);
+					extWup = extendedRestrictedWuPalmerMatching(src, dst, regex1, regex1);
+					//extlesk = extendedLeskMatching(src, dst, regex1, regex1);
+					//exthso = extendedHirstMatching(src, dst, regex1, regex1);
+					
 					file_buffer_writer.write(syno_g + ",");
 					file_buffer_writer.write(cosyno_g + ",");
 					file_buffer_writer.write(wupalm + ",");
@@ -223,7 +243,7 @@ public class TestSetHandler
 				file_buffer_writer.write(extWup + ",");
 				
 				// Classifier decision tree
-				if (exactMatch == eqv_t || syno_g == eqv_t)
+				if (exactMatch == eqv_t || syno_g == eqv_t || jaccardMatch == 1.0)
 				{
 					file_buffer_writer.write("eqv,");
 				}
@@ -233,9 +253,9 @@ public class TestSetHandler
 						file_buffer_writer.write("unknown,");
 					else
 					{
-						if (wupalm >= hyp1_t || extWup >= hyp1_t) // Compensate WS4J error on wupalm measure
+						if ((wupalm >= hyp1_t || extWup >= hyp1_t)) // Compensate WS4J error on wupalm measure
 						{
-							file_buffer_writer.write("hypo,");
+								file_buffer_writer.write("hypo,");
 						}
 						else if ((wupalm > dsj_t && wupalm < hyp1_t) || (extWup > dsj_t && extWup < hyp1_t))
 						{
@@ -517,6 +537,190 @@ public class TestSetHandler
 			{
 				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
 				double v = WuPalmerMatching(s1, s2);
+				if (v>max)
+				{
+					max = v;
+				}
+			}
+		}
+		return max;
+		
+		//stemArrayofString(words1);
+		//stemArrayofString(words2);
+	}
+	
+	static double extendedRestrictedWuPalmerMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1;
+		String[] words2;
+		
+		if (src.contains(" and "))
+		{
+			words1 = src.split(" and ");
+		}
+		else
+			words1 = src.split(regex1);
+		
+		if (dst.contains(" and "))
+		{
+			words2 = dst.split(" and ");
+			//System.out.println(words2);
+		}
+		else
+			words2 = dst.split(regex1);
+		
+		//for (String s:words1)
+			//System.out.println(s);
+		
+		//for (String s:words2)
+			//System.out.println(s);
+		
+		int srcTokenArraySize = words1.length;
+		int dstTokenArraySize = words2.length;
+		
+		//System.out.println(srcTokenArraySize + " " + dstTokenArraySize);
+		
+		int srcFrom, srcTo;
+		int dstFrom, dstTo;
+		
+		if (src.contains(" and "))
+		{
+			srcFrom = 0;
+			srcTo = srcTokenArraySize - 1;
+		}
+		else
+		{
+			if (srcTokenArraySize > 2)
+			{
+				srcFrom = srcTokenArraySize - 2;
+				srcTo = srcTokenArraySize - 1;
+			}
+			else if (srcTokenArraySize == 2)
+			{
+				srcFrom = 1;
+				srcTo = 1;
+			}
+			else
+			{
+				srcFrom = 0;
+				srcTo = 0;
+			}
+		}
+		
+		if (dst.contains(" and "))
+		{
+			dstFrom = 0;
+			dstTo = dstTokenArraySize - 1;
+		}
+		else
+		{
+			if (dstTokenArraySize > 2)
+			{
+				dstFrom = dstTokenArraySize - 2;
+				dstTo = dstTokenArraySize - 1;
+			}
+			else if (dstTokenArraySize == 2)
+			{
+				dstFrom = 1;
+				dstTo = 1;
+			}
+			else
+			{
+				dstFrom = 0;
+				dstTo = 0;
+			}
+		}
+		deletePunctuationsToArray(words1);
+		deletePunctuationsToArray(words2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		//System.out.println("Index: " + srcFrom + " " + srcTo + ";" + dstFrom + " " + dstTo);
+		double max = 0.0;
+		for (int i = srcFrom; i <= srcTo; i++)
+		{
+			for(int j = dstFrom; j <= dstTo; j++)
+			{
+				
+				double v = WuPalmerMatching(words1[i], words2[j]);
+				//System.out.println("WuPalmer tra: " + words1[i] + "," + words2[j] + "=" + v);
+				if (v>max)
+				{
+					max = v;
+				}
+			}
+		}
+		return max;
+				
+		
+	}
+	
+	static String deletePunctuations(String s)
+	{
+		return s.replace('(', ' ').replace(')', ' ').trim();
+	}
+	
+	static String [] deletePunctuationsToArray(String []array)
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			array[i] = deletePunctuations(array[i]);
+		}
+		return array;
+	}
+	
+	static double extendedLeskMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1 = src.split(regex1);
+		String[] words2 = dst.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		double max = 0.0;
+		for (String s1:words1)
+		{
+			for(String s2:words2)
+			{
+				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
+				double v = leskSimilarity(s1, s2);
+				if (v>max)
+				{
+					max = v;
+				}
+			}
+		}
+		return max;
+		
+		//stemArrayofString(words1);
+		//stemArrayofString(words2);
+	}
+	
+	static double extendedHirstMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1 = src.split(regex1);
+		String[] words2 = dst.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		double max = 0.0;
+		for (String s1:words1)
+		{
+			for(String s2:words2)
+			{
+				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
+				double v = HirstSimilarity(s1, s2);
 				if (v>max)
 				{
 					max = v;

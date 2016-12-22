@@ -23,12 +23,13 @@ public class TestSetEvaluator
 	
 	static HashSet<Alignment> groundedAlignment = new HashSet<Alignment>();
 	
-	double[][] confusionMatrix = new double[][]{{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-	double[][] symmetricPrecisionRelaxationMatrix = new double[][]{{1.0,0,0,0},{0,1.0,0.5,0},{0,0.5,1.0,0.25},{0,0,0.25,1.0}};
-	double[][] symmetricRecallRelaxationMatrix = new double[][]{{1.0,0,0,0},{0,1.0,0.5,0},{0,0.5,1.0,0.25},{0,0,0.25,1.0}};
+	double[][] confusionMatrix = new double[][]{{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}};
+	double[][] symmetricPrecisionRelaxationMatrix = new double[][]{{1.0,0,0,0,0},{0,1.0,0.5,0,0},{0,0.5,1.0,0.25,0},{0,0,0.25,1.0,0},{0,0,0,0,1}};
+	double[][] symmetricRecallRelaxationMatrix = new double[][]{{1.0,0,0,0,0},{0,1.0,0.5,0,0},{0,0.5,1.0,0.25,0},{0,0,0.25,1.0,0},{1,1,1,1,1}};
 	
 	SimpleMatrix C;
 	SimpleMatrix symPRM = new SimpleMatrix(symmetricPrecisionRelaxationMatrix);
+	SimpleMatrix asymRRM = new SimpleMatrix(symmetricRecallRelaxationMatrix);
 	
 	
 	public static void main(String[] args) 
@@ -134,7 +135,7 @@ public class TestSetEvaluator
 								confusionMatrix[3][2]++;
 							}
 						}
-						else // dsj case
+						else if (expAlignResult.compareTo("dsj") == 0)
 						{
 							if (ground.compareTo("eqv") == 0)
 							{
@@ -152,6 +153,26 @@ public class TestSetEvaluator
 							else // dsj case
 							{
 								confusionMatrix[3][3]++;
+							}
+						}
+						else // Unknown case
+						{
+							if (ground.compareTo("eqv") == 0)
+							{
+								confusionMatrix[0][4]++; 
+							}
+							else if (ground.compareTo("hypo") == 0 || ground.compareTo("hyper")== 0)
+							{
+								confusionMatrix[1][4]++;
+								//System.out.println("MISMATCH: src: " + src + " dst: " + dst);
+							}
+							else if (ground.compareTo("rel")== 0)
+							{
+								confusionMatrix[2][4]++;
+							}
+							else // dsj case
+							{
+								confusionMatrix[3][4]++;
 							}
 						}
 					}
@@ -222,12 +243,12 @@ public class TestSetEvaluator
 	void visualizeConfusionMatrix()
 	{
 		System.out.println("Confusion Matrix:\n");
-		System.out.print("\t" + "eqv" +"\t" + "hypo" +"\t" + "rel" + "\t" + "dsj");
-		String[] headers = new String[]{"eqv", "hypo", "rel", "dsj"};
-		for (int i = 0 ; i < 4; i ++)
+		System.out.print("\t" + "eqv" +"\t" + "hypo" +"\t" + "rel" + "\t" + "dsj" + "\t" + "unk");
+		String[] headers = new String[]{"eqv", "hypo", "rel", "dsj", "unk"};
+		for (int i = 0 ; i < 5; i ++)
 		{
 			System.out.print("\n" + headers[i] + "\t");
-			for (int j = 0; j < 4; j++)
+			for (int j = 0; j < 5; j++)
 			{
 				System.out.print(confusionMatrix[i][j] + "\t");
 			}
@@ -287,7 +308,7 @@ public class TestSetEvaluator
 		SimpleMatrix recall = getRecall(C, null);
 		
 		SimpleMatrix rel_accuracies = getAccuracies(C, symPRM);
-		SimpleMatrix rel_recall = getRecall(C, symPRM);
+		SimpleMatrix rel_recall = getRecall(C, asymRRM);
 		
 		System.out.println("specific accuracy(recall): " );
 		System.out.println("eqv" + "\t\t" + "hypo" + "\t\t" + "rel" + "\t\t" + "dsj" + "\t\t" + "tot acc.");
