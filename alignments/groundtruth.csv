@@ -1,7 +1,7 @@
 Food;alcohol;hyper
 Food;beverage;hyper
 Food;breakfast_food;hyper
-Food;brewing;hyper
+Food;brewing;rel
 Food;butter;hyper
 Food;canned_food;hyper
 Food;canned_foods;hyper
@@ -36,9 +36,8 @@ Food;junk_food;hyper
 Food;meat;hyper
 Food;milk;hyper
 Food;milk_shake;hyper
-Food;milkshake;hyper
 Food;pasta;hyper
-Food;sangria;hyper
+Food;sangria;rel
 Food;seafood;hyper
 Food;solid_food;hyper
 Food;tapioca;hyper
@@ -188,7 +187,7 @@ feeds;provender;eqv
 Pasta;pasta;eqv
 Coffee;coffee;eqv
 Pickaxe;pick;eqv
-Egg;Yolk;eqv
+Egg;Yolk;rel
 Chocolate;cocoa;eqv
 Drink;drink;eqv
 Nut;egg;eqv
@@ -459,15 +458,14 @@ Game meat;meat;hypo
 Goat meat;meat;hypo
 Horse meat;meat;hypo
 Lamb meat;meat;hypo
-Meat;meat;hypo
 Meat cuts;meat;hypo
 Mutton;meat;hypo
 PSE meat;meat;hypo
 Pork;meat;hypo
 Rabbit meat;meat;hypo
 poultry meat;meat;hypo
-Fish processing;Food processing;eqv
-Fish processing;meat;eqv
+Fish processing;Food processing;hypo
+Fish processing;meat;rel
 Food preservation;Food preservation;eqv
 Food preservation;Food processing;hypo
 minimal processing (of food);Food processing;hypo
@@ -477,71 +475,71 @@ Winemaking;Food processing;hypo
 Food preservation;prepackaged meal;rel
 Food preservation;packaged_goods;rel
 Food preservation;packaging;rel
-Course;meal;eqv
+Course;meal;rel
 Diet;Dietary supplement;rel
 Diet;meal;rel
-Method;Boiling;hyper
-Method;Canning;hyper
-Method;Cooling;hyper
-Method;Curing;hyper
-Method;Fermentation;hyper
-Method;frappe;hyper
-Technique;Boiling;hyper
-Technique;Canning;hyper
-Technique;Cooling;hyper
-Technique;Curing;hyper
-Technique;Fermentation;hyper
-Method;Flexible packaging;hyper
-Method;Freezing;hyper
-Method;Heating;hyper
-Method;High-pressure food preservation;hyper
-Method;Jellying;hyper
-Method;Jugging;hyper
-Method;Pickling;hyper
-Method;Salting;hyper
-Method;Smoking;hyper
-Method;Sugaring;hyper
-Technique;Flexible packaging;hyper
-Technique;Freezing;hyper
-Technique;Heating;hyper
-Technique;High-pressure food preservation;hyper
-Technique;Jellying;hyper
-Technique;Jugging;hyper
-Technique;Pickling;hyper
-Technique;Salting;hyper
-Technique;Smoking;hyper
-Technique;Sugaring;hyper
-Method;boiling;hyper
-Method;boozing;hyper
-Method;breeding;hyper
-Method;brewing;hyper
-Method;broiling;hyper
-Method;canalisation;hyper
-Method;canning;hyper
-Method;colouring;hyper
-Method;devising;hyper
-Method;emulsification;hyper
-Method;food_coloring;hyper
-Method;food_colouring;hyper
-Method;freezing;hyper
-Method;grilling;hyper
-Method;pasteurization;hyper
-Technique;boiling;hyper
-Technique;boozing;hyper
-Technique;breeding;hyper
-Technique;brewing;hyper
-Technique;broiling;hyper
-Technique;canalisation;hyper
-Technique;canning;hyper
-Technique;colouring;hyper
-Technique;devising;hyper
-Technique;emulsification;hyper
-Technique;food_coloring;hyper
-Technique;food_colouring;hyper
-Technique;freezing;hyper
-Technique;grilling;hyper
-Technique;pasteurization;hyper
-Technique;cooking techniques;hyper
+Method;Boiling;rel
+Method;Canning;rel
+Method;Cooling;rel
+Method;Curing;rel
+Method;Fermentation;rel
+Method;frappe;dsj
+Technique;Boiling;rel
+Technique;Canning;rel
+Technique;Cooling;rel
+Technique;Curing;rel
+Technique;Fermentation;rel
+Method;Flexible packaging;rel
+Method;Freezing;rel
+Method;Heating;rel
+Method;High-pressure food preservation;rel
+Method;Jellying;rel
+Method;Jugging;rel
+Method;Pickling;rel
+Method;Salting;rel
+Method;Smoking;rel
+Method;Sugaring;rel
+Technique;Flexible packaging;rel
+Technique;Freezing;rel
+Technique;Heating;rel
+Technique;High-pressure food preservation;rel
+Technique;Jellying;rel
+Technique;Jugging;rel
+Technique;Pickling;rel
+Technique;Salting;rel
+Technique;Smoking;rel
+Technique;Sugaring;rel
+Method;boiling;rel
+Method;boozing;rel
+Method;breeding;rel
+Method;brewing;rel
+Method;broiling;rel
+Method;canalisation;rel
+Method;canning;rel
+Method;colouring;rel
+Method;devising;rel
+Method;emulsification;rel
+Method;food_coloring;rel
+Method;food_colouring;rel
+Method;freezing;rel
+Method;grilling;rel
+Method;pasteurization;rel
+Technique;boiling;rel
+Technique;boozing;rel
+Technique;breeding;rel
+Technique;brewing;rel
+Technique;broiling;rel
+Technique;canalisation;rel
+Technique;canning;rel
+Technique;colouring;rel
+Technique;devising;rel
+Technique;emulsification;rel
+Technique;food_coloring;rel
+Technique;food_colouring;rel
+Technique;freezing;rel
+Technique;grilling;rel
+Technique;pasteurization;rel
+Technique;cooking techniques;rel
 Animal fats;food;hypo
 Animal fats;food_product;hypo
 Animal fats;foodstuff;hypo
@@ -572,9 +570,9 @@ Berries;foodstuff;hypo
 Beverages (Non-Milk);food;hypo
 Beverages (Non-Milk);food_product;hypo
 Beverages (Non-Milk);foodstuff;hypo
-Brassicas;food;hypo
-Brassicas;food_product;hypo
-Brassicas;foodstuff;hypo
+Brassicas;food;rel
+Brassicas;food_product;rel
+Brassicas;foodstuff;rel
 Breakfast cereals;food;hypo
 Breakfast cereals;food_product;hypo
 Breakfast cereals;foodstuff;hypo
@@ -632,12 +630,12 @@ Cooked sausages (Kochwurst);foodstuff;hypo
 Cream;food;hypo
 Cream;food_product;hypo
 Cream;foodstuff;hypo
-Crustaceans;food;hypo
-Crustaceans;food_product;hypo
-Crustaceans;foodstuff;hypo
-Cypriniformes;food;hypo
-Cypriniformes;food_product;hypo
-Cypriniformes;foodstuff;hypo
+Crustaceans;food;rel
+Crustaceans;food_product;rel
+Crustaceans;foodstuff;rel
+Cypriniformes;food;rel
+Cypriniformes;food_product;rel
+Cypriniformes;foodstuff;rel
 Dessert wine;food;hypo
 Dessert wine;food_product;hypo
 Dessert wine;foodstuff;hypo
@@ -731,9 +729,9 @@ Ice cream;foodstuff;hypo
 Infusion drinks;food;hypo
 Infusion drinks;food_product;hypo
 Infusion drinks;foodstuff;hypo
-Insects;food;hypo
-Insects;food_product;hypo
-Insects;foodstuff;hypo
+Insects;food;rel
+Insects;food_product;rel
+Insects;foodstuff;rel
 Jelly;food;hypo
 Jelly;food_product;hypo
 Jelly;foodstuff;hypo
@@ -800,9 +798,9 @@ Miscellaneous marine and aquatic foods;foodstuff;hypo
 Mixed grain products;food;hypo
 Mixed grain products;food_product;hypo
 Mixed grain products;foodstuff;hypo
-Molluscs;food;hypo
-Molluscs;food_product;hypo
-Molluscs;foodstuff;hypo
+Molluscs;food;rel
+Molluscs;food_product;rel
+Molluscs;foodstuff;rel
 Non dairy coffee creamer;food;hypo
 Non dairy coffee creamer;food_product;hypo
 Non dairy coffee creamer;foodstuff;hypo
@@ -845,9 +843,9 @@ Other fish and marine mammals;foodstuff;hypo
 Other juices;food;hypo
 Other juices;food_product;hypo
 Other juices;foodstuff;hypo
-Other mammals;food;hypo
-Other mammals;food_product;hypo
-Other mammals;foodstuff;hypo
+Other mammals;food;rel
+Other mammals;food_product;rel
+Other mammals;foodstuff;rel
 Other meat products;food;hypo
 Other meat products;food_product;hypo
 Other meat products;foodstuff;hypo
@@ -857,9 +855,9 @@ Pasta and noodles;foodstuff;hypo
 Pastry and pies;food;hypo
 Pastry and pies;food_product;hypo
 Pastry and pies;foodstuff;hypo
-Perciformes;food;hypo
-Perciformes;food_product;hypo
-Perciformes;foodstuff;hypo
+Perciformes;food;rel
+Perciformes;food_product;rel
+Perciformes;foodstuff;rel
 Pleuronectiformes;food;hypo
 Pleuronectiformes;food_product;hypo
 Pleuronectiformes;foodstuff;hypo
@@ -905,9 +903,9 @@ Pulses Seeds Nuts and Products;foodstuff;hypo
 Quail eggs;food;hypo
 Quail eggs;food_product;hypo
 Quail eggs;foodstuff;hypo
-Reptiles;food;hypo
-Reptiles;food_product;hypo
-Reptiles;foodstuff;hypo
+Reptiles;food;rel
+Reptiles;food_product;rel
+Reptiles;foodstuff;rel
 Restructured fish and fish analogues;food;hypo
 Restructured fish and fish analogues;food_product;hypo
 Restructured fish and fish analogues;foodstuff;hypo
@@ -983,9 +981,9 @@ Syrups;foodstuff;hypo
 Tongue (preserved);food;hypo
 Tongue (preserved);food_product;hypo
 Tongue (preserved);foodstuff;hypo
-Tubers;food;hypo
-Tubers;food_product;hypo
-Tubers;foodstuff;hypo
+Tubers;food;rel
+Tubers;food_product;rel
+Tubers;foodstuff;rel
 Turkey;food;hypo
 Turkey;food_product;hypo
 Turkey;foodstuff;hypo
@@ -1066,7 +1064,7 @@ Edible oils;food;hypo
 Fruit juices;food;hypo
 Fruit nectars;food;hypo
 Meat;food;hypo
-Oilseeds;food;hypo
+Oilseeds;food;rel
 Spices and condiments;food;hypo
 Starch;food;hypo
 Sugar;food;hypo
