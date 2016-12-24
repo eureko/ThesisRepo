@@ -1,6 +1,6 @@
 package it.unina.thesisrepo.testset.manager;
 
-import it.unina.thesisrepo.testset.manager.TermsSetHandler.Alignment;
+import it.unina.thesisrepo.testset.manager.TermsSetMeasuresHandler.Alignment;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

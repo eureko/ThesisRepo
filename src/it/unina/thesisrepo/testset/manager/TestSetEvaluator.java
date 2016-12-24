@@ -24,12 +24,14 @@ public class TestSetEvaluator
 	static HashSet<Alignment> groundedAlignment = new HashSet<Alignment>();
 	
 	double[][] confusionMatrix = new double[][]{{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}};
+	double[][] asymPrecisionEditRelaxationMatrix = new double[][]{{1,1,0,0,0},{0,1,1,1,0},{0,0.5,1,1,0},{0,0.25,1,1,0},{0,0,0,0,0}};
 	double[][] symmetricPrecisionRelaxationMatrix = new double[][]{{1.0,0,0,0,0},{0,1.0,0.5,0,0},{0,0.5,1.0,0.25,0},{0,0,0.25,1.0,0},{0,0,0,0,1}};
 	double[][] symmetricRecallRelaxationMatrix = new double[][]{{1.0,0,0,0,0},{0,1.0,0.5,0,0},{0,0.5,1.0,0.25,0},{0,0,0.25,1.0,0},{1,1,1,1,1}};
 	
 	SimpleMatrix C;
 	SimpleMatrix symPRM = new SimpleMatrix(symmetricPrecisionRelaxationMatrix);
 	SimpleMatrix asymRRM = new SimpleMatrix(symmetricRecallRelaxationMatrix);
+	SimpleMatrix editPRM = new SimpleMatrix(asymPrecisionEditRelaxationMatrix);
 	
 	
 	public static void main(String[] args) 
@@ -308,6 +310,7 @@ public class TestSetEvaluator
 		SimpleMatrix recall = getRecall(C, null);
 		
 		SimpleMatrix rel_accuracies = getAccuracies(C, symPRM);
+		SimpleMatrix rel_edit_accuracies = getAccuracies(C,editPRM);
 		SimpleMatrix rel_recall = getRecall(C, asymRRM);
 		
 		System.out.println("specific accuracy(recall): " );
@@ -316,6 +319,15 @@ public class TestSetEvaluator
 				String.format("%.3g", accuracies.get(2)) + "(" + String.format("%.3g", recall.get(2)) + ")"+ "\t" +  String.format("%.3g", accuracies.get(3)) + "(" + String.format("%.3g", recall.get(3)) + ")"+ "\t" + String.format("%.3g", C.extractDiag().elementSum()/C.elementSum()));
 		System.out.println(String.format("%.3g", rel_accuracies.get(0)) + "(" + String.format("%.3g", rel_recall.get(0)) + ")"+ "\t" + String.format("%.3g", rel_accuracies.get(1)) + "(" + String.format("%.3g", rel_recall.get(1)) + ")"+ "\t" + 
 				String.format("%.3g", rel_accuracies.get(2)) + "(" + String.format("%.3g", rel_recall.get(2)) + ")"+ "\t" +  String.format("%.3g", rel_accuracies.get(3)) + "(" + String.format("%.3g", rel_recall.get(3)) + ")"+ "\t" + String.format("%.3g", C.transpose().mult(symPRM).extractDiag().elementSum()/C.elementSum()));
+		//System.out.println(String.format("%.3g", rel_edit_accuracies.get(0)) + "\t" + String.format("%.3g", rel_edit_accuracies.get(1)) + "\t" + 
+			//	String.format("%.3g", rel_edit_accuracies.get(2)) + "\t" +  String.format("%.3g", rel_edit_accuracies.get(3)) + "\t" + String.format("%.3g", C.transpose().mult(editPRM).extractDiag().elementSum()/C.elementSum()));
+		
+		//System.out.println("eqv\t" + String.format("%.3g", accuracies.get(0)) +  "\t" + String.format("%.3g", rel_accuracies.get(0)));
+		//System.out.println("hypo\t" + String.format("%.3g", accuracies.get(1)) + "\t" + String.format("%.3g", rel_accuracies.get(1)));
+		//System.out.println("rel\t" + String.format("%.3g", accuracies.get(2)) +  "\t" + String.format("%.3g", rel_accuracies.get(2)));
+		//System.out.println("dsj\t" + String.format("%.3g", accuracies.get(3)) +  "\t" + String.format("%.3g", rel_accuracies.get(3)));
+		
+		
 	}
 	
 	SimpleMatrix getAccuracies(SimpleMatrix C, SimpleMatrix R)
