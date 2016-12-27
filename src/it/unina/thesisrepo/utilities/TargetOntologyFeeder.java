@@ -17,7 +17,6 @@ import edu.mit.jwi.item.IWord;
 import edu.mit.jwi.item.IWordID;
 import edu.mit.jwi.item.POS;
 import edu.mit.jwi.item.Pointer;
-import edu.mit.jwi.item.Synset;
 
 public class TargetOntologyFeeder 
 {

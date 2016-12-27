@@ -1,6 +1,6 @@
-package it.unina.thesisrepo.testset.manager;
+package it.unina.thesisrepo.matchers;
 
-import it.unina.thesisrepo.matchers.SynsetUtility;
+import it.unina.thesisrepo.testset.manager.Aligner;
 import it.unina.thesisrepo.utilities.Inflector;
 
 import java.io.BufferedReader;
@@ -8,7 +8,6 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +33,7 @@ import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 
-public class TestSetMeasuresHandler 
+public class TermsSetMeasuresCalculator 
 {
 	static 
 	{
@@ -45,10 +44,8 @@ public class TestSetMeasuresHandler
 	static RelatednessCalculator wprc =  new WuPalmer(db);
 	static RelatednessCalculator pathrc =  new Path(db);
 	
-	static ArrayList<TreeSet<String>> terms_sets = new ArrayList<TreeSet<String>>(11);
+	static TreeSet<String> terms_sets = new TreeSet<String>();
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
-	
-	static TreeSet<Alignment> allAlignments = new TreeSet<Alignment>();
 	
 	static Levenshtein levSim = new Levenshtein();
 	static JaccardSimilarity<String> jaccardSim = new JaccardSimilarity<String>();
@@ -68,21 +65,81 @@ public class TestSetMeasuresHandler
 	static final String[] singularizerStoWordList = {"pasta", "sangria", "ricotta", "focaccia"};
 	static final Vector<String> singularizedStopWordListObj = new Vector<String>();
 	
+	String source;
+	String target;
 	
 	public static void main(String[] args) 
 	{
+		//try
+		//{
+			//TermsSetMeasuresCalculator termsSetCalculator = new TermsSetMeasuresCalculator("8", "./ontologies/target.csv");
+			//termsSetCalculator.startMeasuring();
+			
+			Aligner aligner = new Aligner(1, 0.5, 0.4, alignmentFolder + "/8.measures", 
+					alignmentFolder + "/8.alignment");
+		/*}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}*/
+	}
+	
+	public TermsSetMeasuresCalculator(String source, String target) 
+	{
+		// TODO Auto-generated constructor stub
+		this.source = source;
+		this.target = target;
+		System.out.println("Start measuring..." + source + ".csv file");
 		WS4JConfiguration.getInstance().setMFS(true);
-		String line = "";
+		
 		try
 		{
-			System.out.println("Starting measuring groundtruth test set...");
-			BufferedReader file_buffer_reader = new BufferedReader(new FileReader("./alignments/groundtruth.csv"));
-			BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment_measures.csv"));
+			BufferedReader file_buffer_reader = new BufferedReader(new FileReader("./ontologies/" + source + ".csv"));
+		    
+			String line;
+			line = file_buffer_reader.readLine(); // Read comment line
 			
-			file_buffer.write("#Test Alignment similarity measures src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,ground,srcunk,dstunk\n");
-			
-			//line = file_buffer_reader.readLine(); // Read comment line
 			while((line = file_buffer_reader.readLine()) != null)
+			{
+				if (line.contains("|"))
+				{
+					String[] pair = line.split("\\|");
+					terms_sets.add(pair[0]);
+				}
+				else
+				{
+					line.trim();
+					terms_sets.add(line.trim());
+				}
+			}
+			file_buffer_reader.close();	
+				
+			//for (TreeSet<String> set:terms_sets)
+					//termsSetHAndler.visualizeSet(set);
+				
+			createTargetSet("./ontologies/target.csv");
+				//termsSetHAndler.visualizeSet(target_terms_set);
+				
+				
+			
+						
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+	void startMeasuring() throws IOException
+	{
+		
+		BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/" + source + ".measures"));
+		file_buffer.write("#Similarity measures. Total number of terms: " + terms_sets.size() + "src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,ground,srcunk,dstunk\n");
+		System.out.println("Start measuring...");			
+		
+		for (String src:terms_sets)
+		{
+			for (String dst:target_terms_set)
 			{
 				double exactMatch = 0.0;
 				double levMatch = 0.0;
@@ -95,11 +152,6 @@ public class TestSetMeasuresHandler
 				double extWup = 0.0;
 				double extlesk = 0.0;
 				double exthso = 0.0;
-				
-				String[] tokens = line.split(";");
-				String src = tokens[0];
-				String dst = tokens[1];
-				String ground = tokens[2];
 				
 				
 				file_buffer.write(src + "," + dst + ","); 
@@ -132,12 +184,12 @@ public class TestSetMeasuresHandler
 				boolean srcUnknown = false;
 				boolean dstUnknown = false;
 				
-				if (src.split(regex1).length > 1) // Multi Word
+				if (src.split(regex1).length > 1) // Single Word
 				{
 					srcMulti = true;
 				}
 				
-				if (dst.split(regex1).length > 1) // Multi Word
+				if (dst.split(regex1).length > 1) // Single Word
 				{
 					dstMulti = true;
 				}
@@ -186,7 +238,7 @@ public class TestSetMeasuresHandler
 					}
 				}
 				
-				if ((srcMulti || dstMulti) && (srcUnknown || dstUnknown)) // Multiple and unknown
+				if ((srcMulti || dstMulti) && (srcUnknown || dstUnknown))
 				{
 					extWup = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
 					//extlesk = extendedLeskMatching(src, dst, regex1, regex1);
@@ -199,7 +251,7 @@ public class TestSetMeasuresHandler
 				}
 				else
 				{
-					if (srcUnknown || dstUnknown) //Single and unknown
+					if (srcUnknown || dstUnknown)
 					{
 						file_buffer.write(syno_g + ",");
 						file_buffer.write(cosyno_g + ",");
@@ -208,10 +260,9 @@ public class TestSetMeasuresHandler
 					}
 					else
 					{
-						if (srcMulti || dstMulti) // Multiple and known
+						if (srcMulti || dstMulti)
 							extWup = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
 						
-						//Single and known
 						if (!singularizedStopWordListObj.contains(src.toLowerCase()))
 							src = inflactor.singularize(src);
 						if (!singularizedStopWordListObj.contains(dst.toLowerCase()))
@@ -231,7 +282,7 @@ public class TestSetMeasuresHandler
 				}
 				
 				file_buffer.write(extWup + ",");
-				file_buffer.write(ground + ",");
+				file_buffer.write("?" + ",");
 				if (srcUnknown)
 					file_buffer.write("unknown,");
 				else
@@ -242,13 +293,8 @@ public class TestSetMeasuresHandler
 				else
 					file_buffer.write("known\n");
 			}
-			file_buffer.close();
-			file_buffer_reader.close();
 		}
-		catch(IOException ioe)
-		{
-			ioe.printStackTrace();
-		}
+		file_buffer.close();
 	}
 	
 	void addSet(String file, TreeSet<String> set) throws IOException

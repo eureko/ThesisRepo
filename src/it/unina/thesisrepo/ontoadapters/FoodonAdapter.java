@@ -7,19 +7,19 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
-public class RDFTBOXExtractor 
+public class FoodonAdapter 
 {
 	OntModel ontoModel;
 	
 	public static void main(String[] args) 
 	{
-		RDFTBOXExtractor rdftboxExtractor = new RDFTBOXExtractor("./ontologies/src/foodon.owl");
+		FoodonAdapter rdftboxExtractor = new FoodonAdapter("./ontologies/src/foodon.owl");
 		rdftboxExtractor.extractNamedClasses();
 		rdftboxExtractor.extractDatatypeProperties();
 		rdftboxExtractor.extractObjectProperties();
 	}
 	
-	public RDFTBOXExtractor(String modelFile) 
+	public FoodonAdapter(String modelFile) 
 	{
 		ontoModel = ModelFactory.createOntologyModel();
 		ontoModel.read(modelFile, "RDF/XML");

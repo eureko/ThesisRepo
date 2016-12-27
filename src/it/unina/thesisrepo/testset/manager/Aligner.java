@@ -7,10 +7,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,7 +17,6 @@ import java.util.Vector;
 
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 
-import org.atteo.evo.inflector.English;
 import org.simmetrics.metrics.JaccardSimilarity;
 import org.simmetrics.metrics.Levenshtein;
 
@@ -33,16 +30,18 @@ import edu.cmu.lti.ws4j.impl.HirstStOnge;
 import edu.cmu.lti.ws4j.impl.Lesk;
 import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
+import edu.cmu.lti.ws4j.util.DepthFinder;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
 import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 
-public class TestSetHandler 
+public class Aligner 
 {
 	static 
 	{
 		System.setProperty("wordnet.database.dir", "C:\\Program Files (x86)\\WordNet\\2.1\\dict");
+		WS4JConfiguration.getInstance().setMFS(true);
 	}
 	static WordNetDatabase wsdatabase = WordNetDatabase.getFileInstance(); 
 	static ILexicalDatabase db = new NictWordNet();
@@ -50,6 +49,7 @@ public class TestSetHandler
 	static RelatednessCalculator pathrc =  new Path(db);
 	static RelatednessCalculator leskrc = new Lesk(db);
 	static RelatednessCalculator hsorc = new HirstStOnge(db);
+	static DepthFinder depthFinder = new DepthFinder(db);
 	
 	static ArrayList<TreeSet<String>> terms_sets = new ArrayList<TreeSet<String>>(11);
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
@@ -64,9 +64,9 @@ public class TestSetHandler
 	static final String regex1 = "[-_/\\s]";
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
-	static final double eqv_t = 1.0;
-	static final double hyp1_t = 0.5;
-	static final double dsj_t = 0.4;
+	double eqv_t = 1.0;
+	double hyp1_t = 0.5;
+	double dsj_t = 0.4;
 	
 	static final Stemmer stemmer = new Stemmer();
 	static final Inflector inflactor = new Inflector();
@@ -75,23 +75,29 @@ public class TestSetHandler
 	static final Vector<String> singularizedStopWordListObj = new Vector<String>();
 	
 	
-	public static void main(String[] args) 
+	
+	public static void main(String[] args) {
+		
+		System.out.println(getAverageDepth("Canned fish"));
+	}
+	
+	public Aligner(double eqv_t, double hyp1_t, double dsj_t, String measuresFile, String fileName) 
 	{
+		this.eqv_t = eqv_t;
+		this.hyp1_t = hyp1_t;
+		this.dsj_t = dsj_t;
+		
 		for (int i = 0; i < singularizerStoWordList.length; i++)
 			singularizedStopWordListObj.add(singularizerStoWordList[i]);
 		
-		//Method	Canning
-		System.out.println(WuPalmerMatching("insect", "foodstuff"));
 		
-		
-		WS4JConfiguration.getInstance().setMFS(true);
 		String line = "";
 		try
 		{
 			System.out.println("Starting alignment...");
-			BufferedReader file_buffer = new BufferedReader(new FileReader(alignmentFolder + "/test_alignment_measures.csv"));
-			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment.csv"));
-			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,exp,grd\n");
+			BufferedReader file_buffer = new BufferedReader(new FileReader(measuresFile));
+			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(fileName));
+			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,exp,ground\n");
 		    
 			
 			line = file_buffer.readLine(); // Read comment line
@@ -136,7 +142,24 @@ public class TestSetHandler
 					{
 						if ((wupalm >= hyp1_t || extWup >= hyp1_t)) // Compensate WS4J error on wupalm measure
 						{
-								file_buffer_writer.write("hypo,");
+							if (src.toLowerCase().contains(dst.toLowerCase()) || dst.toLowerCase().contains(src.toLowerCase()))
+							{
+								if (src.toLowerCase().contains(dst.toLowerCase()))
+									file_buffer_writer.write("hypo,");
+								else
+									file_buffer_writer.write("hyper,");
+							}
+							else
+							{
+								if ((getAverageDepth(src) >= getAverageDepth(dst)))
+								{
+									file_buffer_writer.write("hypo,");
+								}
+								else
+								{
+									file_buffer_writer.write("hyper,");
+								}
+							}
 						}
 						else if ((wupalm >= dsj_t && wupalm < hyp1_t) || (extWup >= dsj_t && extWup < hyp1_t))
 						{
@@ -146,7 +169,7 @@ public class TestSetHandler
 							file_buffer_writer.write("dsj,");
 					}
 				}
-				file_buffer_writer.write(ground+"\n");
+				file_buffer_writer.write(ground + "\n");
 			}
 			
 			file_buffer_writer.close();
@@ -672,6 +695,24 @@ public class TestSetHandler
 		
 		//stemArrayofString(words1);
 		//stemArrayofString(words2);
+	}
+	
+	static double getAverageDepth(String src)
+	{
+		double sum = 0.0;
+		
+		List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(src, "n");
+		 int i = 0;
+		 
+		 for (Concept c_src:synsets1)
+		 {
+			sum += depthFinder.getShortestDepth(c_src);
+			i++;
+		 }
+		 if (sum != 0)
+			 return sum/i;
+		 else
+			 return Double.MAX_VALUE;
 	}
 	
 	class Alignment implements Comparable<Alignment>

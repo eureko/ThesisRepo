@@ -11,9 +11,7 @@ import java.util.TreeMap;
 
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 
-import org.simmetrics.StringMetric;
 import org.simmetrics.metrics.JaccardSimilarity;
-import org.simmetrics.metrics.Jaro;
 import org.simmetrics.metrics.Levenshtein;
 
 public class LexicographicMatcher 
