@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ncicp="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:ID="Beverage">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Food"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Squirting_Cucumber">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Rape_Honey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Honey"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tangerine_Tomato_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Lime_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Citrus_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Alcoholic_Beverage">
+    <rdfs:subClassOf rdf:resource="#Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Asparagus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Apple_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Fruit_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Codfish">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Fish_Vertebrates"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Milk">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Dairy_Product"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Coconut_Oil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Food_Oil"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pimento">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Hydrogenated_Soybean_Oil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Food_Oil"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Kidney_Bean">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Bean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pea">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Bean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Table_Salt">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Zucchini">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pinto_Bean">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Bean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Enriched_Food">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Caviar">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Chicken_Liver">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Liver_Food"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Radish">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Cruciferous_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Beef">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Purple_Grape_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Turkey_Poultry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Poultry"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Dandelion_Honey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Honey"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Celery_Extract">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bell_Pepper">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Peppers"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sunflower_Honey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Honey"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tomato-Soy_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Honey">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Safflower_Oil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Food_Oil"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Turnip">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Carrot_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cucumber">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Bean">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Applesauce">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mackerel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fish_Vertebrates"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Food_Oil">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Snow_Pea">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Green_Vegetable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Duck">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Poultry"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Gelatin">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Whey">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Fish_Vertebrates">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cottonseed_Meal">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Yam">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pomegranate_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Squid">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Shellfish"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bean_Sprout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sunflower_Seed">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Crab">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Crustacean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Orange_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Citrus_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Onion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Carrot">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Beef_Liver">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Liver_Food"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cherry_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Limpet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Shellfish"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mycoprotein">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Olive_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Red_Snapper">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Oat_Biscuit">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Watercress">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Cruciferous_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Fowl">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Poultry"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mustard_Greens">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Shark">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Brussels_Sprout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Spinach">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Green_Leafy_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Collard_Greens">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Peanut_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cumin">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Death_Cap">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Mushroom"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Corn_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Liver_Food">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Veal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Catfish">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Cruciferous_Vegetable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pumpkin">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sesame_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Parsley">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Taro">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sea_Salt">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Salt_Substitute">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Red_Bell_Pepper">
+    <rdfs:subClassOf rdf:resource="#Bell_Pepper"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ginger_Rhizome">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Mushroom">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Wheatgrass_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Squid_Boiled">
+    <rdfs:subClassOf rdf:resource="#Squid"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Butter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Dairy_Product"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Fortified_Food">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Shellfish">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Hot_Pepper">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Peppers"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Turnip_Greens">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Egg_White">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Soybean_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Poultry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Egg_Yolk">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lobster">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Crustacean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Swiss_Chard">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Peppers">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Okra">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Soybean">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Maize">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Hydrogenated_Palm_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Fruit_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Perch">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="White_Carrot">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Nut_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tuna">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Juice">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Oyster">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pork">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Drink">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Chocolate">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Wheat_Gluten">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Salmon">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Buttermilk">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Dairy_Product"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Green_Bean">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pastry">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Oryza">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Canola_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mung_Bean">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Alfalfa_Sprout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Dairy_Product">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Broccoli">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="White_Wine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Wine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Anchovy">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Infant_Formula">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cauliflower">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Herbal_Tea">
+    <rdfs:subClassOf rdf:resource="#Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Eastern_Oyster">
+    <rdfs:subClassOf rdf:resource="#Oyster"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Grapefruit_Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Citrus_Juice"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Corn_Syrup">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cabbage">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Brassica_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Leek">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Beef_Less_Cooked">
+    <rdfs:subClassOf rdf:resource="#Beef"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Shiitake_Mushroom">
+    <rdfs:subClassOf rdf:resource="#Mushroom"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Astacus_fluviatilis">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Crustacean"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Wine_Cooler">
+    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Scallop">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Poppy_Seed_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Jalapeno_Pepper">
+    <rdfs:subClassOf rdf:resource="#Peppers"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Acai_Berry_Juice">
+    <rdfs:subClassOf rdf:resource="#Juice"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Crustacean">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Peanut">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Herring">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Brassica_Vegetable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sugar">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sunflower_Oil">
+    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Celery">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Maple_Syrup">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sweet_Potato">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Beet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Nonstarchy_Vegetable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Snail">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Meat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Clam">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Abalone">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Celeriac">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Flounder">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mussel">
+    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Citrus_Juice">
+    <rdfs:subClassOf rdf:resource="#Fruit_Juice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lettuce">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Green_Leafy_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Meat">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Raw_Sugar">
+    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Organic_Food">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Swordfish">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Black-Eyed_Pea">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cuttlefish">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Processed_Meat">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Potato">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Fennel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Maize_Invert_Sugar">
+    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Wine">
+    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Green_Bell_Pepper">
+    <rdfs:subClassOf rdf:resource="#Bell_Pepper"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Chickpea">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sake">
+    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Chile_Pepper">
+    <rdfs:subClassOf rdf:resource="#Peppers"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Fruit_and_Vegetable">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Squash">
+    <rdfs:subClassOf rdf:resource="#Fruit_and_Vegetable"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sardine">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Manuka_Honey">
+    <rdfs:subClassOf rdf:resource="#Honey"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Venison">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="White_Fish">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Green_Leafy_Vegetable">
+    <rdfs:subClassOf rdf:resource="#Green_Vegetable"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Rhubarb">
+    <rdfs:subClassOf rdf:resource="#Fruit_and_Vegetable"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Shrimp">
+    <rdfs:subClassOf rdf:resource="#Crustacean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Fava_Bean">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Red_Tomato_Juice">
+    <rdfs:subClassOf rdf:resource="#Juice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lima_Bean">
+    <rdfs:subClassOf rdf:resource="#Bean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Beer">
+    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Popcorn">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mutton">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Trout">
+    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Frog_Leg">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Raisin">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Egg_Poultry">
+    <rdfs:subClassOf rdf:resource="#Food"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Goat_Milk">
+    <rdfs:subClassOf rdf:resource="#Dairy_Product"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Squid_Raw">
+    <rdfs:subClassOf rdf:resource="#Squid"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pheasant">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Beef_Cooked">
+    <rdfs:subClassOf rdf:resource="#Beef"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Brown_Sugar">
+    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lemon_Juice">
+    <rdfs:subClassOf rdf:resource="#Citrus_Juice"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lamb">
+    <rdfs:subClassOf rdf:resource="#Meat"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Liquor">
+    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sage_Tea">
+    <rdfs:subClassOf rdf:resource="#Herbal_Tea"/>
+  </owl:Class>
+</rdf:RDF>
