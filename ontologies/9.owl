@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="Flours">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Flours</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Champagne">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="Beverages"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Champagne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="CoconutGel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Coconut Gel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="MeatBinders">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Meat Binders</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="BeverageBases">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beverage Bases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Cereals">
+    <rdfs:label xml:lang="en">Cereals</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FruitAndVegetables">
+    <rdfs:label xml:lang="en">Fruit and Vegetables</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="AlcoholicBeverageSubstitutes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="Beverages"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Alcoholic Beverage Substitutes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Glycerol">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Glycerol</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="DairySubstitutes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="DairyProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Dairy Substitutes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="IceCreamAndEdibleIces">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="DairyProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Ice Cream and Edible Ices</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FortifiedWines">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="Beverages"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fortified Wines</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Roots">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Roots</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Beverages">
+    <rdfs:label xml:lang="en">Beverages</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FoodPreservatives">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Food Preservatives</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="MeatTenderizers(Ingredient)">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Meat Tenderizers (Ingredient)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="DairyProducts">
+    <rdfs:label xml:lang="en">Dairy products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Gelose">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Gelose</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Eggnog(Alcoholic)">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Eggnog (Alcoholic)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FoodBasesAndAdditives">
+    <rdfs:label xml:lang="en">Food Bases and Additives</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Aquavit">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Aquavit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Brandy">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Brandy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FoodStabilizers">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Food Stabilizers</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Beer(Alcoholic)">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Beer (Alcoholic)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Thickeners(Food)">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Thickeners (Food)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Arrack">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Arrack</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="AlcoholicBeverages">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverages</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="PecticExtras">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Pectic Extras</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Awamori">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Awamori</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Cheeses">
+    <rdfs:subClassOf rdf:resource="DairyProducts"/>
+    <rdfs:label xml:lang="en">Cheeses</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Daiquiris">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Daiquiris</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Eggs(Food)">
+    <rdfs:subClassOf rdf:resource="DairyProducts"/>
+    <rdfs:label xml:lang="en">Eggs (Food)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="FoodDyes">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Food Dyes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="ColoringExtracts">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Coloring Extracts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="AlcoholicBeverageCompounds">
+    <rdfs:subClassOf rdf:resource="Beverages"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverage Compounds</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Butter">
+    <rdfs:subClassOf rdf:resource="DairyProducts"/>
+    <rdfs:label xml:lang="en">Butter</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="Gelatins">
+    <rdfs:subClassOf rdf:resource="FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Gelatins</rdfs:label>
+  </owl:Class>
+</rdf:RDF>

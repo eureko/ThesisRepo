@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:bbc="http://www.bbc.co.uk/ontologies/creativework#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:ID="Category">
+    <rdfs:label xml:lang="en">Category</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Diet">
+    <rdfs:label xml:lang="en">Diet</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LabelProperty">
+    <rdfs:label xml:lang="en">Label Property</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="BlogPost">
+    <rdfs:label xml:lang="en">BlogPost</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TravelIncident">
+    <rdfs:label xml:lang="en">TravelIncident</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WebDocumentCategory">
+    <rdfs:label xml:lang="en">WebDocumentCategory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ThingGraph">
+    <rdfs:label xml:lang="en">ThingGraph</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Graph"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NewsService">
+    <rdfs:label xml:lang="en">NewsService</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Thumbnail">
+    <rdfs:label xml:lang="en">Thumbnail</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Episode">
+    <rdfs:label xml:lang="en">Episode</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CreativeWork"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Programme"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cuisine">
+    <rdfs:label xml:lang="en">Cuisine</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="PersonalProfileDocument">
+    <rdfs:label xml:lang="en">PersonalProfileDocument</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Audience">
+    <rdfs:label xml:lang="en">Audience</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="StageSequence">
+    <rdfs:label xml:lang="en">StageSequence</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Technique">
+    <rdfs:label xml:lang="en">Technique</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ShoppingCategory">
+    <rdfs:label xml:lang="en">ShoppingCategory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Stage">
+    <rdfs:label xml:lang="en">Stage</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TransitionOntology">
+    <rdfs:label xml:lang="en">Transition Ontology</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Graph"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Ontology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Collection">
+    <rdfs:label xml:lang="en">Collection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Graph">
+    <rdfs:label xml:lang="en">Graph</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LiveEventPage">
+    <rdfs:label xml:lang="en">LiveEventPage</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Food">
+    <rdfs:label xml:lang="en">Food</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Menu">
+    <rdfs:label xml:lang="en">Menu</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Collection"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WeatherAlert">
+    <rdfs:label xml:lang="en">WeatherAlert</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Group">
+    <rdfs:label xml:lang="en">Group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CreativeWorkGraph">
+    <rdfs:label xml:lang="en">CreativeWorkGraph</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ingredient">
+    <rdfs:label xml:lang="en">Ingredient</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Person">
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CreativeWork">
+    <rdfs:label xml:lang="en">CreativeWork</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Programme">
+    <rdfs:label xml:lang="en">Programme</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OnlineEcommerceAccount">
+    <rdfs:label xml:lang="en">Online E-commerce Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OnlineChatAccount">
+    <rdfs:label xml:lang="en">Online Chat Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Step">
+    <rdfs:label xml:lang="en">Step</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Dataset">
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Season">
+    <rdfs:label xml:lang="en">Season</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="WebDocument">
+    <rdfs:label xml:lang="en">WebDocument</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OnlineGamingAccount">
+    <rdfs:label xml:lang="en">Online Gaming Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IngredientList">
+    <rdfs:label xml:lang="en">IngredientList</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Method">
+    <rdfs:label xml:lang="en">Method</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Format">
+    <rdfs:label xml:lang="en">Format</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Recipe">
+    <rdfs:label xml:lang="en">Recipe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Clip">
+    <rdfs:label xml:lang="en">Clip</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CreativeWork"/>
+    <rdfs:subClassOf rdf:resource="#Programme"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Occasion">
+    <rdfs:label xml:lang="en">Occasion</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Image">
+    <rdfs:label xml:lang="en">Image</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Commentary">
+    <rdfs:label xml:lang="en">Commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Document">
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Organization">
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Product">
+    <rdfs:label xml:lang="en">Product</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LiveCoverage">
+    <rdfs:label xml:lang="en">LiveCoverage</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Platform">
+    <rdfs:label xml:lang="en">Platform</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Project">
+    <rdfs:label xml:lang="en">Project</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NewsItem">
+    <rdfs:label xml:lang="en">NewsItem</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Ontology">
+    <rdfs:label xml:lang="en">Ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:about="#OnlineAccount">
+    <rdfs:label xml:lang="en">Online Account</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Course">
+    <rdfs:label xml:lang="en">Course</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ThumbnailType">
+    <rdfs:label xml:lang="en">ThumbnailType</rdfs:label>
+  </owl:Class>
+</rdf:RDF>
