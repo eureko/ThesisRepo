@@ -2,6 +2,7 @@ package it.unina.thesisrepo.ontoadapters;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.TreeSet;
 
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
@@ -10,26 +11,29 @@ import org.apache.jena.ontology.Ontology;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
-public class BBCFoodOntoAdapter 
+public class FoodonOntoAdapter 
 {
-	final static String uri = "http://www.bbc.co.uk/ontologies/creativework#";
+	final static String uri = "http://purl.obolibrary.org/obo/foodon-edit.owl#";
 	static OntModel write_model;
-	static final String resultOntoFilePath = "./ontologies/3.owl";
-	static final String sourceFilePath = "./ontologies/src/BBCfoodOntology.ttl";
+	static final String resultOntoFilePath = "./ontologies/9.owl";
+	static final String sourceFilePath = "./ontologies/src/foodon.owl";
 	
 	static final String regex2 = "(?<!^)(?=[A-Z])";
 	
+	static TreeSet<String> classesSet = new TreeSet<String>();
+	
 	public static void main(String[] args) 
 	{
+		
 		try
 		{
-			OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
+			OntModel model = ModelFactory.createOntologyModel();
 			model.read(sourceFilePath);
-			
+				
 			write_model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
-			write_model.setNsPrefix("bbc", uri);
+			write_model.setNsPrefix("foodon", uri);
 			
-			Ontology ont = write_model.createOntology("http://www.bbc.co.uk/ontologies/creativework");
+			Ontology ont = write_model.createOntology("http://purl.obolibrary.org/obo/foodon-edit.owl");
 			ont.addComment("Automatically created through Jena APis", "en");
 			
 			
@@ -52,19 +56,25 @@ public class BBCFoodOntoAdapter
 	
 	static void addClass(OntClass c)
 	{
+		classesSet.add(c.getURI());
+		System.out.println(c);
 		OntClass cls = write_model.createClass(uri + c.getLocalName());
 		cls.setLabel(getLabelFromClass(c), "en");
 		
-		ExtendedIterator<OntClass> subClasses = c.listSubClasses();
-		while(subClasses.hasNext())
+		if (c.hasSubClass())
 		{
-			OntClass subClass = subClasses.next();
-			OntClass cls_sub = write_model.createClass(uri +  subClass.getLocalName());
-			
-			cls_sub.setLabel(getLabelFromClass(subClass), "en");
-			
-			cls.addSubClass(cls_sub);
-			addClass(subClass);
+			ExtendedIterator<OntClass> subClasses = c.listSubClasses(true);
+			while(subClasses.hasNext())
+			{
+				OntClass subClass = subClasses.next();
+				OntClass cls_sub = write_model.createClass(uri +  subClass.getLocalName());
+				
+				cls_sub.setLabel(getLabelFromClass(subClass), "en");
+				
+				cls.addSubClass(cls_sub);
+				if (!classesSet.contains(subClass.getURI()))
+					addClass(subClass);
+			}
 		}
 	}
 	

@@ -1,809 +1,1080 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:ncicp="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:ncicp="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:Class rdf:ID="Beverage">
+  <owl:Ontology rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl">
+    <rdfs:comment xml:lang="en">Automatically created through Jena APis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beverage">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Food"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beverage</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Squirting_Cucumber">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squirting_Cucumber">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Squirting Cucumber</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Rape_Honey">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Rape_Honey">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Honey"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Honey"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Rape Honey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Tangerine_Tomato_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tangerine_Tomato_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Tangerine Tomato Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lime_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lime_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Citrus_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Citrus_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Lime Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Alcoholic_Beverage">
-    <rdfs:subClassOf rdf:resource="#Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beverage"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverage</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Asparagus">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asparagus">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Asparagus</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Apple_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Apple_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Fruit_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Apple Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Codfish">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Codfish">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Fish_Vertebrates"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Codfish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Milk">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Milk">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Dairy_Product"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dairy_Product"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Milk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Coconut_Oil">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Coconut_Oil">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Food_Oil"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Coconut Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pimento">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pimento">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pimento</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Hydrogenated_Soybean_Oil">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hydrogenated_Soybean_Oil">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Food_Oil"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Hydrogenated Soybean Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Kidney_Bean">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Kidney_Bean">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Bean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Kidney Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pea">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pea">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Bean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Table_Salt">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Table_Salt">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Table Salt</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Zucchini">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Zucchini">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Zucchini</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pinto_Bean">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pinto_Bean">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Bean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pinto Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Enriched_Food">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Enriched_Food">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Enriched Food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Caviar">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Caviar">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Caviar</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Chicken_Liver">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Chicken_Liver">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Liver_Food"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Liver_Food"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Chicken Liver</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Radish">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Radish">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Cruciferous_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cruciferous_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Radish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beef">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beef</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Purple_Grape_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Purple_Grape_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Purple Grape Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Turkey_Poultry">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Turkey_Poultry">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Poultry"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Poultry"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Turkey Poultry</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Dandelion_Honey">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dandelion_Honey">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Honey"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Honey"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Dandelion Honey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Celery_Extract">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Celery_Extract">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Celery Extract</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Bell_Pepper">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bell_Pepper">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Peppers"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peppers"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Bell Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sunflower_Honey">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sunflower_Honey">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Honey"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Honey"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sunflower Honey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Tomato-Soy_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tomato-Soy_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Tomato-Soy Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Honey">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Honey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Honey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Safflower_Oil">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Safflower_Oil">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Food_Oil"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Safflower Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Turnip">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Turnip">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Turnip</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Carrot_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Carrot_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Carrot Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cucumber">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cucumber">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cucumber</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Bean">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Applesauce">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Applesauce">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Applesauce</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mackerel">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mackerel">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fish_Vertebrates"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mackerel</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Food_Oil">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Food Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Snow_Pea">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Snow_Pea">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Snow Pea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Green_Vegetable">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Vegetable">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Green Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Duck">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Duck">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Poultry"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Poultry"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Duck</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Gelatin">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gelatin">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Gelatin</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Whey">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Whey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Whey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Fish_Vertebrates">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fish Vertebrates</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cottonseed_Meal">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cottonseed_Meal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cottonseed Meal</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Yam">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Yam">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Yam</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pomegranate_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pomegranate_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pomegranate Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Squid">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squid">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Shellfish"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Squid</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Bean_Sprout">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean_Sprout">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Bean Sprout</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sunflower_Seed">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sunflower_Seed">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sunflower Seed</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Crab">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crab">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Crustacean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crustacean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Crab</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Orange_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Orange_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Citrus_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Citrus_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Orange Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Onion">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Onion">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Onion</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Carrot">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Carrot">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Carrot</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beef_Liver">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef_Liver">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Liver_Food"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Liver_Food"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beef Liver</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cherry_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cherry_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cherry Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Limpet">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Limpet">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Shellfish"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Limpet</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mycoprotein">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mycoprotein">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mycoprotein</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Olive_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Olive_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Olive Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Red_Snapper">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Red_Snapper">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Red Snapper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Oat_Biscuit">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Oat_Biscuit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Oat Biscuit</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Watercress">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Watercress">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Cruciferous_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cruciferous_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Watercress</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Fowl">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fowl">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Poultry"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Poultry"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fowl</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mustard_Greens">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mustard_Greens">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mustard Greens</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Shark">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shark">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Shark</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Brussels_Sprout">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brussels_Sprout">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Brussels Sprout</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Spinach">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Spinach">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Green_Leafy_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Leafy_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Spinach</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Collard_Greens">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Collard_Greens">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Collard Greens</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Peanut_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peanut_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Peanut Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cumin">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cumin">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cumin</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Death_Cap">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Death_Cap">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Mushroom"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mushroom"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Death Cap</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Corn_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Corn_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Corn Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Liver_Food">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Liver_Food">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Liver Food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Veal">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Veal">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Veal</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Catfish">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Catfish">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Catfish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Cruciferous_Vegetable">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cruciferous_Vegetable">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cruciferous Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pumpkin">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pumpkin">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pumpkin</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sesame_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sesame_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Sesame Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Parsley">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Parsley">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Parsley</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Taro">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Taro">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Taro</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sea_Salt">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sea_Salt">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sea Salt</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Salt_Substitute">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Salt_Substitute">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Salt Substitute</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Red_Bell_Pepper">
-    <rdfs:subClassOf rdf:resource="#Bell_Pepper"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Red_Bell_Pepper">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bell_Pepper"/>
+    <rdfs:label xml:lang="en">Red Bell Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Ginger_Rhizome">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ginger_Rhizome">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Ginger Rhizome</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Mushroom">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mushroom">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mushroom</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Wheatgrass_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Wheatgrass_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Wheatgrass Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Squid_Boiled">
-    <rdfs:subClassOf rdf:resource="#Squid"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squid_Boiled">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squid"/>
+    <rdfs:label xml:lang="en">Squid Boiled</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Butter">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Butter">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Dairy_Product"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dairy_Product"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Butter</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Fortified_Food">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fortified_Food">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fortified Food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Shellfish">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Shellfish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Hot_Pepper">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hot_Pepper">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Peppers"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peppers"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Hot Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Turnip_Greens">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Turnip_Greens">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Turnip Greens</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Egg_White">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Egg_White">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Egg White</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Soybean_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Soybean_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Soybean Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Poultry">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Poultry">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Poultry</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Egg_Yolk">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Egg_Yolk">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Egg Yolk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lobster">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lobster">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Crustacean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crustacean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Lobster</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Swiss_Chard">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Swiss_Chard">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Swiss Chard</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Peppers">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peppers">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Peppers</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Okra">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Okra">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Okra</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Soybean">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Soybean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Soybean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Maize">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Maize">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Maize</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Hydrogenated_Palm_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hydrogenated_Palm_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Hydrogenated Palm Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Fruit_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fruit Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Perch">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Perch">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Perch</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="White_Carrot">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White_Carrot">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">White Carrot</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Nut_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Nut_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Nut Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Tuna">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tuna">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Tuna</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Juice">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Oyster">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Oyster">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Oyster</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pork">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pork">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pork</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Drink">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Drink">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Drink</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Chocolate">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Chocolate">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Chocolate</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Wheat_Gluten">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Wheat_Gluten">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Wheat Gluten</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Salmon">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Salmon">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Salmon</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Buttermilk">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Buttermilk">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Dairy_Product"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dairy_Product"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Buttermilk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Green_Bean">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Bean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Green Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pastry">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pastry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pastry</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Oryza">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Oryza">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Oryza</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Canola_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Canola_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Canola Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mung_Bean">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mung_Bean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Mung Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Alfalfa_Sprout">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alfalfa_Sprout">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Alfalfa Sprout</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Dairy_Product">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dairy_Product">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Dairy Product</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Broccoli">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Broccoli">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Broccoli</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="White_Wine">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White_Wine">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Wine"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Wine"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">White Wine</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Anchovy">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Anchovy">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Anchovy</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Infant_Formula">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Infant_Formula">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Infant Formula</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cauliflower">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cauliflower">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cauliflower</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Herbal_Tea">
-    <rdfs:subClassOf rdf:resource="#Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Herbal_Tea">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beverage"/>
+    <rdfs:label xml:lang="en">Herbal Tea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Eastern_Oyster">
-    <rdfs:subClassOf rdf:resource="#Oyster"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Eastern_Oyster">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Oyster"/>
+    <rdfs:label xml:lang="en">Eastern Oyster</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Grapefruit_Juice">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Grapefruit_Juice">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Citrus_Juice"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Citrus_Juice"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Grapefruit Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Corn_Syrup">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Corn_Syrup">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Corn Syrup</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cabbage">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cabbage">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Brassica_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cabbage</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Leek">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Leek">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Leek</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beef_Less_Cooked">
-    <rdfs:subClassOf rdf:resource="#Beef"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef_Less_Cooked">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef"/>
+    <rdfs:label xml:lang="en">Beef Less Cooked</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Shiitake_Mushroom">
-    <rdfs:subClassOf rdf:resource="#Mushroom"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shiitake_Mushroom">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mushroom"/>
+    <rdfs:label xml:lang="en">Shiitake Mushroom</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Astacus_fluviatilis">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Astacus_fluviatilis">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Crustacean"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crustacean"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Astacus fluviatilis</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Wine_Cooler">
-    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Wine_Cooler">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage"/>
+    <rdfs:label xml:lang="en">Wine Cooler</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Scallop">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Scallop">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Scallop</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Poppy_Seed_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Poppy_Seed_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Poppy Seed Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Jalapeno_Pepper">
-    <rdfs:subClassOf rdf:resource="#Peppers"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Jalapeno_Pepper">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peppers"/>
+    <rdfs:label xml:lang="en">Jalapeno Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Acai_Berry_Juice">
-    <rdfs:subClassOf rdf:resource="#Juice"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Acai_Berry_Juice">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
+    <rdfs:label xml:lang="en">Acai Berry Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Crustacean">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crustacean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Crustacean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Peanut">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peanut">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Peanut</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Herring">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Herring">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Herring</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Brassica_Vegetable">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brassica_Vegetable">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Brassica Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sugar">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sugar">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sugar</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sunflower_Oil">
-    <rdfs:subClassOf rdf:resource="#Food_Oil"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sunflower_Oil">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food_Oil"/>
+    <rdfs:label xml:lang="en">Sunflower Oil</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Celery">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Celery">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Celery</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Maple_Syrup">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Maple_Syrup">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Maple Syrup</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sweet_Potato">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sweet_Potato">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sweet Potato</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beet">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beet">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beet</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Nonstarchy_Vegetable">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Nonstarchy_Vegetable">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Nonstarchy Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Snail">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Snail">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Meat"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Snail</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food">
+    <rdfs:label xml:lang="en">Food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Clam">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Clam">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Clam</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Abalone">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Abalone">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Abalone</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Celeriac">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Celeriac">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Celeriac</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Flounder">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Flounder">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Flounder</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mussel">
-    <rdfs:subClassOf rdf:resource="#Shellfish"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mussel">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shellfish"/>
+    <rdfs:label xml:lang="en">Mussel</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Citrus_Juice">
-    <rdfs:subClassOf rdf:resource="#Fruit_Juice"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Citrus_Juice">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_Juice"/>
+    <rdfs:label xml:lang="en">Citrus Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lettuce">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lettuce">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Green_Leafy_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Leafy_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Lettuce</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Meat">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Meat</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Raw_Sugar">
-    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Raw_Sugar">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sugar"/>
+    <rdfs:label xml:lang="en">Raw Sugar</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Organic_Food">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Organic_Food">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Organic Food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Swordfish">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Swordfish">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Swordfish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Black-Eyed_Pea">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Black-Eyed_Pea">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Black-Eyed Pea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cuttlefish">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cuttlefish">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Cuttlefish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Processed_Meat">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Processed_Meat">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Processed Meat</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Potato">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Potato">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Potato</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Fennel">
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fennel">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Fruit_and_Vegetable"/>
+      <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fennel</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Maize_Invert_Sugar">
-    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Maize_Invert_Sugar">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sugar"/>
+    <rdfs:label xml:lang="en">Maize Invert Sugar</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Wine">
-    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Wine">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage"/>
+    <rdfs:label xml:lang="en">Wine</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Green_Bell_Pepper">
-    <rdfs:subClassOf rdf:resource="#Bell_Pepper"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Bell_Pepper">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bell_Pepper"/>
+    <rdfs:label xml:lang="en">Green Bell Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Chickpea">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Chickpea">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Chickpea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sake">
-    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sake">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage"/>
+    <rdfs:label xml:lang="en">Sake</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Chile_Pepper">
-    <rdfs:subClassOf rdf:resource="#Peppers"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Chile_Pepper">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peppers"/>
+    <rdfs:label xml:lang="en">Chile Pepper</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Fruit_and_Vegetable">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Fruit and Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Squash">
-    <rdfs:subClassOf rdf:resource="#Fruit_and_Vegetable"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squash">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
+    <rdfs:label xml:lang="en">Squash</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sardine">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sardine">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Sardine</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Manuka_Honey">
-    <rdfs:subClassOf rdf:resource="#Honey"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Manuka_Honey">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Honey"/>
+    <rdfs:label xml:lang="en">Manuka Honey</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Venison">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Venison">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Venison</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="White_Fish">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White_Fish">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">White Fish</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Green_Leafy_Vegetable">
-    <rdfs:subClassOf rdf:resource="#Green_Vegetable"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Leafy_Vegetable">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Green_Vegetable"/>
+    <rdfs:label xml:lang="en">Green Leafy Vegetable</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Rhubarb">
-    <rdfs:subClassOf rdf:resource="#Fruit_and_Vegetable"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Rhubarb">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fruit_and_Vegetable"/>
+    <rdfs:label xml:lang="en">Rhubarb</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Shrimp">
-    <rdfs:subClassOf rdf:resource="#Crustacean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Shrimp">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Crustacean"/>
+    <rdfs:label xml:lang="en">Shrimp</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Fava_Bean">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fava_Bean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Fava Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Red_Tomato_Juice">
-    <rdfs:subClassOf rdf:resource="#Juice"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Red_Tomato_Juice">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Juice"/>
+    <rdfs:label xml:lang="en">Red Tomato Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lima_Bean">
-    <rdfs:subClassOf rdf:resource="#Bean"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lima_Bean">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Bean"/>
+    <rdfs:label xml:lang="en">Lima Bean</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beer">
-    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beer">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage"/>
+    <rdfs:label xml:lang="en">Beer</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Popcorn">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Popcorn">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Popcorn</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Mutton">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mutton">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Mutton</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Trout">
-    <rdfs:subClassOf rdf:resource="#Fish_Vertebrates"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Trout">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Fish_Vertebrates"/>
+    <rdfs:label xml:lang="en">Trout</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Frog_Leg">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Frog_Leg">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Frog Leg</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Raisin">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Raisin">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Raisin</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Egg_Poultry">
-    <rdfs:subClassOf rdf:resource="#Food"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Egg_Poultry">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Food"/>
+    <rdfs:label xml:lang="en">Egg Poultry</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Goat_Milk">
-    <rdfs:subClassOf rdf:resource="#Dairy_Product"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Goat_Milk">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dairy_Product"/>
+    <rdfs:label xml:lang="en">Goat Milk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Squid_Raw">
-    <rdfs:subClassOf rdf:resource="#Squid"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squid_Raw">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squid"/>
+    <rdfs:label xml:lang="en">Squid Raw</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Pheasant">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pheasant">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Pheasant</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Beef_Cooked">
-    <rdfs:subClassOf rdf:resource="#Beef"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef_Cooked">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Beef"/>
+    <rdfs:label xml:lang="en">Beef Cooked</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Brown_Sugar">
-    <rdfs:subClassOf rdf:resource="#Sugar"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brown_Sugar">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sugar"/>
+    <rdfs:label xml:lang="en">Brown Sugar</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lemon_Juice">
-    <rdfs:subClassOf rdf:resource="#Citrus_Juice"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lemon_Juice">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Citrus_Juice"/>
+    <rdfs:label xml:lang="en">Lemon Juice</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Lamb">
-    <rdfs:subClassOf rdf:resource="#Meat"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lamb">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meat"/>
+    <rdfs:label xml:lang="en">Lamb</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Liquor">
-    <rdfs:subClassOf rdf:resource="#Alcoholic_Beverage"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Liquor">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Alcoholic_Beverage"/>
+    <rdfs:label xml:lang="en">Liquor</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Sage_Tea">
-    <rdfs:subClassOf rdf:resource="#Herbal_Tea"/>
+  <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sage_Tea">
+    <rdfs:subClassOf rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Herbal_Tea"/>
+    <rdfs:label xml:lang="en">Sage Tea</rdfs:label>
   </owl:Class>
 </rdf:RDF>

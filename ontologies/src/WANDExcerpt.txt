@@ -1,0 +1,37 @@
+Beverages
+	Alcoholic Beverage Substitutes
+	Alcoholic Beverages
+	Alcoholic Beverage Compounds
+	Aquavit
+	Arrack
+	Awamori
+	Beer (Alcoholic)
+	Brandy
+	Champagne
+	Daiquiris
+	Eggnog (Alcoholic)
+	Fortified Wines
+Cereals
+Dairy products
+	Butter
+	Cheeses
+	Dairy Substitutes
+	Eggs (Food)
+	Ice Cream and Edible Ices
+Food Bases and Additives
+	Beverage Bases
+	Coconut Gel
+	Coloring Extracts
+	Flours
+	Food Dyes
+	Food Preservatives
+	Food Stabilizers
+	Gelatins
+	Gelose
+	Glycerol
+	Meat Binders
+	Meat Tenderizers (Ingredient)
+	Pectic Extras
+	Roots
+	Thickeners (Food)
+Fruit and Vegetables

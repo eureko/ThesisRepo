@@ -1,91 +1,65 @@
 package it.unina.thesisrepo.ontoadapters;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Vector;
 
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.Ontology;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.util.iterator.ExtendedIterator;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.parser.Parser;
 
 public class AGROVCAdapter 
 {
-	static final String uri = "http://aims.fao.org/aos/agrovoc/#";
-	static FileInputStream fileInputStreamReader;
-	BufferedReader file_buffer;
+	static final String uri = "http://aims.fao.org/aos/agrovoc#";
 	static OntModel model;
-	
-	//http://aims.fao.org/aos/agrovoc/c_6211
-	//http://aims.fao.org/aos/agrovoc/xl_en_1299486360046
 	
 	static final String root_resource_uri = "http://aims.fao.org/aos/agrovoc/c_6211";
 	//static final String root_resource_uri = "http://aims.fao.org/aos/agrovoc/c_8678";
+	static final String resultOntoFilePath = "./ontologies/2.owl";
+	static final String sourceFilePath = "./ontologies/src/agrovoc_core.rdf";
 	
-	static final String filePath = "./ontologies/src/agrovoc_core.rdf";
 	public static void main(String[] args) 
 	{
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
-		model.setNsPrefix("ncicp", uri);
-		//model.read("./ontologies/src/ncicp.owl", "RDF/XML");
-		//System.out.println(model);
+		model.setNsPrefix("agrovc", uri);
 		
+		Ontology ont = model.createOntology("http://aims.fao.org/aos/agrovoc");
+		ont.addComment("Automatically created through Jena APis", "en");
+
 		try
 		{
+			// <products> (c_6211v) is the Root concept
+			String rootClassNameLabel = getPreferredLabel(getPreferredLabelUri(root_resource_uri,  "en"));
 			
-			OntClass rootClass = model.createClass(root_resource_uri);
-			rootClass.addLabel(getPreferredLabel(getPreferredLabelUri(root_resource_uri,  "en")),"en");
+			String[] tokens = rootClassNameLabel.split("\\s");
+			String className = ""; 
+			for (String str:tokens)
+				className += capitalizeString(str);
+			
+			OntClass rootClass = model.createClass(uri + className);
+			rootClass.addLabel(rootClassNameLabel,"en");
+			rootClass.addVersionInfo(root_resource_uri.substring(root_resource_uri.lastIndexOf('/')+1));
 			
 			getSpecialised(root_resource_uri, rootClass);
 			
-			/*for (String s:specialized)
-			{
-				System.out.println(s);
-				String label_uri = getPreferredLabelUri(s, "en");
-				System.out.println(label_uri);
-				System.out.println(getPreferredLabel(label_uri));
+			FileWriter ncicpOntoFile = new FileWriter(resultOntoFilePath);
+			model.write(ncicpOntoFile, "RDF/XML-ABBREV");
 				
-			}*/
-			
-			FileWriter ncicpOntoFile = new FileWriter("./ontologies/2.owl");
-			
-			model.write(ncicpOntoFile, "RDF/XML-ABBREV", uri);
-				
-			
-			//exploreResource("http://aims.fao.org/aos/agrovoc/c_6211");
-			//http://aims.fao.org/aos/agrovoc/xl_en_1299486360046
-			//exploreResource("http://aims.fao.org/aos/agrovoc/c_6211");
-			//getPreferredLabelUri("http://aims.fao.org/aos/agrovoc/c_6211", "en");
-			
-			//System.out.println(getPreferredLabel("http://aims.fao.org/aos/agrovoc/xl_en_1299485662168"));
-			
-
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
 		}
-			
 	}
 	
 	static String getPreferredLabelUri(String resource, String lang) throws IOException
 	{
-		
-		BufferedReader file_buffer = new BufferedReader(new FileReader(filePath));
+		BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
 		String line = "", lineint = "";
-		boolean found = false;
 		
 		while((line = file_buffer.readLine()) != null)
 		{
@@ -115,14 +89,8 @@ public class AGROVCAdapter
 	}
 	static String getPreferredLabel(String label_uri) throws IOException
 	{
-		//<rdf:Description rdf:about="http://aims.fao.org/aos/agrovoc/xl_en_1299486360046">
-		//<literalForm xmlns="http://www.w3.org/2008/05/skos-xl#" xml:lang="en">products</literalForm>
-		//</rdf:Description>
-		
-		BufferedReader file_buffer = new BufferedReader(new FileReader(filePath));
+		BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
 		String line = "", lineint = "";
-		StringBuffer classDescBuffer = new StringBuffer();
-		boolean found = false;
 		
 		while((line = file_buffer.readLine()) != null)
 		{
@@ -144,15 +112,15 @@ public class AGROVCAdapter
 			}
 		}
 		
+		file_buffer.close();
 		return "";
 	}
 	
 	static void exploreResource(String resource) throws IOException
 	{
-		BufferedReader file_buffer = new BufferedReader(new FileReader(filePath));
+		BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
 		String line = "", lineint = "";
 		StringBuffer classDescBuffer = new StringBuffer();
-		boolean found = false;
 		
 		while((line = file_buffer.readLine()) != null)
 		{
@@ -169,18 +137,16 @@ public class AGROVCAdapter
 					else
 						classDescBuffer.append(lineint + "\n");
 				}
-				
 				System.out.println(classDescBuffer.toString());
 			}
 		}
-		
 		file_buffer.close();
 	}
 	
 	static Vector<String> getSpecialised(String resource, OntClass c) throws IOException
 	{
-		System.out.println(resource);
-		BufferedReader file_buffer = new BufferedReader(new FileReader(filePath));
+		System.out.println(c);
+		BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
 		String line = "", lineint = "";
 		Vector<String> specialized = new Vector<String>();
 		
@@ -192,18 +158,13 @@ public class AGROVCAdapter
 				{
 					if (lineint.contains("<broader"))
 					{
-						//System.out.println(lineint);
 						String[] tokens = lineint.split("\\s");
 						String tmp = tokens[3];
 						String lineint_resource = tmp.substring(tmp.indexOf('"')+1, tmp.lastIndexOf('"'));
 						
 						if (lineint_resource.compareTo(resource)==0)
 						{
-							//found = true;
-							//classDescBuffer.append(lineint + "\n");
-							//System.out.println(lineint);
 							specialized.add(line.substring(line.indexOf('"') +1, line.lastIndexOf('"')));
-							//specialized.add(line);
 							lineint = "";
 							break;
 						}
@@ -218,8 +179,15 @@ public class AGROVCAdapter
 		
 		for (String s:specialized)
 		{
-			OntClass newC = model.createClass(s);
-			newC.addLabel(getPreferredLabel(getPreferredLabelUri(s,  "en")),"en");
+			
+			String label = getPreferredLabel(getPreferredLabelUri(s,  "en"));
+			String[] tokens = label.split("\\s");
+			String subclassName = ""; 
+			for (String str:tokens)
+				subclassName += capitalizeString(str);
+			OntClass newC = model.createClass(uri + subclassName);
+			newC.addVersionInfo(s.substring(s.lastIndexOf('/')+1));
+			newC.addLabel(label,"en");
 			c.addSubClass(newC);
 			getSpecialised(s, newC);
 			
@@ -227,4 +195,18 @@ public class AGROVCAdapter
 		file_buffer.close();
 		return specialized;
 	}
+	
+	public static String capitalizeString(String string) {
+		  char[] chars = string.toLowerCase().toCharArray();
+		  boolean found = false;
+		  for (int i = 0; i < chars.length; i++) {
+		    if (!found && Character.isLetter(chars[i])) {
+		      chars[i] = Character.toUpperCase(chars[i]);
+		      found = true;
+		    } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { // You can add other chars here
+		      found = false;
+		    }
+		  }
+		  return String.valueOf(chars);
+		}
 }

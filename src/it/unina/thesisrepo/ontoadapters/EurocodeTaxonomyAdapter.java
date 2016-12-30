@@ -7,6 +7,7 @@ import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntDocumentManager;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.Ontology;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.jsoup.Jsoup;
@@ -16,29 +17,20 @@ import org.jsoup.select.Elements;
 
 public class EurocodeTaxonomyAdapter 
 {
-	static String SOURCE = "http://www.danfood.info/eurocode/";
-	static String NS = SOURCE + "#";
+	static final String uri = "http://www.danfood.info/eurocode#";
+	static OntModel model;
 	
+	static final String resultOntoFilePath = "./ontologies/6.owl";
+	static final String sourceFilePath = "./ontologies/src/Eurocode2.html";
 	public static void main(String[] args) 
 	{
 		try
 		{
-			/*BufferedReader file_buffer = new BufferedReader(new FileReader("./ontologies/src/Eurocode.txt"));
-		    
-			String line;
-			line = file_buffer.readLine(); // Read comment line
-			
-			while((line = file_buffer.readLine()) != null)
-			{
-				String[] splited = line.split("\\s+");
-				System.out.println(line.substring(splited[0].length()).trim());
-				//System.out.println(splited[0]);
-			}*/
-			
-			FileWriter eurocodeOntoFile = new FileWriter("./ontologies/8.owl");
-			
 			OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
-			OntDocumentManager dm = model.getDocumentManager();
+			model.setNsPrefix("eurocode2", uri);
+			
+			Ontology ont = model.createOntology("http://www.danfood.info/eurocode/");
+			ont.addComment("Automatically created through Jena APis", "en");
 			
 			//model.setNsPrefix("eurocode", SOURCE);
 			
@@ -62,7 +54,7 @@ public class EurocodeTaxonomyAdapter
 					
 					//System.out.println(capitalizedClassNAme);
 					
-					firstLevelClass = model.createClass(NS + capitalizedClassNAme);
+					firstLevelClass = model.createClass(uri + capitalizedClassNAme);
 					firstLevelClass.addLabel(className, "en");
 				}
 				else 
@@ -74,7 +66,7 @@ public class EurocodeTaxonomyAdapter
 					String comment = tdElems.get(2).text();
 					
 					//System.out.println("\t" + capitalizedClassName);
-					OntClass secondLevelCalss = model.createClass(NS + capitalizedClassName);
+					OntClass secondLevelCalss = model.createClass(uri + capitalizedClassName);
 					secondLevelCalss.addComment(comment, "en");
 					secondLevelCalss.addLabel(label, "en");
 					
@@ -101,7 +93,8 @@ public class EurocodeTaxonomyAdapter
 				}
 			}*/
 			
-			model.write(eurocodeOntoFile, "RDF/XML-ABBREV", SOURCE);
+			FileWriter eurocodeOntoFile = new FileWriter(resultOntoFilePath);
+			model.write(eurocodeOntoFile, "RDF/XML-ABBREV");
 		}
 		catch(Exception ex)
 		{

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:wand="http://www.wandinc.com/#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.wandinc.com/">
+    <rdfs:comment xml:lang="en">Automatically created through Jena APis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.wandinc.com/#FoodStabilizers">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Food Stabilizers</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Beverages">
+    <rdfs:label xml:lang="en">Beverages</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Daiquiris">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Daiquiris</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Thickeners(Food)">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Thickeners (Food)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#FoodDyes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Food Dyes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#MeatTenderizers(Ingredient)">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Meat Tenderizers (Ingredient)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#BeverageBases">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Beverage Bases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Arrack">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Arrack</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#FruitAndVegetables">
+    <rdfs:label xml:lang="en">Fruit and Vegetables</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#AlcoholicBeverageSubstitutes">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverage Substitutes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#MeatBinders">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Meat Binders</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#FoodBasesAndAdditives">
+    <rdfs:label xml:lang="en">Food Bases and Additives</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#DairyProducts">
+    <rdfs:label xml:lang="en">Dairy products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#FortifiedWines">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Fortified Wines</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#DairySubstitutes">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#DairyProducts"/>
+    <rdfs:label xml:lang="en">Dairy Substitutes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#IceCreamAndEdibleIces">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#DairyProducts"/>
+    <rdfs:label xml:lang="en">Ice Cream and Edible Ices</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Awamori">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Awamori</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Cheeses">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#DairyProducts"/>
+    <rdfs:label xml:lang="en">Cheeses</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#AlcoholicBeverageCompounds">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverage Compounds</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Brandy">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Brandy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Butter">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#DairyProducts"/>
+    <rdfs:label xml:lang="en">Butter</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#FoodPreservatives">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Food Preservatives</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Cereals">
+    <rdfs:label xml:lang="en">Cereals</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Flours">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Flours</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#AlcoholicBeverages">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Alcoholic Beverages</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Roots">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Roots</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#PecticExtras">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Pectic Extras</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Gelose">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Gelose</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Champagne">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Champagne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#ColoringExtracts">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Coloring Extracts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Aquavit">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Aquavit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Glycerol">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Glycerol</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Eggnog(Alcoholic)">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Eggnog (Alcoholic)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#CoconutGel">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Coconut Gel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Eggs(Food)">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#DairyProducts"/>
+    <rdfs:label xml:lang="en">Eggs (Food)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Gelatins">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#FoodBasesAndAdditives"/>
+    <rdfs:label xml:lang="en">Gelatins</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.wandinc.com/#Beer(Alcoholic)">
+    <rdfs:subClassOf rdf:resource="http://www.wandinc.com/#Beverages"/>
+    <rdfs:label xml:lang="en">Beer (Alcoholic)</rdfs:label>
+  </owl:Class>
+</rdf:RDF>

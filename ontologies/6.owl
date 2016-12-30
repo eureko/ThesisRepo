@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:eurocode2="http://www.danfood.info/eurocode#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.danfood.info/eurocode/">
+    <rdfs:comment xml:lang="en">Automatically created through Jena APis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Liqueurs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Liqueurs</rdfs:label>
+    <rdfs:comment xml:lang="en">Advocaat, cherry brandy, Cointeau, cream liqueur</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#UnripeSpeltProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Unripe spelt products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Ham">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Ham</rdfs:label>
+    <rdfs:comment xml:lang="en">Parma ham, sugar-glazed ham</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts">
+    <rdfs:label xml:lang="en">Pulses, seeds, kernals, nuts and products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Milk">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Milk</rdfs:label>
+    <rdfs:comment xml:lang="en">Liquid milks, including fortified, UHT and sterilised products, and reconstituted dried milk, subdivided on fat content. Also items for buttermilk, soured milks and condensed milks</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Condiments,SeasoningAndExtracts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Condiments, seasoning and extracts</rdfs:label>
+    <rdfs:comment xml:lang="en">Salt, mustard, vinegar, tomato ketchup, Worcestershire sauce, beef stock cubes, yeast extract</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherMeatProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Other meat products</rdfs:label>
+    <rdfs:comment xml:lang="en">Including meat products preserved as pieces rather than as the original cut, e.g. galantine, brawn, souse, meat loaves</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FishAndFishProducts">
+    <rdfs:label xml:lang="en">Fish and fish products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherBirds">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Other birds</rdfs:label>
+    <rdfs:comment xml:lang="en">Pigeon, guinea fowl, pheasant, quail, ostrich</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#ChickenEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Chicken eggs</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided into whole, white and yolk</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#AnimalFats">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#FatsAndOils"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Animal fats</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PastryAndPies">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pastry and pies</rdfs:label>
+    <rdfs:comment xml:lang="en">Choux pastry, meat pies, mixed pies (major fillings from &gt;1 main group)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SugarProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sugar products</rdfs:label>
+    <rdfs:comment xml:lang="en">Icing, marzipan, candied fruit and nuts</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SweetProductsAndDishes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sweet products and dishes</rdfs:label>
+    <rdfs:comment xml:lang="en">Fruit cake, gâteau, Danish pastries, trifle</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#RestructuredFishAndFishAnalogues">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Restructured fish and fish analogues</rdfs:label>
+    <rdfs:comment xml:lang="en">Reformed scampi, crabsticks</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Gadiformes">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Gadiformes</rdfs:label>
+    <rdfs:comment xml:lang="en">Cods including Burbot</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#ConfectioneryBars">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Confectionery bars</rdfs:label>
+    <rdfs:comment xml:lang="en">Chocolate covered bars, chocolate covered ice cream bars, other confectionery bars</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PreservedMeats,HamAndBacon">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Preserved meats, ham and bacon</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Jelly">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Jelly</rdfs:label>
+    <rdfs:comment xml:lang="en">Dessert (sweet) jellies with gelatine base and flavoured with fruit juice, wine or liqueur</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Cream">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cream</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided on fat content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MalaceousFruit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Malaceous fruit</rdfs:label>
+    <rdfs:comment xml:lang="en">Apple, pear, quince</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PreservedPoultry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Preserved poultry</rdfs:label>
+    <rdfs:comment xml:lang="en">Smoked turkey, Spinkganz</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Reptiles">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Reptiles</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#NutAndSeedProducts">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts"/>
+    <rdfs:label xml:lang="en">Nut and seed products</rdfs:label>
+    <rdfs:comment xml:lang="en">Coconut milk, marzipan, nuts and raisins</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SmokedFish">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Smoked fish</rdfs:label>
+    <rdfs:comment xml:lang="en">Kippers, smoked salmon, bloater</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherBirdEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Other bird eggs</rdfs:label>
+    <rdfs:comment xml:lang="en">e.g. of pheasant, gull, plover</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherFermentedMilkProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Other fermented milk products</rdfs:label>
+    <rdfs:comment xml:lang="en">Excluding kefir, fermented (i.e. alcohol-containing) milk products. Subdivided by fat content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Nuts">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts"/>
+    <rdfs:label xml:lang="en">Nuts</rdfs:label>
+    <rdfs:comment xml:lang="en">Peanut, hazelnut</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#CheeseSubstitutes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Cheese substitutes</rdfs:label>
+    <rdfs:comment xml:lang="en">Imitiation cheese products in which part or all the milk fat is replaced by plant oils or other fat substitutes</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Yogurt">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Yogurt</rdfs:label>
+    <rdfs:comment xml:lang="en">A product of lactic cultures acting on milk. Subdivided by fat content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitJams,JelliesAndMarmalades">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fruit jams, jellies and marmalades</rdfs:label>
+    <rdfs:comment xml:lang="en">Plum jam, blackcurrant jelly, mincemeat, NOT redcurrant jelly</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#DessertWine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Dessert wine</rdfs:label>
+    <rdfs:comment xml:lang="en">Wines from grapes with high sugar content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Brassicas">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Brassicas</rdfs:label>
+    <rdfs:comment xml:lang="en">Used for Brassica species grown for their heads (white cabbage), leaves (spring greens, kale), flowering heads (broccoli) or sprouts. Other species are classified as root vegetables</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Frogs">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Frogs</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BreakfastCereals">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Breakfast cereals</rdfs:label>
+    <rdfs:comment xml:lang="en">Cereals, oats based</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Other eggs</rdfs:label>
+    <rdfs:comment xml:lang="en">e.g. turtle eggs</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#WheatFlours">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Wheat flours</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Pleuronectiformes">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Pleuronectiformes</rdfs:label>
+    <rdfs:comment xml:lang="en">Flat fish</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetableFatsAndOils">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#FatsAndOils"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Vegetable fats and oils</rdfs:label>
+    <rdfs:comment xml:lang="en">Palm oil, coconut oil, blended vegetable oils</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitMixtures">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fruit mixtures</rdfs:label>
+    <rdfs:comment xml:lang="en">Fruit salad, fruit cocktail, mixed fruit</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#TurkeyEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Turkey eggs</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Perciformes">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Perciformes</rdfs:label>
+    <rdfs:comment xml:lang="en">Includes Percoidei (Perches) and Scombroidei (Mackerels)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Insects">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Insects</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#GooseEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Goose eggs</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitJuice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fruit juice</rdfs:label>
+    <rdfs:comment xml:lang="en">Apple juice, cranberry juice, orange juice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MilkAndMilkProducts">
+    <rdfs:label xml:lang="en">Milk and milk products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#IceCream">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    <rdfs:label xml:lang="en">Ice cream</rdfs:label>
+    <rdfs:comment xml:lang="en">Dairy and non-dairy ice cream and other frozen confections, e.g. water ices and sorbets</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Low-energyProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Low-energy products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Wine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Wine</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided by alcohol content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Fat-modifiedFoods">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Fat-modified foods</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatAndMeatProducts">
+    <rdfs:label xml:lang="en">Meat and meat products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherFishAndMarineMammals">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Other fish and marine mammals</rdfs:label>
+    <rdfs:comment xml:lang="en">Includes: Scad as Trachurus spp.; Tuna, etc. as Thunnus spp.; mullets as Mugilidae spp.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SugarSubstitutes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sugar substitutes</rdfs:label>
+    <rdfs:comment xml:lang="en">Nutritive substitutes (e.g. sorbitol) Non-nutritive substitutes (e.g. saccharine)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Goose">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Goose</rdfs:label>
+    <rdfs:comment xml:lang="en">Flesh</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Clupeiformes">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Clupeiformes</rdfs:label>
+    <rdfs:comment xml:lang="en">Includes Clupeoidei (Herrings), Salmonoidei (Salmon and trout) and Esocoidei (Pikes)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Syrups">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Syrups</rdfs:label>
+    <rdfs:comment xml:lang="en">Corn syrup, maple syrup, black treacle, molasses</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Sauces">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Sauces</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Sauces, vegetable base. Note, Redcurrant jelly is Sauces, fruit base</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitAndFruitProducts">
+    <rdfs:label xml:lang="en">Fruit and fruit products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PulseProducts">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts"/>
+    <rdfs:label xml:lang="en">Pulse products</rdfs:label>
+    <rdfs:comment xml:lang="en">Black fermented Chinese bean, soya milk, tofu, soya noodles, tempeh</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Pulses">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts"/>
+    <rdfs:label xml:lang="en">Pulses</rdfs:label>
+    <rdfs:comment xml:lang="en">Soybean, dried peas, lentils, beans</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetableJuice">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Vegetable juice</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrot juice, tomato juice, mixed vegetable juice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Dry,SmokedSausages(Rohwurst)">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Dry, smoked sausages (Rohwurst)</rdfs:label>
+    <rdfs:comment xml:lang="en">Salami-type sausages, Blockwurst, peperoni, saucisson fumè, Teewurst</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#LambOffal">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Lamb offal</rdfs:label>
+    <rdfs:comment xml:lang="en">Lamb's liver</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Mayonnaise">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mayonnaise</rdfs:label>
+    <rdfs:comment xml:lang="en">Egg and oil based cold sauce. Subdivided on fat or oil content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousMarineAndAquaticFoods">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Miscellaneous marine and aquatic foods</rdfs:label>
+    <rdfs:comment xml:lang="en">Seaweeds, echinoderms</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MarineOils">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#FatsAndOils"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Marine oils</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Honey">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Honey</rdfs:label>
+    <rdfs:comment xml:lang="en">Honey, honeycomb</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFruit">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    <rdfs:label xml:lang="en">Miscellaneous fruit</rdfs:label>
+    <rdfs:comment xml:lang="en">Banana, date, kiwi fruit, melon</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Liqueur/fortifiedWine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Liqueur/fortified wine</rdfs:label>
+    <rdfs:comment xml:lang="en">Port, sherry, madeira, marsala</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#StoneFruit">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    <rdfs:label xml:lang="en">Stone fruit</rdfs:label>
+    <rdfs:comment xml:lang="en">Apricot, cherry, olive, plum</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SavouryProductsAndDishes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Savoury products and dishes</rdfs:label>
+    <rdfs:comment xml:lang="en">Savoury biscuits, savoury pancakes, pizza</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Molluscs">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Molluscs</rdfs:label>
+    <rdfs:comment xml:lang="en">Including land molluscs (Snail)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts">
+    <rdfs:label xml:lang="en">Vegetables and vegetable products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Beverages(Non-milk)">
+    <rdfs:label xml:lang="en">Beverages (non-milk)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Crustaceans">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Crustaceans</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherAlcoholicLongDrinks">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Other alcoholic long drinks</rdfs:label>
+    <rdfs:comment xml:lang="en">Cider, perry, alcoholic ginger beer</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PoultryOffal">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Poultry offal</rdfs:label>
+    <rdfs:comment xml:lang="en">Chicken liver, duck liver, goose liver</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#EdibleFungi">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Edible fungi</rdfs:label>
+    <rdfs:comment xml:lang="en">Cultivated mushroom, shiitake mushroom, straw mushroom, truffle</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BakingGoodsAndOtherIngredients">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Baking goods and other ingredients</rdfs:label>
+    <rdfs:comment xml:lang="en">Yeast, baking powder, cornflower, arrowroot, custard powder, gelatine</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#WheatBreads">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Wheat breads</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherJuices">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Other juices</rdfs:label>
+    <rdfs:comment xml:lang="en">Coconut milk, clam juice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FatsAndOils">
+    <rdfs:label xml:lang="en">Fats and oils</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Berries">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    <rdfs:label xml:lang="en">Berries</rdfs:label>
+    <rdfs:comment xml:lang="en">Grapes, raspberries, currants</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Carbohydrate,ProteinOrFat-richProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Carbohydrate, protein or fat-rich products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#RestructuredMeatAndMeatAnalogues">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Restructured meat and meat analogues</rdfs:label>
+    <rdfs:comment xml:lang="en">Reformed chicken, Textured Vegetable Protein (TVF)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SeedsAndKernals">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Pulses,Seeds,Kernals,NutsAndProducts"/>
+    <rdfs:label xml:lang="en">Seeds and kernals</rdfs:label>
+    <rdfs:comment xml:lang="en">Linseed, beechnut seed, pine kernel (syn. pine nut)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Chicken">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Chicken</rdfs:label>
+    <rdfs:comment xml:lang="en">Breast, leg, wing</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#DuckEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Duck eggs</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#High-energyProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">High-energy products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OtherMammals">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Other mammals</rdfs:label>
+    <rdfs:comment xml:lang="en">Horse, goat, rabbit, hare, boar, deer, kangaroo. Excludes marine mammals</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Bacon">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Bacon</rdfs:label>
+    <rdfs:comment xml:lang="en">Smoked or unsmoked. Back bacon, streaky bacon</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PreservedBeef">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Preserved beef</rdfs:label>
+    <rdfs:comment xml:lang="en">Corned beef, pastrami, bresaola</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#OatProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Oat products</rdfs:label>
+    <rdfs:comment xml:lang="en">Oatcakes</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#High-carbohydrateProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">High-carbohydrate products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Whey">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    <rdfs:label xml:lang="en">Whey</rdfs:label>
+    <rdfs:comment xml:lang="en">Residue from milk after removal of casein and most of the fat as the curd</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Non-chocolateDessertTopping">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Non-chocolate dessert topping</rdfs:label>
+    <rdfs:comment xml:lang="en">Tip Top, Dream Topping, fruit syrups</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PastaAndNoodles">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Pasta and noodles</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FatSpread">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FatsAndOils"/>
+    <rdfs:label xml:lang="en">Fat spread</rdfs:label>
+    <rdfs:comment xml:lang="en">Fat spread, &gt;65% fat, &gt;25% saturates Fat spread, &gt;65% fat, &lt;25% saturates Fat spread, 45-65% fat, &gt;25% saturates Fat spread, 45-65% fat, &lt;25% saturates Fat spread, 30-45% fat Fat spread, &lt;30% fat</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Veal,CarcaseMeat">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Veal, carcase meat</rdfs:label>
+    <rdfs:comment xml:lang="en">Leg of veal, veal (loin) chops</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VealOffal">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Veal offal</rdfs:label>
+    <rdfs:comment xml:lang="en">Liver</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#LeafVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Leaf vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Lettuces, mustard and cress</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#RiceProductsAndDishes">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Rice products and dishes</rdfs:label>
+    <rdfs:comment xml:lang="en">Rice flour, brown rice, Basmati rice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Pastes,PâtèsAndTerrines">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Pastes, pâtès and terrines</rdfs:label>
+    <rdfs:comment xml:lang="en">Beef paste, Liverwurst, pâtè de foie gras, duck terrine</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Pork,CarcaseMeat">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Pork, carcase meat</rdfs:label>
+    <rdfs:comment xml:lang="en">Tenderloin, chump, hock</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetableNectar">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Vegetable nectar</rdfs:label>
+    <rdfs:comment xml:lang="en">Diluted vegetable juice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#CannedFish">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Canned fish</rdfs:label>
+    <rdfs:comment xml:lang="en">Canned sardine, canned tuna</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PreparedSalads">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Prepared salads</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Prepared salads, cooked vegetable base</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#CookedSausages(Kochwurst)">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Cooked sausages (Kochwurst)</rdfs:label>
+    <rdfs:comment xml:lang="en">Jagdwurst, Schinkensulzwurst</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MiscellaneousFoods">
+    <rdfs:label xml:lang="en">Miscellaneous foods</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SavourySnacks">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    <rdfs:label xml:lang="en">Savoury snacks</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Savoury snacks, potato base</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PreservedFish">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Preserved fish</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BuckwheatProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Buckwheat products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Soups">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    <rdfs:label xml:lang="en">Soups</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Soup, vegetable base</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Duck">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Duck</rdfs:label>
+    <rdfs:comment xml:lang="en">Flesh</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MeatProducts">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Meat products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SpiritsAndBrandy">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Spirits and brandy</rdfs:label>
+    <rdfs:comment xml:lang="en">Gin, whiskey, vodka</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#QuailEggs">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Quail eggs</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Vitamin/MineralProducts/Tonics">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Vitamin / mineral products / tonics</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitingVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Fruiting vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Cucumber, gherkin, marrow, courgette</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SpicesAndHerbs">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    <rdfs:label xml:lang="en">Spices and herbs</rdfs:label>
+    <rdfs:comment xml:lang="en">Cloves, coriander seeds, curry powder, paprika, sage, thyme</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MixedGrainProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Mixed grain products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#ChocolateAndChocolateProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Chocolate and chocolate products</rdfs:label>
+    <rdfs:comment xml:lang="en">Chocolate spread, cooking chocolate, fruit and nut chocolate, chocolate covered caramels, truffles, Creme eggs</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FruitNectar">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Fruit nectar</rdfs:label>
+    <rdfs:comment xml:lang="en">Diluted fruit juice</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#NonDairyCoffeeCreamer">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    <rdfs:label xml:lang="en">Non dairy coffee creamer</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#DilutionDrinks">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Dilution drinks</rdfs:label>
+    <rdfs:comment xml:lang="en">Squash, cordial</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BulbVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Bulb vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Leek, onion, spring onion</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Cypriniformes">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Cypriniformes</rdfs:label>
+    <rdfs:comment xml:lang="en">Includes Cyprinoidei (Carps) and Siluroidei (Catfishes)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FreshAndLightlyCookedSausages(Bratwurst)">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Fresh and lightly cooked sausages (Bratwurst)</rdfs:label>
+    <rdfs:comment xml:lang="en">Sausage meat, Cumberland sausage, chipolatos, haggis, Frankfurters, black pudding, Blutwurst</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Non-dilutionDrinks">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Non-dilution drinks</rdfs:label>
+    <rdfs:comment xml:lang="en">Non-cola carbonated drinks, colas, mixers, non-carbonated lemonades</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Protein-enrichedFoods">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Protein-enriched foods</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Non-chocolateConfectionery">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Non-chocolate confectionery</rdfs:label>
+    <rdfs:comment xml:lang="en">Toffee, boiled sweets, fudge, nougat, sherbet sweets, confectionery (paste) jellies, Turkish delight</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse">
+    <rdfs:label xml:lang="en">Products for special nutritional use</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#StalkVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Stalk vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Celery, Florence fennel, rhubarb</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#RyeProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Rye products</rdfs:label>
+    <rdfs:comment xml:lang="en">Rye flour; rye bread, dark; rye crispbread</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Lamb,CarcaseMeat">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Lamb, carcase meat</rdfs:label>
+    <rdfs:comment xml:lang="en">Includes lamb and mutton: leg, shoulder, best end of neck</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MilletProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Millet products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#FishProducts">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Fish products</rdfs:label>
+    <rdfs:comment xml:lang="en">Caviar, herring roe, fish pastes, fish cake</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Beer">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Beer</rdfs:label>
+    <rdfs:comment xml:lang="en">Alcoholic beverage prepared from malted cereals. Also includes barley beer/wine</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#MaizeProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Maize products</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#InfusionDrinks">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Infusion drinks</rdfs:label>
+    <rdfs:comment xml:lang="en">Tea, coffee, cocoa, herb teas</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Turkey">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Turkey</rdfs:label>
+    <rdfs:comment xml:lang="en">Breast, leg, wing</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Cheese">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    <rdfs:label xml:lang="en">Cheese</rdfs:label>
+    <rdfs:comment xml:lang="en">Subdivided by type (hard, soft, fresh) and, for each type, by fat content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BabyFoods">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    <rdfs:label xml:lang="en">Baby foods</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#VegetableMixtures">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Vegetable mixtures</rdfs:label>
+    <rdfs:comment xml:lang="en">Mixed salad, mixed vegetables</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Kefir">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MilkAndMilkProducts"/>
+    <rdfs:label xml:lang="en">Kefir</rdfs:label>
+    <rdfs:comment xml:lang="en">A fermented milk drink containing alcohol and carbonated</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BarleyProducts">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Barley products</rdfs:label>
+    <rdfs:comment xml:lang="en">Barley flour, barley breads, barley products</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SaltedAndPickledFish">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FishAndFishProducts"/>
+    <rdfs:label xml:lang="en">Salted and pickled fish</rdfs:label>
+    <rdfs:comment xml:lang="en">Matjes herring, rollmop herring</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#GrainsAndGrainProducts">
+    <rdfs:label xml:lang="en">Grains and grain products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts">
+    <rdfs:label xml:lang="en">Sugar, chocolate and related products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#PorkOffal">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Pork offal</rdfs:label>
+    <rdfs:comment xml:lang="en">Liver</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#CitrusFruit">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FruitAndFruitProducts"/>
+    <rdfs:label xml:lang="en">Citrus fruit</rdfs:label>
+    <rdfs:comment xml:lang="en">Grapefruit, lemon, orange</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#EggAndEggProducts">
+    <rdfs:label xml:lang="en">Egg and egg products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Beef,CarcaseMeat">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Beef, carcase meat</rdfs:label>
+    <rdfs:comment xml:lang="en">Cuts such as topside, brisket, possibly documented with pictures</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#EnteralFoods">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#ProductsForSpecialNutritionalUse"/>
+    <rdfs:label xml:lang="en">Enteral foods</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#ShootVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Shoot vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Asparagas, chicory, palm hearts</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#SaladDressing">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MiscellaneousFoods"/>
+    <rdfs:label xml:lang="en">Salad dressing</rdfs:label>
+    <rdfs:comment xml:lang="en">Vinegar and oil based cold sauce. Subdivided on fat or oil content</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#CompoundFatsAndOils">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FatsAndOils"/>
+    <rdfs:label xml:lang="en">Compound fats and oils</rdfs:label>
+    <rdfs:comment xml:lang="en">Mixtures incorporating animal, vegetable and/or artificial sourced materials</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Cocktails">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Cocktails</rdfs:label>
+    <rdfs:comment xml:lang="en">Bloody Mary, Screwdriver</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Butter">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FatsAndOils"/>
+    <rdfs:label xml:lang="en">Butter</rdfs:label>
+    <rdfs:comment xml:lang="en">Butter oil, butter ghee</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#BeefOffal">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Beef offal</rdfs:label>
+    <rdfs:comment xml:lang="en">Of calf, cow and oxen: liver, tongue, tripe, other offal</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Tongue(Preserved)">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#MeatAndMeatProducts"/>
+    <rdfs:label xml:lang="en">Tongue (preserved)</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Margarine">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#FatsAndOils"/>
+    <rdfs:label xml:lang="en">Margarine</rdfs:label>
+    <rdfs:comment xml:lang="en">Margarine, &gt;25% saturates Margarine, &lt;25% saturates</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Sugar">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Sugar,ChocolateAndRelatedProducts"/>
+    <rdfs:label xml:lang="en">Sugar</rdfs:label>
+    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#RootVegetables">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Root vegetables</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrot, turnip, beetroot, radish</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Water">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#Beverages(Non-milk)"/>
+    <rdfs:label xml:lang="en">Water</rdfs:label>
+    <rdfs:comment xml:lang="en">Tap water, still and carbonated spring water, mineralised water</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.danfood.info/eurocode#Tubers">
+    <rdfs:subClassOf rdf:resource="http://www.danfood.info/eurocode#VegetablesAndVegetableProducts"/>
+    <rdfs:label xml:lang="en">Tubers</rdfs:label>
+    <rdfs:comment xml:lang="en">Potato, sweet potato, cassava</rdfs:comment>
+  </owl:Class>
+</rdf:RDF>

@@ -8,12 +8,17 @@ import java.io.IOException;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.Ontology;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 public class WANDAdapter 
 {
-	static final String base_uri = "http://www.wandinc.com/#";
+	
+	static final String uri = "http://www.wandinc.com/#";
+	
+	static final String resultOntoFilePath = "./ontologies/7.owl";
+	static final String sourceFilePath = "./ontologies/src/WANDExcerpt.txt";
 	
 	public static void main(String[] args) 
 	{
@@ -21,8 +26,12 @@ public class WANDAdapter
 		try
 		{
 			OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
+			model.setNsPrefix("wand", uri);
 			
-			BufferedReader file_buffer = new BufferedReader(new FileReader("./ontologies/src/WANDExcerpt.txt"));
+			Ontology ont = model.createOntology("http://www.wandinc.com/");
+			ont.addComment("Automatically created through Jena APis", "en");
+			
+			BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
 			String line;
 			//line = file_buffer.readLine(); // Read comment line
 			OntClass c = null;
@@ -30,12 +39,12 @@ public class WANDAdapter
 			{
 				if (!line.startsWith("\t"))
 				{
-					c = model.createClass(capitalizeString(line.trim()).replace(" ", ""));
+					c = model.createClass(uri + capitalizeString(line.trim()).replace(" ", ""));
 					c.addLabel(line.trim(), "en");
 				}
 				else
 				{
-					OntClass subClass = model.createClass(capitalizeString(line.trim()).replace(" ", ""));
+					OntClass subClass = model.createClass(uri + capitalizeString(line.trim()).replace(" ", ""));
 					subClass.addLabel(line.trim(), "en");
 					
 					c.addSubClass(subClass);
@@ -44,8 +53,8 @@ public class WANDAdapter
 			
 			file_buffer.close();
 			
-			FileWriter file_writer = new FileWriter("./ontologies/9.owl");
-			model.write(file_writer, "RDF/XML-ABBREV", base_uri);
+			FileWriter file_writer = new FileWriter(resultOntoFilePath);
+			model.write(file_writer, "RDF/XML-ABBREV");
 		}
 		catch(IOException ioe)
 		{

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:agrovc="http://aims.fao.org/aos/agrovoc#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_36642">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_8678"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">bioproducts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_8678">
+    <rdfs:label xml:lang="en">agricultural products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_32499">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/agrovoc#c_8678"/>
+    <rdfs:label xml:lang="en">out of season products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_32501">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/agrovoc#c_32499"/>
+    <rdfs:label xml:lang="en">out of season fruits</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_34072">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/agrovoc#c_8678"/>
+    <rdfs:label xml:lang="en">perishable products</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc#c_32502">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/agrovoc#c_32499"/>
+    <rdfs:label xml:lang="en">out of season vegetables</rdfs:label>
+  </owl:Class>
+</rdf:RDF>

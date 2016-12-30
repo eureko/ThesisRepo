@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:bbc="http://www.bbc.co.uk/ontologies/creativework#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.bbc.co.uk/ontologies/creativework">
+    <rdfs:comment xml:lang="en">Automatically created through Jena APis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Category">
+    <rdfs:label xml:lang="en">Category</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Diet">
+    <rdfs:label xml:lang="en">Diet</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#LabelProperty">
+    <rdfs:label xml:lang="en">Label Property</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#BlogPost">
+    <rdfs:label xml:lang="en">Blog Post</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#TravelIncident">
+    <rdfs:label xml:lang="en">Travel Incident</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#WebDocumentCategory">
+    <rdfs:label xml:lang="en">Web Document Category</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#ThingGraph">
+    <rdfs:label xml:lang="en">Thing Graph</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Graph"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#NewsService">
+    <rdfs:label xml:lang="en">News Service</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Thumbnail">
+    <rdfs:label xml:lang="en">Thumbnail</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Episode">
+    <rdfs:label xml:lang="en">Episode</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Programme"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Cuisine">
+    <rdfs:label xml:lang="en">Cuisine</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#PersonalProfileDocument">
+    <rdfs:label xml:lang="en">Personal Profile Document</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Audience">
+    <rdfs:label xml:lang="en">Audience</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#StageSequence">
+    <rdfs:label xml:lang="en">Stage Sequence</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Technique">
+    <rdfs:label xml:lang="en">Technique</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#ShoppingCategory">
+    <rdfs:label xml:lang="en">Shopping Category</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Stage">
+    <rdfs:label xml:lang="en">Stage</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#TransitionOntology">
+    <rdfs:label xml:lang="en">Transition Ontology</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Graph"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Ontology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Collection">
+    <rdfs:label xml:lang="en">Collection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Graph">
+    <rdfs:label xml:lang="en">Graph</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#LiveEventPage">
+    <rdfs:label xml:lang="en">Live Event Page</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Food">
+    <rdfs:label xml:lang="en">Food</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Menu">
+    <rdfs:label xml:lang="en">Menu</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Collection"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#WeatherAlert">
+    <rdfs:label xml:lang="en">Weather Alert</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Group">
+    <rdfs:label xml:lang="en">Group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWorkGraph">
+    <rdfs:label xml:lang="en">Creative Work Graph</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Ingredient">
+    <rdfs:label xml:lang="en">Ingredient</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Person">
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#CreativeWork">
+    <rdfs:label xml:lang="en">Creative Work</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Programme">
+    <rdfs:label xml:lang="en">Programme</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineEcommerceAccount">
+    <rdfs:label xml:lang="en">Online E-commerce Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineChatAccount">
+    <rdfs:label xml:lang="en">Online Chat Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Step">
+    <rdfs:label xml:lang="en">Step</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Dataset">
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Season">
+    <rdfs:label xml:lang="en">Season</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#WebDocument">
+    <rdfs:label xml:lang="en">Web Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineGamingAccount">
+    <rdfs:label xml:lang="en">Online Gaming Account</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineAccount"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#IngredientList">
+    <rdfs:label xml:lang="en">Ingredient List</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Method">
+    <rdfs:label xml:lang="en">Method</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Format">
+    <rdfs:label xml:lang="en">Format</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Recipe">
+    <rdfs:label xml:lang="en">Recipe</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Clip">
+    <rdfs:label xml:lang="en">Clip</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Programme"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Occasion">
+    <rdfs:label xml:lang="en">Occasion</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Image">
+    <rdfs:label xml:lang="en">Image</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Document"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Commentary">
+    <rdfs:label xml:lang="en">Commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Document">
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Organization">
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Product">
+    <rdfs:label xml:lang="en">Product</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#LiveCoverage">
+    <rdfs:label xml:lang="en">Live Coverage</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Platform">
+    <rdfs:label xml:lang="en">Platform</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Project">
+    <rdfs:label xml:lang="en">Project</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#NewsItem">
+    <rdfs:label xml:lang="en">News Item</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#CreativeWork"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Ontology">
+    <rdfs:label xml:lang="en">Ontology</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework#Graph"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#OnlineAccount">
+    <rdfs:label xml:lang="en">Online Account</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#Course">
+    <rdfs:label xml:lang="en">Course</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/creativework#ThumbnailType">
+    <rdfs:label xml:lang="en">Thumbnail Type</rdfs:label>
+  </owl:Class>
+</rdf:RDF>
