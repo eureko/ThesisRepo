@@ -44,7 +44,7 @@ public class TermsSetMeasuresCalculator
 	static RelatednessCalculator wprc =  new WuPalmer(db);
 	static RelatednessCalculator pathrc =  new Path(db);
 	
-	static TreeSet<String> terms_sets = new TreeSet<String>();
+	TreeSet<String> terms_sets = new TreeSet<String>();
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
 	
 	static Levenshtein levSim = new Levenshtein();
@@ -89,27 +89,30 @@ public class TermsSetMeasuresCalculator
 		// TODO Auto-generated constructor stub
 		this.source = source;
 		this.target = target;
-		System.out.println("Start measuring..." + source + ".csv file");
+		//System.out.println("Start measuring..." + source);
 		WS4JConfiguration.getInstance().setMFS(true);
 		
 		try
 		{
-			BufferedReader file_buffer_reader = new BufferedReader(new FileReader("./ontologies/" + source + ".csv"));
+			BufferedReader file_buffer_reader = new BufferedReader(new FileReader(source));
 		    
 			String line;
 			line = file_buffer_reader.readLine(); // Read comment line
 			
 			while((line = file_buffer_reader.readLine()) != null)
 			{
-				if (line.contains("|"))
+				if (!line.isEmpty())
 				{
-					String[] pair = line.split("\\|");
-					terms_sets.add(pair[0]);
-				}
-				else
-				{
-					line.trim();
-					terms_sets.add(line.trim());
+					if (line.contains("|"))
+					{
+						String[] pair = line.split("\\|");
+						terms_sets.add(pair[0]);
+					}
+					else
+					{
+						line.trim();
+						terms_sets.add(line.trim());
+					}
 				}
 			}
 			file_buffer_reader.close();	
@@ -117,7 +120,7 @@ public class TermsSetMeasuresCalculator
 			//for (TreeSet<String> set:terms_sets)
 					//termsSetHAndler.visualizeSet(set);
 				
-			createTargetSet("./ontologies/target.csv");
+			//createTargetSet("./ontologies/target.csv");
 				//termsSetHAndler.visualizeSet(target_terms_set);
 				
 				
@@ -130,10 +133,10 @@ public class TermsSetMeasuresCalculator
 		}
 	}
 	
-	void startMeasuring() throws IOException
+	public void startMeasuring(String file) throws IOException
 	{
 		
-		BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/" + source + ".measures"));
+		BufferedWriter file_buffer = new BufferedWriter(new FileWriter(file));
 		file_buffer.write("#Similarity measures. Total number of terms: " + terms_sets.size() + "src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,ground,srcunk,dstunk\n");
 		System.out.println("Start measuring...");			
 		
@@ -320,7 +323,7 @@ public class TermsSetMeasuresCalculator
 		file_buffer.close();
 	}
 	
-	void createTargetSet(String file) throws IOException
+	public static void createTargetSet(String file) throws IOException
 	{
 		BufferedReader file_buffer = new BufferedReader(new FileReader(file));
 	    

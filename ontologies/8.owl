@@ -1,1039 +1,257 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:iso="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:Class rdf:ID="PreservedFish">
+  <owl:Ontology rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics">
+    <rdfs:comment xml:lang="en">Automatically created through Jena APis</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#WheyCheese">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="FishAndFishProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Preserved fish</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">whey cheese</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Reptiles">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Sugar">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Reptiles</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Soups">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Soups</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Soup, vegetable base</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Yogurt">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Yogurt</rdfs:label>
-    <rdfs:comment xml:lang="en">A product of lactic cultures acting on milk. Subdivided by fat content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Low-energyProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Low-energy products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="High-carbohydrateProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">High-carbohydrate products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#FreshAndLightlyCookedSausages(Bratwurst)">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fresh and lightly cooked sausages (Bratwurst)</rdfs:label>
-    <rdfs:comment xml:lang="en">Sausage meat, Cumberland sausage, chipolatos, haggis, Frankfurters, black pudding, Blutwurst</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SaladDressing">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Salad dressing</rdfs:label>
-    <rdfs:comment xml:lang="en">Vinegar and oil based cold sauce. Subdivided on fat or oil content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Milk">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Milk</rdfs:label>
-    <rdfs:comment xml:lang="en">Liquid milks, including fortified, UHT and sterilised products, and reconstituted dried milk, subdivided on fat content. Also items for buttermilk, soured milks and condensed milks</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="LambOffal">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Lamb offal</rdfs:label>
-    <rdfs:comment xml:lang="en">Lamb's liver</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Chicken">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Chicken</rdfs:label>
-    <rdfs:comment xml:lang="en">Breast, leg, wing</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Cheese">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Cheese</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided by type (hard, soft, fresh) and, for each type, by fat content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Insects">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Insects</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="EdibleFungi">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Edible fungi</rdfs:label>
-    <rdfs:comment xml:lang="en">Cultivated mushroom, shiitake mushroom, straw mushroom, truffle</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Carbohydrate,ProteinOrFat-richProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Carbohydrate, protein or fat-rich products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherFermentedMilkProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other fermented milk products</rdfs:label>
-    <rdfs:comment xml:lang="en">Excluding kefir, fermented (i.e. alcohol-containing) milk products. Subdivided by fat content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Non-dilutionDrinks">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Non-dilution drinks</rdfs:label>
-    <rdfs:comment xml:lang="en">Non-cola carbonated drinks, colas, mixers, non-carbonated lemonades</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PreservedBeef">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Preserved beef</rdfs:label>
-    <rdfs:comment xml:lang="en">Corned beef, pastrami, bresaola</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="VealOffal">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Veal offal</rdfs:label>
-    <rdfs:comment xml:lang="en">Liver</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Fat-modifiedFoods">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fat-modified foods</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="InfusionDrinks">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Infusion drinks</rdfs:label>
-    <rdfs:comment xml:lang="en">Tea, coffee, cocoa, herb teas</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Molluscs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Molluscs</rdfs:label>
-    <rdfs:comment xml:lang="en">Including land molluscs (Snail)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="DilutionDrinks">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Dilution drinks</rdfs:label>
-    <rdfs:comment xml:lang="en">Squash, cordial</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#FruitJams,JelliesAndMarmalades">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fruit jams, jellies and marmalades</rdfs:label>
-    <rdfs:comment xml:lang="en">Plum jam, blackcurrant jelly, mincemeat, NOT redcurrant jelly</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="FatsAndOils">
-    <rdfs:label xml:lang="en">Fats and oils</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherBirds">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other birds</rdfs:label>
-    <rdfs:comment xml:lang="en">Pigeon, guinea fowl, pheasant, quail, ostrich</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="BabyFoods">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Baby foods</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="VegetableFatsAndOils">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Vegetable fats and oils</rdfs:label>
-    <rdfs:comment xml:lang="en">Palm oil, coconut oil, blended vegetable oils</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherMammals">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other mammals</rdfs:label>
-    <rdfs:comment xml:lang="en">Horse, goat, rabbit, hare, boar, deer, kangaroo. Excludes marine mammals</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Pork,CarcaseMeat">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Pork, carcase meat</rdfs:label>
-    <rdfs:comment xml:lang="en">Tenderloin, chump, hock</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Liqueurs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Liqueurs</rdfs:label>
-    <rdfs:comment xml:lang="en">Advocaat, cherry brandy, Cointeau, cream liqueur</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Pastes,PâtèsAndTerrines">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Pastes, pâtès and terrines</rdfs:label>
-    <rdfs:comment xml:lang="en">Beef paste, Liverwurst, pâtè de foie gras, duck terrine</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="BakingGoodsAndOtherIngredients">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Baking goods and other ingredients</rdfs:label>
-    <rdfs:comment xml:lang="en">Yeast, baking powder, cornflower, arrowroot, custard powder, gelatine</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Sugar">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Sugar</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:ID="MixedGrainProducts">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MilkAndProcessedMilkProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="GrainsAndGrainProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Mixed grain products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">Milk and processed milk products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="MaizeProducts">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Coffee">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#GrainsAndGrainProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Beverages"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Maize products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">Coffee</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#PreservedMeats,HamAndBacon">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#BabyFood">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#PrepackagedAndPreparedFoods"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Preserved meats, ham and bacon</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">baby food</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="AnimalFats">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Animal fats</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="QuailEggs">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MilkProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="EggAndEggProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Quail eggs</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">milk products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#CookedSausages(Kochwurst)">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food">
+    <rdfs:label xml:lang="en">Food</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Tea">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Beverages"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Cooked sausages (Kochwurst)</rdfs:label>
-    <rdfs:comment xml:lang="en">Jagdwurst, Schinkensulzwurst</rdfs:comment>
+    <rdfs:label xml:lang="en">Tea</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Ham">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Grains">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">grains</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#ProcessesInTheFoodIndustry">
+    <rdfs:label xml:lang="en">Processes in the food industry</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitNectars">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Ham</rdfs:label>
-    <rdfs:comment xml:lang="en">Parma ham, sugar-glazed ham</rdfs:comment>
+    <rdfs:label xml:lang="en">Fruit nectars</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="FruitAndFruitProducts">
-    <rdfs:label xml:lang="en">Fruit and fruit products</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="Cream">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#DerivedProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProducts"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Cream</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided on fat content</rdfs:comment>
+    <rdfs:label xml:lang="en">derived products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Non-chocolateDessertTopping">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#SugarProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Non-chocolate dessert topping</rdfs:label>
-    <rdfs:comment xml:lang="en">Tip Top, Dream Topping, fruit syrups</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Sauces">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Sauces</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Sauces, vegetable base. Note, Redcurrant jelly is Sauces, fruit base</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherFishAndMarineMammals">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other fish and marine mammals</rdfs:label>
-    <rdfs:comment xml:lang="en">Includes: Scad as Trachurus spp.; Tuna, etc. as Thunnus spp.; mullets as Mugilidae spp.</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Turkey">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Turkey</rdfs:label>
-    <rdfs:comment xml:lang="en">Breast, leg, wing</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="RyeProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#GrainsAndGrainProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Rye products</rdfs:label>
-    <rdfs:comment xml:lang="en">Rye flour; rye bread, dark; rye crispbread</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Honey">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Honey</rdfs:label>
-    <rdfs:comment xml:lang="en">Honey, honeycomb</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="BarleyProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#GrainsAndGrainProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Barley products</rdfs:label>
-    <rdfs:comment xml:lang="en">Barley flour, barley breads, barley products</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="RestructuredMeatAndMeatAnalogues">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Restructured meat and meat analogues</rdfs:label>
-    <rdfs:comment xml:lang="en">Reformed chicken, Textured Vegetable Protein (TVF)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Wine">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Wine</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided by alcohol content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SaltedAndPickledFish">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Salted and pickled fish</rdfs:label>
-    <rdfs:comment xml:lang="en">Matjes herring, rollmop herring</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="CompoundFatsAndOils">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Compound fats and oils</rdfs:label>
-    <rdfs:comment xml:lang="en">Mixtures incorporating animal, vegetable and/or artificial sourced materials</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PulseProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Pulse products</rdfs:label>
-    <rdfs:comment xml:lang="en">Black fermented Chinese bean, soya milk, tofu, soya noodles, tempeh</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="UnripeSpeltProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#GrainsAndGrainProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Unripe spelt products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="MeatProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Meat products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="ShootVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Shoot vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Asparagas, chicory, palm hearts</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Duck">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Duck</rdfs:label>
-    <rdfs:comment xml:lang="en">Flesh</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Bacon">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Bacon</rdfs:label>
-    <rdfs:comment xml:lang="en">Smoked or unsmoked. Back bacon, streaky bacon</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="MiscellaneousMarineAndAquaticFoods">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Miscellaneous marine and aquatic foods</rdfs:label>
-    <rdfs:comment xml:lang="en">Seaweeds, echinoderms</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Goose">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Goose</rdfs:label>
-    <rdfs:comment xml:lang="en">Flesh</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Pulses">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Pulses</rdfs:label>
-    <rdfs:comment xml:lang="en">Soybean, dried peas, lentils, beans</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="IceCream">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Ice cream</rdfs:label>
-    <rdfs:comment xml:lang="en">Dairy and non-dairy ice cream and other frozen confections, e.g. water ices and sorbets</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SmokedFish">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Smoked fish</rdfs:label>
-    <rdfs:comment xml:lang="en">Kippers, smoked salmon, bloater</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="VegetableNectar">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Vegetable nectar</rdfs:label>
-    <rdfs:comment xml:lang="en">Diluted vegetable juice</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="RootVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Root vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrot, turnip, beetroot, radish</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="RiceProductsAndDishes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#GrainsAndGrainProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Rice products and dishes</rdfs:label>
-    <rdfs:comment xml:lang="en">Rice flour, brown rice, Basmati rice</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="CitrusFruit">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Citrus fruit</rdfs:label>
-    <rdfs:comment xml:lang="en">Grapefruit, lemon, orange</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#GrainsAndGrainProducts">
-    <rdfs:label xml:lang="en">Grains and grain products</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="NonDairyCoffeeCreamer">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Non dairy coffee creamer</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Frogs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Frogs</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Condiments,SeasoningAndExtracts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Condiments, seasoning and extracts</rdfs:label>
-    <rdfs:comment xml:lang="en">Salt, mustard, vinegar, tomato ketchup, Worcestershire sauce, beef stock cubes, yeast extract</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="BreakfastCereals">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Breakfast cereals</rdfs:label>
-    <rdfs:comment xml:lang="en">Cereals, oats based</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Dry,SmokedSausages(Rohwurst)">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Dry, smoked sausages (Rohwurst)</rdfs:label>
-    <rdfs:comment xml:lang="en">Salami-type sausages, Blockwurst, peperoni, saucisson fumè, Teewurst</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Perciformes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Perciformes</rdfs:label>
-    <rdfs:comment xml:lang="en">Includes Percoidei (Perches) and Scombroidei (Mackerels)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PreservedPoultry">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Preserved poultry</rdfs:label>
-    <rdfs:comment xml:lang="en">Smoked turkey, Spinkganz</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Non-chocolateConfectionery">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Non-chocolate confectionery</rdfs:label>
-    <rdfs:comment xml:lang="en">Toffee, boiled sweets, fudge, nougat, sherbet sweets, confectionery (paste) jellies, Turkish delight</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="MilletProducts">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Millet products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Pleuronectiformes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Pleuronectiformes</rdfs:label>
-    <rdfs:comment xml:lang="en">Flat fish</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherEggs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#EggAndEggProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other eggs</rdfs:label>
-    <rdfs:comment xml:lang="en">e.g. turtle eggs</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Margarine">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Margarine</rdfs:label>
-    <rdfs:comment xml:lang="en">Margarine, &gt;25% saturates Margarine, &lt;25% saturates</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SugarProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProduct"/>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Sugar products</rdfs:label>
-    <rdfs:comment xml:lang="en">Icing, marzipan, candied fruit and nuts</rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:about="#Vitamin/MineralProducts/Tonics">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitJuices">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Vitamin / mineral products / tonics</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+    <rdfs:label xml:lang="en">Fruit juices</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Whey">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#BakedProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProduct"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Whey</rdfs:label>
-    <rdfs:comment xml:lang="en">Residue from milk after removal of casein and most of the fat as the curd</rdfs:comment>
+    <rdfs:label xml:lang="en">baked products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="BulbVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Bulb vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Leek, onion, spring onion</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherBirdEggs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#EggAndEggProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other bird eggs</rdfs:label>
-    <rdfs:comment xml:lang="en">e.g. of pheasant, gull, plover</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PastryAndPies">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Pastry and pies</rdfs:label>
-    <rdfs:comment xml:lang="en">Choux pastry, meat pies, mixed pies (major fillings from &gt;1 main group)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="FruitMixtures">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Fruit mixtures</rdfs:label>
-    <rdfs:comment xml:lang="en">Fruit salad, fruit cocktail, mixed fruit</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SugarSubstitutes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Sugar substitutes</rdfs:label>
-    <rdfs:comment xml:lang="en">Nutritive substitutes (e.g. sorbitol) Non-nutritive substitutes (e.g. saccharine)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="MarineOils">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Marine oils</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="StoneFruit">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Stone fruit</rdfs:label>
-    <rdfs:comment xml:lang="en">Apricot, cherry, olive, plum</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="NutAndSeedProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Nut and seed products</rdfs:label>
-    <rdfs:comment xml:lang="en">Coconut milk, marzipan, nuts and raisins</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Mayonnaise">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Mayonnaise</rdfs:label>
-    <rdfs:comment xml:lang="en">Egg and oil based cold sauce. Subdivided on fat or oil content</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="CannedFish">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Canned fish</rdfs:label>
-    <rdfs:comment xml:lang="en">Canned sardine, canned tuna</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Water">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Water</rdfs:label>
-    <rdfs:comment xml:lang="en">Tap water, still and carbonated spring water, mineralised water</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#EggAndEggProducts">
-    <rdfs:label xml:lang="en">Egg and egg products</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="SpicesAndHerbs">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MiscellaneousFoods"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Spices and herbs</rdfs:label>
-    <rdfs:comment xml:lang="en">Cloves, coriander seeds, curry powder, paprika, sage, thyme</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="VegetableMixtures">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Vegetable mixtures</rdfs:label>
-    <rdfs:comment xml:lang="en">Mixed salad, mixed vegetables</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="ChickenEggs">
-    <rdfs:subClassOf rdf:resource="#EggAndEggProducts"/>
-    <rdfs:label xml:lang="en">Chicken eggs</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided into whole, white and yolk</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Beef,CarcaseMeat">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Beef, carcase meat</rdfs:label>
-    <rdfs:comment xml:lang="en">Cuts such as topside, brisket, possibly documented with pictures</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Syrups">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Syrups</rdfs:label>
-    <rdfs:comment xml:lang="en">Corn syrup, maple syrup, black treacle, molasses</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="FruitingVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fruiting vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Cucumber, gherkin, marrow, courgette</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Tongue(Preserved)">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Tongue (preserved)</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="LeafVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Leaf vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Lettuces, mustard and cress</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SavouryProductsAndDishes">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Savoury products and dishes</rdfs:label>
-    <rdfs:comment xml:lang="en">Savoury biscuits, savoury pancakes, pizza</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Tubers">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Tubers</rdfs:label>
-    <rdfs:comment xml:lang="en">Potato, sweet potato, cassava</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="FishProducts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fish products</rdfs:label>
-    <rdfs:comment xml:lang="en">Caviar, herring roe, fish pastes, fish cake</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Brassicas">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Brassicas</rdfs:label>
-    <rdfs:comment xml:lang="en">Used for Brassica species grown for their heads (white cabbage), leaves (spring greens, kale), flowering heads (broccoli) or sprouts. Other species are classified as root vegetables</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Protein-enrichedFoods">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Protein-enriched foods</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#MiscellaneousFoods">
-    <rdfs:label xml:lang="en">Miscellaneous foods</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherAlcoholicLongDrinks">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other alcoholic long drinks</rdfs:label>
-    <rdfs:comment xml:lang="en">Cider, perry, alcoholic ginger beer</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PoultryOffal">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Poultry offal</rdfs:label>
-    <rdfs:comment xml:lang="en">Chicken liver, duck liver, goose liver</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="StalkVegetables">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#VegetablesAndVegetableProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Stalk vegetables</rdfs:label>
-    <rdfs:comment xml:lang="en">Celery, Florence fennel, rhubarb</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="EnteralFoods">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ProductsForSpecialNutritionalUse"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Enteral foods</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Berries">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Berries</rdfs:label>
-    <rdfs:comment xml:lang="en">Grapes, raspberries, currants</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SeedsAndKernals">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Seeds and kernals</rdfs:label>
-    <rdfs:comment xml:lang="en">Linseed, beechnut seed, pine kernel (syn. pine nut)</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PreparedSalads">
-    <rdfs:subClassOf rdf:resource="#MiscellaneousFoods"/>
-    <rdfs:label xml:lang="en">Prepared salads</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Prepared salads, cooked vegetable base</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Kefir">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Kefir</rdfs:label>
-    <rdfs:comment xml:lang="en">A fermented milk drink containing alcohol and carbonated</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Liqueur/fortifiedWine">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Liqueur/fortified wine</rdfs:label>
-    <rdfs:comment xml:lang="en">Port, sherry, madeira, marsala</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="FruitJuice">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Fruit juice</rdfs:label>
-    <rdfs:comment xml:lang="en">Apple juice, cranberry juice, orange juice</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SavourySnacks">
-    <rdfs:subClassOf rdf:resource="#MiscellaneousFoods"/>
-    <rdfs:label xml:lang="en">Savoury snacks</rdfs:label>
-    <rdfs:comment xml:lang="en">Subdivided on base constituent, e.g. Savoury snacks, potato base</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="SpiritsAndBrandy">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Beverages(Non-milk)"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Spirits and brandy</rdfs:label>
-    <rdfs:comment xml:lang="en">Gin, whiskey, vodka</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#ProductsForSpecialNutritionalUse">
-    <rdfs:label xml:lang="en">Products for special nutritional use</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="WheatFlours">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Wheat flours</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Lamb,CarcaseMeat">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Lamb, carcase meat</rdfs:label>
-    <rdfs:comment xml:lang="en">Includes lamb and mutton: leg, shoulder, best end of neck</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="MalaceousFruit">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Malaceous fruit</rdfs:label>
-    <rdfs:comment xml:lang="en">Apple, pear, quince</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="DuckEggs">
-    <rdfs:subClassOf rdf:resource="#EggAndEggProducts"/>
-    <rdfs:label xml:lang="en">Duck eggs</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Butter">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Butter">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
     <rdfs:label xml:lang="en">Butter</rdfs:label>
-    <rdfs:comment xml:lang="en">Butter oil, butter ghee</rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:about="#Beverages(Non-milk)">
-    <rdfs:label xml:lang="en">Beverages (non-milk)</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#EdibleOils">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Edible oils</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="GooseEggs">
-    <rdfs:subClassOf rdf:resource="#EggAndEggProducts"/>
-    <rdfs:label xml:lang="en">Goose eggs</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="Beer">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Beer</rdfs:label>
-    <rdfs:comment xml:lang="en">Alcoholic beverage prepared from malted cereals. Also includes barley beer/wine</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="OtherMeatProducts">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#SensoryAnalysis">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#GeneralMethodsOfTestsAndAnalysis"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Other meat products</rdfs:label>
-    <rdfs:comment xml:lang="en">Including meat products preserved as pieces rather than as the original cut, e.g. galantine, brawn, souse, meat loaves</rdfs:comment>
+    <rdfs:label xml:lang="en">Sensory analysis</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="FruitNectar">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Fruit nectar</rdfs:label>
-    <rdfs:comment xml:lang="en">Diluted fruit juice</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProducts">
+    <rdfs:label xml:lang="en">food products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Jelly">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MaterialsAndArticles">
+    <rdfs:label xml:lang="en">Materials and articles</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#VegetableJuices">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Jelly</rdfs:label>
-    <rdfs:comment xml:lang="en">Dessert (sweet) jellies with gelatine base and flavoured with fruit juice, wine or liqueur</rdfs:comment>
+    <rdfs:label xml:lang="en">vegetable juices</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="BuckwheatProducts">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Buckwheat products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#PlantsAndEquipmentForTheFoodIndustry">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MaterialsAndArticles"/>
+    <rdfs:label xml:lang="en">plants and equipment for the food industry</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="ConfectioneryBars">
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Meat">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Meat</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#EvaporatedMilk">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">evaporated milk</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#CateringContainers">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MaterialsAndArticles"/>
+    <rdfs:label xml:lang="en">catering containers</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#CerealsPulses">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Cereals pulses</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MilkAndMilkProductsInGeneral">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Milk and milk products in general</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#IceCreamAndIceConfectionery">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Ice cream and ice confectionery</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Beverages">
+    <rdfs:label xml:lang="en">Beverages</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#PrepackagedAndPreparedFoods">
+    <rdfs:label xml:lang="en">prepackaged and prepared foods</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FrozenProducts">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts"/>
+      <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProduct"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Confectionery bars</rdfs:label>
-    <rdfs:comment xml:lang="en">Chocolate covered bars, chocolate covered ice cream bars, other confectionery bars</rdfs:comment>
+    <rdfs:label xml:lang="en">frozen products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Crustaceans">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Crustaceans</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MaterialsAndArticlesInContactWithDrinkingWater">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MaterialsAndArticles"/>
+    <rdfs:label xml:lang="en">materials and articles in contact with drinking water</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Clupeiformes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Clupeiformes</rdfs:label>
-    <rdfs:comment xml:lang="en">Includes Clupeoidei (Herrings), Salmonoidei (Salmon and trout) and Esocoidei (Pikes)</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables">
+    <rdfs:label xml:lang="en">Fruits and Vegetables</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="SweetProductsAndDishes">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Sweet products and dishes</rdfs:label>
-    <rdfs:comment xml:lang="en">Fruit cake, gâteau, Danish pastries, trifle</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Sorbets">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">sorbets</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Sugar,ChocolateAndRelatedProducts">
-    <rdfs:label xml:lang="en">Sugar, chocolate and related products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodHygiene">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#ProcessesInTheFoodIndustry"/>
+    <rdfs:label xml:lang="en">food hygiene</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="FatSpread">
-    <rdfs:subClassOf rdf:resource="#FatsAndOils"/>
-    <rdfs:label xml:lang="en">Fat spread</rdfs:label>
-    <rdfs:comment xml:lang="en">Fat spread, &gt;65% fat, &gt;25% saturates Fat spread, &gt;65% fat, &lt;25% saturates Fat spread, 45-65% fat, &gt;25% saturates Fat spread, 45-65% fat, &lt;25% saturates Fat spread, 30-45% fat Fat spread, &lt;30% fat</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#CottageCheese">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">cottage cheese</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#VegetablesAndVegetableProducts">
-    <rdfs:label xml:lang="en">Vegetables and vegetable products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Starch">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Starch</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="CheeseSubstitutes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MilkAndMilkProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Cheese substitutes</rdfs:label>
-    <rdfs:comment xml:lang="en">Imitiation cheese products in which part or all the milk fat is replaced by plant oils or other fat substitutes</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodProduct">
+    <rdfs:label xml:lang="en">Food product</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="WheatBreads">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Wheat breads</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#SpicesAndCondiments">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Spices and condiments</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="VegetableJuice">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Vegetable juice</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrot juice, tomato juice, mixed vegetable juice</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Oilseeds">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Oilseeds</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="OtherJuices">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Other juices</rdfs:label>
-    <rdfs:comment xml:lang="en">Coconut milk, clam juice</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Cocoa">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Beverages"/>
+    <rdfs:label xml:lang="en">Cocoa</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="MiscellaneousFruit">
-    <rdfs:subClassOf rdf:resource="#FruitAndFruitProducts"/>
-    <rdfs:label xml:lang="en">Miscellaneous fruit</rdfs:label>
-    <rdfs:comment xml:lang="en">Banana, date, kiwi fruit, melon</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Cheese">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Cheese</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="DessertWine">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Dessert wine</rdfs:label>
-    <rdfs:comment xml:lang="en">Wines from grapes with high sugar content</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#DriedMilk">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">dried milk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cocktails">
-    <rdfs:subClassOf rdf:resource="#Beverages(Non-milk)"/>
-    <rdfs:label xml:lang="en">Cocktails</rdfs:label>
-    <rdfs:comment xml:lang="en">Bloody Mary, Screwdriver</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#GeneralMethodsOfTestsAndAnalysis">
+    <rdfs:label xml:lang="en">General methods of tests and analysis</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="High-energyProducts">
-    <rdfs:subClassOf rdf:resource="#ProductsForSpecialNutritionalUse"/>
-    <rdfs:label xml:lang="en">High-energy products</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#MeatProducts">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">meat products</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Cypriniformes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Cypriniformes</rdfs:label>
-    <rdfs:comment xml:lang="en">Includes Cyprinoidei (Carps) and Siluroidei (Catfishes)</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#EdibleFats">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Edible fats</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Veal,CarcaseMeat">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Veal, carcase meat</rdfs:label>
-    <rdfs:comment xml:lang="en">Leg of veal, veal (loin) chops</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#RefrigeratingEquipment">
+    <rdfs:label xml:lang="en">Refrigerating equipment</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Gadiformes">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#FishAndFishProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Gadiformes</rdfs:label>
-    <rdfs:comment xml:lang="en">Cods including Burbot</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Flours">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">flours</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="BeefOffal">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MeatAndMeatProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Beef offal</rdfs:label>
-    <rdfs:comment xml:lang="en">Of calf, cow and oxen: liver, tongue, tripe, other offal</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodMicrobiology">
+    <rdfs:label xml:lang="en">Food microbiology</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="TurkeyEggs">
-    <rdfs:subClassOf rdf:resource="#EggAndEggProducts"/>
-    <rdfs:label xml:lang="en">Turkey eggs</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodAdditives">
+    <rdfs:label xml:lang="en">Food additives</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#FishAndFishProducts">
-    <rdfs:label xml:lang="en">Fish and fish products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FoodSafety">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#ProcessesInTheFoodIndustry"/>
+    <rdfs:label xml:lang="en">food safety</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="OatProducts">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Oat products</rdfs:label>
-    <rdfs:comment xml:lang="en">Oatcakes</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#CondensedMilk">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">condensed milk</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#MeatAndMeatProducts">
-    <rdfs:label xml:lang="en">Meat and meat products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Corn">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">corn</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#MilkAndMilkProducts">
-    <rdfs:label xml:lang="en">Milk and milk products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Quick-frozenFruits">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables"/>
+    <rdfs:label xml:lang="en">quick-frozen fruits</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="Nuts">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Nuts</rdfs:label>
-    <rdfs:comment xml:lang="en">Peanut, hazelnut</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#VegetableNectars">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#FruitsAndVegetables"/>
+    <rdfs:label xml:lang="en">vegetable nectars</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="ChocolateAndChocolateProducts">
-    <rdfs:subClassOf rdf:resource="#Sugar,ChocolateAndRelatedProducts"/>
-    <rdfs:label xml:lang="en">Chocolate and chocolate products</rdfs:label>
-    <rdfs:comment xml:lang="en">Chocolate spread, cooking chocolate, fruit and nut chocolate, chocolate covered caramels, truffles, Creme eggs</rdfs:comment>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Chocolate">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">Chocolate</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="PorkOffal">
-    <rdfs:subClassOf rdf:resource="#MeatAndMeatProducts"/>
-    <rdfs:label xml:lang="en">Pork offal</rdfs:label>
-    <rdfs:comment xml:lang="en">Liver</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="PastaAndNoodles">
-    <rdfs:subClassOf rdf:resource="#GrainsAndGrainProducts"/>
-    <rdfs:label xml:lang="en">Pasta and noodles</rdfs:label>
-    <rdfs:comment xml:lang="en"> </rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="RestructuredFishAndFishAnalogues">
-    <rdfs:subClassOf rdf:resource="#FishAndFishProducts"/>
-    <rdfs:label xml:lang="en">Restructured fish and fish analogues</rdfs:label>
-    <rdfs:comment xml:lang="en">Reformed scampi, crabsticks</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Pulses,Seeds,Kernals,NutsAndProducts">
-    <rdfs:label xml:lang="en">Pulses, seeds, kernals, nuts and products</rdfs:label>
+  <owl:Class rdf:about="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#AnimalProduce">
+    <rdfs:subClassOf rdf:resource="http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#Food"/>
+    <rdfs:label xml:lang="en">animal produce</rdfs:label>
   </owl:Class>
 </rdf:RDF>

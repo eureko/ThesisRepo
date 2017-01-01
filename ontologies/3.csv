@@ -1,18 +1,58 @@
-#BBC Food Ontology by BBC. The Food Ontology is a simple lightweight ontology for publishing data about recipes, including the foods they are made from and the foods they create as well as the diets, menus, seasons, courses and occasions they may be suitable for. Whilst it originates in a specific BBC use case, the Food Ontology should be applicable to a wide range of recipe data publishing across the web.
-Collection 
-course 
-Cuisine
-Diet
-Food
-Ingredient
-IngredientList
-Menu
-Method
-Occasion
-Recipe
+#BBC Food Ontology. Available online, http://www.bbc.co.uk/ontologies/fo
+Person
+Creative Work
 Season
-ShoppingCategory
-Stage
-StageSequence
-Step
+News Service
+Live Event Page
+Course
+Web Document
+Diet
+Document
+Group
 Technique
+Format
+Platform
+Creative Work Graph
+Travel Incident
+Audience
+Thing Graph
+Online E-commerce Account
+Recipe
+Organization
+Menu
+Online Chat Account
+Label Property
+Category
+Thumbnail Type
+Live Coverage
+News Item
+Blog Post
+Collection
+Episode
+Image
+Ingredient
+Step
+Agent
+Online Gaming Account
+Weather Alert
+Personal Profile Document
+Clip
+Thumbnail
+Web Document Category
+Product
+Graph
+Shopping Category
+Stage
+Project
+Commentary
+Stage Sequence
+Ingredient List
+Dataset
+Food
+Online Account
+Occasion
+Cuisine
+Transition Ontology
+Method
+Ontology
+Programme

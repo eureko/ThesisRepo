@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.Vector;
 
 import edu.cmu.lti.jawjaw.pobj.POS;
 import edu.cmu.lti.lexical_db.ILexicalDatabase;
@@ -19,6 +20,7 @@ import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
 import edu.cmu.lti.ws4j.util.DepthFinder;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
+import edu.smu.tspell.wordnet.NounSynset;
 import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
@@ -30,7 +32,7 @@ public class LinguisticMatcher
 	{
 		System.setProperty("wordnet.database.dir", "C:\\Program Files (x86)\\WordNet\\2.1\\dict");
 	}
-	WordNetDatabase wsdatabase = WordNetDatabase.getFileInstance(); 
+	static WordNetDatabase wsdatabase = WordNetDatabase.getFileInstance(); 
 	
 	TreeMap<String, String> srcMap = new TreeMap<String, String>();
 	TreeMap<String, String> dstMap = new TreeMap<String, String>();
@@ -102,6 +104,10 @@ public class LinguisticMatcher
 		 
 		
 		//System.out.println("****" + linguisticMatching("food", "butter"));
+		 
+		 System.out.println("****************************");
+		 
+		 System.out.println(isHyponymOf("breakfast food", "food"));
 		
 	}
 	
@@ -285,4 +291,32 @@ public class LinguisticMatcher
 	{
 		return ((List<Concept>)db.getAllConcepts(s, "n")).size();
 	}
+	
+	static boolean isHyponymOf(String src, String dst)
+	{
+		Vector<String> src_words = new Vector<String>();
+		
+		Synset[] synsets = wsdatabase.getSynsets(src);
+		
+		for (Synset s:synsets)
+		{
+			Synset[] hypernyms = ((NounSynset)s).getHypernyms();
+			for (Synset hyp:hypernyms)
+			{
+				String[] wordsForms = hyp.getWordForms();
+				
+				for (String w:wordsForms)
+					src_words.add(w);
+			}
+		}
+		
+		for (String s:src_words)
+			System.out.println(s);
+		
+		if (src_words.contains(dst))
+			return true;
+		else
+			return false;
+		
+	  }
 }

@@ -1,77 +1,207 @@
-#National Cancer Institute Thesaurus by the American National Institutes of Health (NIH): The NCI Thesaurus is a reference terminology and biomedical ontology used in NCI systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities. 
-Food
-Food Product
-Acer saccharum Sap
-Applesauce
-Beef
-Beverage
-Brown Rice
-Caviar
-Chocolate
-Corn Syrup
-Cottonseed Meal
-Cumin
-Dairy Product
-Dietary Fish
-Drink
-Egg White
-Egg Yolk
-Egg Poultry
-Enriched Food
-Food Oil
-Fortified Food
-Frog Leg
-Fruit
-Vegetable
-Garden Snail
-Gelatin
-Golden Raisin
-Honey
-Infant Formula
-Juice
-Lamb
-Liver
-Mutton
-Mycoprotein
-Organic Food
-Pastry
-Pheasant
-Popcor
+#National Cancer Institute Thesaurus. Available online, https://ncit.nci.nih.gov/ncitbrowser/
+Corn Oil
+Scallop
 Pork
+Chickpea
+Liquor
+Perch
+Brown Sugar
+Cherry Juice
+Bean
+Anchovy
+Coconut Oil
+Flounder
+Sage Tea
 Poultry
-Salt Substitute
-Sea Salt
-Shellfish
-Sugar
+Shrimp
+Wine Cooler
+Corn Syrup
+Tuna
+Red Tomato Juice
+Beer
+Nut Oil
+Eastern Oyster
+Parsley
+Lobster
+Shark
+Green Bell Pepper
+Fortified Food
+Ginger Rhizome
+Raisin
 Sunflower Seed
+Turnip
+Beef Liver
+Sesame Oil
+Salmon
+Soybean Oil
+Sardine
+Fruit and Vegetable
+Dairy Product
+Fennel
+Sea Salt
+White Fish
+Cauliflower
+Mycoprotein
+Bell Pepper
+Applesauce
+Milk
+Honey
+Collard Greens
+Chocolate
+Mackerel
+Peanut
+Sweet Potato
+Egg White
+Apple Juice
+Popcorn
+Squid Boiled
+Carrot
+Grapefruit Juice
+Processed Meat
+Maple Syrup
+Butter
+Lima Bean
+Crab
+Cucumber
+Lime Juice
+Fowl
+Safflower Oil
+White Carrot
+Fruit Juice
+Asparagus
+Peppers
+Fava Bean
+Turkey Poultry
+Herring
+Beet
+Turnip Greens
 Table Salt
-Veal
+Abalone
+Zucchini
+Yam
 Venison
-Wheat Gluten
+Enriched Food
+Black-Eyed Pea
+Alfalfa Sprout
+Hot Pepper
+Limpet
+Tomato-Soy Juice
+Jalapeno Pepper
+Drink
+Hydrogenated Palm Oil
+Trout
+Nonstarchy Vegetable
+Infant Formula
+Swordfish
+Lamb
+Pheasant
+Celeriac
+Kidney Bean
+Herbal Tea
+Bean Sprout
+Raw Sugar
+Maize
+Chicken Liver
+Cuttlefish
+Green Leafy Vegetable
+Mussel
+Swiss Chard
 Whey
-Food Component
-Artificial Sweetener
-Acesulfame
-Acesulfame Potassium
-Alitame
-Alitame Anhydrous
-Aspartame
-Betamipron
-Calcium Cyclamate
-Calcium Cyclamate Anhydrous
-Cyclamic Acid
-High Fructose Corn Syrup
-Lactitol
-Lactitol Monohydrate
-Maltitol
-Melizame
-Neotame
-Polydextrose
-Potassium Saccharin
-Saccharin
-Saccharin Calcium
-Saccharin Sodium Anhydrous
-Saccharin Sodium Dihydrate
-Sodium Cyclamate
-Sucralose
-Xylitol
+Celery
+Maize Invert Sugar
+Purple Grape Juice
+Death Cap
+Citrus Juice
+Potato
+Snail
+Oat Biscuit
+Wheat Gluten
+Sake
+Mutton
+Rhubarb
+Soybean
+Gelatin
+Watercress
+Pea
+Wine
+Oryza
+Juice
+Catfish
+Pomegranate Juice
+Cottonseed Meal
+Frog Leg
+Egg Poultry
+Beef Cooked
+Squirting Cucumber
+Crustacean
+Onion
+Carrot Juice
+Meat
+Sugar
+Mung Bean
+Leek
+Red Snapper
+Codfish
+Fish Vertebrates
+Broccoli
+Lettuce
+Green Vegetable
+Brassica Vegetable
+Orange Juice
+Poppy Seed Oil
+Manuka Honey
+Pinto Bean
+Mustard Greens
+Canola Oil
+Pimento
+Oyster
+Beef
+Tangerine Tomato Juice
+Goat Milk
+Chile Pepper
+Salt Substitute
+Beverage
+Lemon Juice
+Astacus fluviatilis
+Red Bell Pepper
+Squid
+Olive Oil
+Spinach
+Celery Extract
+Okra
+Green Bean
+Egg Yolk
+Hydrogenated Soybean Oil
+Dandelion Honey
+Rape Honey
+Liver Food
+Brussels Sprout
+Veal
+Alcoholic Beverage
+Food
+Shiitake Mushroom
+Squid Raw
+Cumin
+Shellfish
+Pumpkin
+White Wine
+Duck
+Sunflower Oil
+Wheatgrass Juice
+Radish
+Beef Less Cooked
+Sunflower Honey
+Pastry
+Caviar
+Squash
+Snow Pea
+Clam
+Organic Food
+Cruciferous Vegetable
+Buttermilk
+Mushroom
+Food Oil
+Acai Berry Juice
+Peanut Oil
+Taro
+Cabbage

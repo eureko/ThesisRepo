@@ -74,11 +74,17 @@ public class Aligner
 	static final String[] singularizerStoWordList = {"pasta", "sangria", "ricotta", "focaccia"};
 	static final Vector<String> singularizedStopWordListObj = new Vector<String>();
 	
-	
+	String measuresFile;
+	String outputfileName;
 	
 	public static void main(String[] args) {
 		
 		System.out.println(getAverageDepth("Canned fish"));
+	}
+	
+	public Aligner (String measuresFile, String fileName)
+	{
+		this(1, 0.5, 0.4,  measuresFile, fileName);
 	}
 	
 	public Aligner(double eqv_t, double hyp1_t, double dsj_t, String measuresFile, String fileName) 
@@ -87,16 +93,23 @@ public class Aligner
 		this.hyp1_t = hyp1_t;
 		this.dsj_t = dsj_t;
 		
+		this.measuresFile = measuresFile;
+		this.outputfileName = fileName;
+		
 		for (int i = 0; i < singularizerStoWordList.length; i++)
 			singularizedStopWordListObj.add(singularizerStoWordList[i]);
 		
 		
+	}
+	
+	public void startAligning()
+	{
 		String line = "";
 		try
 		{
 			System.out.println("Starting alignment...");
 			BufferedReader file_buffer = new BufferedReader(new FileReader(measuresFile));
-			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(fileName));
+			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(outputfileName));
 			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,exp,ground\n");
 		    
 			

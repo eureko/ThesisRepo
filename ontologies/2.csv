@@ -1,50 +1,898 @@
-#AGROVOC Multilingual agricultural thesaurus, by AIMS Advisory Board: AGROVOC is a controlled vocabulary covering all areas of interest of the Food and Agriculture Organization (FAO) of the United Nations, including food, nutrition, agriculture, fisheries, forestry, environment etc. 
-Food technology
-Food preservation
-Food processing
-Breadmaking
-Brewing
-Buttermaking
-Cheesemaking
-Fish processing
-Malting
-minimal processing (of food)
-nutrient improvement
-food enrichment
-food fortification
-food supplementation
-Winemaking
-Products
-agricultural products
-animal products
-carcasses
-cocoons
-eggs
-fish
-Hive products
-Ivory
-Livestock products
-Meat
-Baby beef
-Beef
-Buffalo meat
-Camel meat
-Chilled meat
-Deboned meat
-DFD meat
-Game meat
-Goat meat
-Horse meat
-Lamb meat
-Meat cuts
-Mutton
-Pork
-poultry meat
-PSE meat
-Rabbit meat
-Veal
+#AGROVOC Multilingual agricultural thesaurus. Available online, http://aims.fao.org/vestregistry/vocabularies/agrovoc-multilingual-agricultural-thesaurus
+white wines
+carambola
+raw milk
+fish fillets
+fast food
+turpentine
+taro
+caraway
+glandless cotton
+leaf meal
+meat substitutes
+stouts
+herbal teas
+kefir
+sweet corn
+oil mill byproducts
+tallows
+olives
+temperate fruits
+sugarcane byproducts
+canes and rattans
+snuff
+rosemary
+poles
+cheese whey
+drumsticks
+fishery products
+sweet peppers
+cauliflowers
+carboxymethylcellulose
+paper
+kohlrabi
+coconut milk
+human milk
+corn starch
+hay
+beef
+rayon
+cut flowers
+concentrates
+olive oil
+cereals
 milk
-artificial products
-byproducts
-Fat products
+cellophane
+buffalo milk
+adzuki beans
+cereal byproducts
+genetically modified foods
+Jerusalem artichokes
 feeds
+dried vegetables
+goose meat
+processed cheese
+silage
+soy milk
+leaf protein concentrate
+cherry tomatoes
+egg yolk
+chinese cabbages
+jojoba
+hydrolyzed proteins
+veneer logs
+pelleted feeds
+protein concentrates
+copals
+soft shelled eggs
+peaches
+perry
+fennel
+cashews
+mulberries
+joints (meat)
+soyfoods
+branchwood
+paperboard
+goat cheese
+soups
+minced fish
+wood flour
+sunflower meal
+red currants
+turnips
+propolis
+vegetable extracts
+bakery products
+animal products
+orangequats
+gin (beverage)
+arak
+lac
+low calorie foods
+hive products
+textured proteins
+tapioca
+lamb meat
+desiccated coconut
+copra meal
+chamomile
+jelly jams
+tomatoes
+batters
+gums
+venison
+pearls
+kaki
+sucrose polyester
+jellied meat
+dewberries
+fat products
+abattoir byproducts
+grain
+blackberries
+cardoons
+duck meat
+furs
+pepper
+street foods
+complete feeds
+buttermilk
+sesame oil
+PSE meat
+smoked fish
+whey
+mung beans
+Japanese bunching onions
+rapeseed oil
+horse meat
+gum resins
+carcass composition
+rice husks
+soybean products
+cherimoyas
+mine timber
+bioproducts
+processed products
+royal jelly
+butter
+edible fungi
+asparagus beans
+spruce gum
+viscose
+parsnips
+pea flour
+canned fish
+puff paste
+tropical fruits
+jellied milk
+limequats
+heartwood
+hams
+wood products
+taro flour
+essential oils
+confectionery
+white currants
+meat pastes
+winter squashes
+agricultural products
+chaff
+faba beans
+feed roots
+cheese substitutes
+broccoli
+cork
+fresh-cut produce
+pummelos
+cardamoms
+livestock feed
+pickles
+kola nuts
+lemons
+tangors
+sour cherries
+argan oil
+shea butter
+lucerne meal
+pyroxylin
+chicory
+bone meal
+rose hips
+apitong
+lees
+mace
+mead
+vodka
+citrons
+plywood
+stone fruits
+sugar byproducts
+sawnwood
+sago
+milling byproducts
+latex
+fish oils
+black currants
+middlings
+cowpeas
+oats
+coprecipitates
+cereal protein
+summer squash
+oil products
+quarters
+low fat foods
+snack foods
+starch products
+linseed oil
+baby beef
+construction paper
+frog legs
+poppy seed
+amyris oil
+biscuits
+processed animal products
+dammars
+groundnut oil
+champagne and sparkling wines
+niger seed
+mechanical pulp
+rye flour
+health foods
+leather
+cereal flours
+cow milk
+thyme
+imitation cream
+juvenile wood
+hard wheat
+popcorn
+arrowroot
+sweet oranges
+legumes
+lucuma
+colostrum
+highbush blueberries
+oilseed protein
+oilseeds
+basmati rice
+fishery byproducts
+vegetable juices
+spaghetti
+cedarwood oil
+laminated wood
+fish
+sterilized milk
+plant oils
+pome fruits
+infant foods
+anise
+miso
+dessert grapes
+fruit vegetables
+phycocolloids
+brussels sprouts
+acorns
+whale oil
+almonds
+deboned meat
+starea
+juniper
+green feed
+rhubarb
+beverages
+pasta
+beers
+feed meals
+maple syrup
+nut products
+softwood
+jack fruit
+ales
+salads
+vegetable legumes
+gooseberries
+roundwood
+fish products
+sausages
+cocoons
+rice polishings
+apple juice
+cooking fats
+groundnuts
+cellulose products
+perfume oils
+aromatized wines
+coarse grains
+cigars
+coconuts
+bamboo shoots
+ciders
+chervil
+artificial products
+canned vegetables
+ewe cheese
+waste paper
+bulgur
+walnuts
+walking sticks
+quinoa
+brandies
+skim milk
+fish meal
+ginger
+chives
+acidophilus milk
+cakes
+coffee
+leaf protein
+plant products
+offal
+chemical pulp
+almond oil
+palm kernel oil
+frozen fruits
+fruit musts
+sides
+sugar confectionery
+cocoa powder
+desiccated fodders
+dates
+sweet potatoes
+grain feed
+mare milk
+oilseed cakes
+rapeseed
+protan jelly
+maize
+sea cucumbers
+safflower oil
+lagers
+grape must
+ivory
+vanilla (spice)
+salsify
+longans
+dill
+composite board
+instant foods
+wine grapes
+flavoured milk
+seaweed products
+potato flour
+sweetbreads
+cottonseed meal
+paper felt
+cornflakes
+pet foods
+vinasse
+egg products
+squids
+dried skim milk
+loquats
+celluloid
+fat substitutes
+hazelnuts
+hydroxypropyl cellulose
+palm hearts
+malt
+plantains
+products
+cigarettes
+sunflower seed
+fermented foods
+wood chips
+cranberries
+celery
+smoked meat
+meat meal
+sandarac
+gum tragacanth
+robusta coffee
+oregano
+logs
+deadwood
+mangosteen
+animal protein
+textiles
+honeycomb extracts
+hides and skins
+sponges
+fermented products
+kales
+mycoprotein
+structural timber
+freeze dried products
+pumpkins
+dietetic foods
+triticales (product)
+malting barley
+grain legumes
+castor beans
+fibre pulp
+vegetable purees
+squashes
+jaggery
+casings
+passion fruits
+vermouth
+balm
+dent maize
+orange juice
+breakfast cereals
+minced meat
+compound feeds
+dehydrated feeds
+cooking oils
+prepared foods
+rye
+safou (fruit)
+chillies
+aubergines
+soft cheese
+pulp
+spinach beet
+honey
+noodles
+pineapples
+out of season products
+arabica coffee
+nuts
+processed plant products
+brewers grains
+grapefruits
+mandarins
+sawdust
+cognac
+cream cheese
+soft drinks
+cottonseed
+potato products
+shea nuts
+wood wool
+liquid feeds
+strawberries
+caseinates
+broken rice
+protein products
+loins
+ghee
+sage
+coffee beans
+coffee whiteners
+nutmegs
+fruit juices
+jams
+coca
+milk byproducts
+hydroxypropyl methylcellulose
+backfat
+pomegranates
+gum arabic
+canned fruits
+limes
+livestock products
+rums
+improved wood
+weaning feeds
+chewing tobacco
+sweet cherries
+citrus fruits
+cinnamon
+deep frozen products
+palm oils
+taioba
+soybean oil
+sugarbeet juice
+endives
+whey protein
+xanthan gum
+bergamot orange
+cold rice
+frozen products
+cucumbers
+sawlogs
+spirits
+rice
+rapeseed meal
+malt substitutes
+beet pulp
+mechanically deboned meat
+waxy maize
+fish protein concentrate
+bacon
+rubber
+wood extracts
+papayas
+egg white
+guar gum
+tung oil
+macadamia nuts
+fruit products
+soup mixes
+feather meal
+tarragon
+soybean meal
+sesame
+fortified wines
+port wine
+caviar substitutes
+groundnut meal
+flours
+fruit syrups
+rabbit meat
+linseed
+nitrocellulose
+pulpwood
+bulbous vegetables
+tea substitutes
+feeds of animal origin
+refined sugar
+doughs
+forage
+kelp
+pasteurized milk
+bagasse
+lima beans
+linseed cake
+non food products
+lowbush blueberries
+milk fat
+gari
+soft fruits
+dried products
+sorghum grain
+shellac
+meat emulsions
+beetroot
+cane sugar
+feed cereals
+saffron
+bark products
+hardwood
+withies
+kraft paper
+cellulose acetate
+single cell protein
+cocoa products
+brewery byproducts
+natural fabrics
+cultured cream
+game meat
+soft wheat
+canned meat
+kinos
+irradiated foods
+reconstituted milk
+homogenized milk
+congusta coffee
+African bitter yam
+soft corn
+whiskies
+chocolate
+bean sprouts
+pearl barley
+lavender oil
+alcoholic beverages
+cottonseed oil
+kiwifruits
+semipreserved foods
+fresh products
+beeswax
+meat extracts
+opium
+wood pulp
+grape juice
+soybean flour
+DFD meat
+cuttlefish
+tobacco seed
+root vegetables
+semolina
+fillets
+pork
+new products
+sunflower oil
+octopuses
+watermelons
+bran
+lard
+reaction wood
+soy protein
+tangelos
+savory
+fish pastes
+rambutans
+blood protein concentrate
+compotes
+sugarbeet
+chilled meat
+garlic
+liberica coffee
+desserts
+fruits
+wheat germ
+tangerines
+soybeans
+peas
+liquid milk
+asparagus spears
+tea
+flint maize
+dried milk
+copaiba
+icecream
+surimi
+sugarbeet byproducts
+rose wines
+blueberries
+modified starches
+coffee pulp
+cucurbit fruits
+dissolving pulp
+methyl cellulose
+oleoresins
+wood residues
+cheese
+chickpeas
+turmeric
+Finger millet
+cabbages
+calamondins
+semichemical pulp
+instant coffee
+gutta-percha
+cereal germs
+mutton
+mother of pearl
+bottled products
+veal
+kidney beans
+tempeh
+coconut water
+wood panels
+cultured milk
+candied fruits
+radishes
+charcoal
+tobacco
+perishable products
+sago flour
+handle stocks
+quinces
+wheat flour
+beans
+newsprint
+potatoes
+clementines
+protein isolates
+palm sugar
+stemwood
+spinach
+brazil nuts
+cocoa beans
+raisins
+animal fats
+chewing gum
+apricots
+vegetables
+mastic resin
+mint
+milk replacers
+vegetable products
+simulated foods
+particle boards
+sherry
+stimulants
+sleepers
+synthetic fibres
+christmas trees
+watercress
+fibreboards
+bushmeat
+reconstituted foods
+Canada balsam
+coriander
+cocoa butter
+cumin
+canned products
+parsley
+cloves
+milk protein
+smoking tobacco
+syrup (for bee feeding)
+rice value added product
+blood meal
+shoulders
+bananas
+yams
+condensed milk
+cut foliage
+roughage
+onions
+basil
+tofu
+vegetable pulps
+byproducts
+haylage
+mustard oil
+urd
+intermediate moisture foods
+corned beef
+rice cake
+potato starch
+pistachios
+dried fish
+frozen foods
+gelatin
+take out foods
+coconut oil
+figs
+fish extracts
+evaporated milk
+out of season fruits
+gluten feed
+betel
+marrows
+coffee substitutes
+peanut butter
+veneers
+lychees
+legs (meat)
+stem vegetables
+noncereal flours
+maize germ
+forest products
+tanning agents
+ewe milk
+pecans
+inflorescence vegetables
+rice flour
+bread
+camel meat
+copra
+plant fats
+suet
+animal meals
+camel milk
+macaroni
+white sugar
+sugarcane
+bamboos
+plant protein
+resins
+wheats
+out of season vegetables
+value added product
+cured meat
+wood
+celeriac
+salted fish
+uht milk
+grapes
+cereal products
+prunes
+feed crucifers
+meat products
+seville oranges
+buckwheat flour
+corn flour
+refrigerated foods
+medicated feeds
+carrots
+novel foods
+meat
+carcasses
+soy sauce
+frozen vegetables
+garri
+quarg
+oat flour
+akee
+carobs
+nectarines
+leeks
+guavas
+carbonated beverages
+buckwheat
+melons
+cocoa husks
+catjang
+mate
+chicken meat
+horseradish
+muskmelons
+rosin
+satsumas
+palm kernels
+cream
+frozen fish
+steaks
+shallots
+corn cob mix
+mangolds
+gherkins
+millets
+soft maize
+chestnuts
+hard cheese
+pseudocereals
+sweet potato flour
+yam flour
+blockboard
+ornamental shells
+pigeon peas
+lettuces
+leaf vegetables
+palm kernel cake
+durians
+okras
+caviar
+shell-less eggs
+whole crop silage
+wines
+frozen meat
+frankincense
+yoghurt
+red wines
+avocados
+skyr
+chops
+oatmeal
+spices
+meat byproducts
+butter oil
+fruit purees
+maize oil
+castor oil
+sugarcane juice
+foods
+locust bean gum
+fruit pulps
+pears
+curd
+citranges
+cucurbit vegetables
+fruit leathers
+feed grasses
+meat cuts
+goat meat
+raw sugar
+cassava
+globe artichokes
+buffalo meat
+sugar
+marmalades
+paprika
+sapwood
+jasmine oil
+collodion
+eggs
+lentils
+benzoin resin
+apples
+feed legumes
+liqueurs
+raspberries
+safflower seed
+poultry meat
+ethyl cellulose
+roes
+turkey meat
+milk substitutes
+peel
+milk products
+fuelwood
+extract wood
+stored products
+horse gram
+cherries
+dried fruits
+isinglass
+nonwood forest products
+allspice
+seafoods
+recombined products
+whole milk
+illegally derived forest products
+plums
+hyssop
+goat milk
+geotextiles
+dried whey
+tall oil
+molasses
+shortening
+mangoes
+dried meat
+chickpea flour
+barley
+beet sugar
+organic foods
+rutabagas
+bay laurel
+cocoa beverages
+pineapple juice
+processed foods
+chicle

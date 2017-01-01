@@ -4,13 +4,13 @@ package it.unina.thesisrepo.matchers;
 public class Alignment
 {
 	
-	String src;
-	String dst;
-	double measures[];
-	String result;
+	public String src;
+	public String dst;
+	public double measures[];
+	public String result;
 	String ground;
 	
-	Alignment(String src, String dst, double[] measures, String result)
+	public Alignment(String src, String dst, double[] measures, String result)
 	{
 		this.src = src;
 		this.dst = dst;

@@ -2,7 +2,9 @@ package it.unina.thesisrepo.matchers;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Vector;
@@ -21,16 +23,15 @@ public class SemanticallyGroundedAligner
 	OntModel model;
 	HashSet<Alignment> linguistic_alignments = new HashSet<Alignment>();
 	HashSet<Alignment> sem_gounded_alignments = new HashSet<Alignment>();
+	HashSet<Alignment> total_alignments = new HashSet<Alignment>();
 	
 	public static void main(String[] args) {
 		
 		try
 		{
-			SemanticallyGroundedAligner sem_alig = new SemanticallyGroundedAligner("./ontologies/8.owl", "./alignments/8.alignment");
+			SemanticallyGroundedAligner sem_alig = new SemanticallyGroundedAligner(null, "./alignments/8.alignment");
 			sem_alig.inferAlphaConsequences();
 			sem_alig.visualizeSet();
-			
-			
 		}
 		catch(IOException ioe)
 		{
@@ -39,13 +40,14 @@ public class SemanticallyGroundedAligner
 		
 	}
 	
-	public SemanticallyGroundedAligner(String srcOntology, String alignmentFile) throws IOException {
+	public SemanticallyGroundedAligner(OntModel model, String alignmentFile) throws IOException {
 		// TODO Auto-generated constructor stub
 		
-		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
-		model.read(srcOntology);
+		//model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
+		//model.read(srcOntology);
+		this.model = model;
 		
-		System.out.println("Handling alignment " + alignmentFile);
+		//System.out.println("Handling alignment " + alignmentFile);
 		BufferedReader file_buffer = new BufferedReader(new FileReader(alignmentFile));
 	    
 		String line;
@@ -72,6 +74,7 @@ public class SemanticallyGroundedAligner
 				
 				Alignment a = new Alignment(src, dst, measures, result);
 				linguistic_alignments.add(a);
+				total_alignments.add(a);
 				
 			}
 			catch(Exception ex)
@@ -80,8 +83,17 @@ public class SemanticallyGroundedAligner
 			}
 
 		}
+		
+		
 		file_buffer.close();
 		
+	}
+	
+	public void getStats()
+	{
+		System.out.println("Linguistic alignment set size: " + linguistic_alignments.size());
+		System.out.println("Semantically grounded alignment set size: " + sem_gounded_alignments.size());
+		System.out.println("Total alignment set size: " + total_alignments.size());
 	}
 	
 	void visualizeSet()
@@ -122,7 +134,7 @@ public class SemanticallyGroundedAligner
         return list1;
     }
 	
-	void inferAlphaConsequences()
+	public void inferAlphaConsequences()
 	{
 		ExtendedIterator<OntClass> classes = model.listNamedClasses();
 		while(classes.hasNext())
@@ -132,7 +144,7 @@ public class SemanticallyGroundedAligner
 			//System.out.println(c_label);
 			if (c.hasSuperClass())
 			{
-				ExtendedIterator<OntClass> superClasses = c.listSuperClasses(false);
+				ExtendedIterator<OntClass> superClasses = c.listSuperClasses(true);
 				while(superClasses.hasNext())
 				{
 					OntClass superClass = superClasses.next();
@@ -144,28 +156,33 @@ public class SemanticallyGroundedAligner
 					for (Alignment a:result)
 					{
 						
+						
+						
 						if (a.result.compareToIgnoreCase("eqv") == 0 || 
 							a.result.compareToIgnoreCase("hypo") == 0)
 						{
 							// inherits all alignment as hypo
-							
+							System.out.println(a.src + "<" + a.result + ">" + a.dst);
 							System.out.println(c_label + " hypo " + a.dst + " (" + supclassLabel + ")");
 							
 							Alignment sem_a  = new Alignment(c_label, a.dst, null, "hypo");
 							sem_gounded_alignments.add(sem_a);
+							total_alignments.add(sem_a);
 						}
 						else if (a.result.compareToIgnoreCase("rel") == 0)
 						{
-							System.out.println(c_label + " rel " + a.dst + " (" + supclassLabel + ")");
+							//System.out.println(c_label + " rel " + a.dst + " (" + supclassLabel + ")");
 							Alignment sem_a  = new Alignment(c_label, a.dst, null, "rel");
 							sem_gounded_alignments.add(sem_a);
+							total_alignments.add(sem_a);
 						}
-						else
+						/*else
 						{
-							System.out.println(c_label + " dsj " + a.dst + " (" + supclassLabel + ")");
+							//System.out.println(c_label + " dsj " + a.dst + " (" + supclassLabel + ")");
 							Alignment sem_a  = new Alignment(c_label, a.dst, null, "dsj");
 							sem_gounded_alignments.add(sem_a);
-						}
+							total_alignments.add(sem_a);
+						}*/
 					}
 				}
 			}
@@ -175,12 +192,20 @@ public class SemanticallyGroundedAligner
 	Vector<Alignment> findAlignmentFromSrc(String src)
 	{
 		Vector<Alignment> result = new Vector<Alignment>();
-		for (Alignment a:linguistic_alignments)
+		for (Alignment a:total_alignments)
 		{
 			if (a.src.compareToIgnoreCase(src)==0)
 				result.add(a);
 		}
-		
 		return result;
+	}
+	
+	public void writeSemanticallyGrounded(String file) throws IOException
+	{
+		BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+		writer.write("#Semantically grounded alignments\n");
+		for (Alignment a:sem_gounded_alignments)
+			writer.write(a.src + "," + a.dst + ","+ a.result + "\n");
+		writer.close();
 	}
 }

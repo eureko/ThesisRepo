@@ -1,58 +1,1039 @@
-#LIRMM Food Ontology by LIRMM Laboratoire: This ontology models the Food domain. It allows to describe ingredients and food products. Some classes are: food:Recipe, food:Food, food:FoodProduct, food:Dish, food:Ingredient, etc.
-FoodProduct|A manufactured food product null
-Dish|A dish is a food item with a recipe null
-Recipe|Recipe A recipe as a set of ingredients together with the protocol to prepare the resulting food
-Food|Anything that can be eaten: a basic Food item (e.g. salt), a Dish made with a recipe, a manufactured Food Product null
-Ingredient|An ingredient : a certain quantity of food that is part of another food Represents an ingredient line in a recipe (for a Dish) or an ingredient listed in the ingredient list (for a Product).We need to specify a quantity and unit, so the relation is not binary. So the value for the containsIngredient property of a Food object is an object of the IngredientAmount class (instead of a Food object or string directly). See http://www.w3.org/TR/swbp-n-aryRelations/ for details.
-NutritionData|Nutrition data for a food item (recipe, product or ingredient) null
-polyunsaturatedFatPer100g|Nutrition data: polyunsaturated fat (in g) per 100g (or 100ml for liquids) null
-omega6FatPer100g|Nutrition data: omega 6 fat (in g) per 100g (or 100ml for liquids) null
-carbonFootprintPer100g|Carbon foorprint (in g) per 100g (or 100ml for liquids) null
-unit|Unit for the specified quantity e.g. 1 clove of garlic -> quantity = 1, unit = clove, ingredient = garlic (or Food object for garlic)
-copperPer100g|Nutrition data: copper (in g) per 100g (or 100ml for liquids) null
-pantothenicAcidPer100g|Nutrition data: pantothenic acid (in g) per 100g (or 100ml for liquids) Note that pantothenic acid is also known as vitamin B5
-molybdenumPer100g|Nutrition data: molybdenum (in g) per 100g (or 100ml for liquids) null
-vitaminDPer100g|Nutrition data: vitamin D (in g) per 100g (or 100ml for liquids) null
-rank|Rank of an ingredient in an ingredient list ordered by quantity (e.g. food products) null
-vitaminB3Per100g|Nutrition data: vitamin B3 (in g) per 100g (or 100ml for liquids) Note that vitamin B3 is also known as vitamin Pp or niacin or nicotinic acid
-saltEquivalentPer100g|Nutrition data: equivalent in salt (in g) per 100g (or 100ml for liquids) null
-transFatPer100g|Nutrition data: trans fat (in g) per 100g (or 100ml for liquids) null
-vitaminEPer100g|Nutrition data: vitamin E (in g) per 100g (or 100ml for liquids) null
-saturatedFatPer100g|Nutrition data: saturated fat (in g) per 100g (or 100ml for liquids) null
-vitaminAPer100g|Nutrition data: vitamin A (in g) per 100g (or 100ml for liquids) null
-starchPer100g|Nutrition data: starch (in g) per 100g (or 100ml for liquids) null
-vitaminB2Per100g|Nutrition data: vitamin B2 (in g) per 100g (or 100ml for liquids) Note that vitamin B2 is also known as riboflavin
-polyolsPer100g|Nutrition data: polyols (in g) per 100g (or 100ml for liquids) null
-potassiumPer100g|Nutrition data: potassium (in g) per 100g (or 100ml for liquids) null
-vitaminCPer100g|Nutrition data: vitamin C (in g) per 100g (or 100ml for liquids) Note that vitamin C is also known as L-ascorbic acid
-vitaminKPer100g|Nutrition data: vitamin K (in g) per 100g (or 100ml for liquids) null
-iodinePer100g|Nutrition data: iodine (in g) per 100g (or 100ml for liquids) null
-sugarsPer100g|Nutrition data: sugars (in g) per 100g (or 100ml for liquids) null
-biotinPer100g|Nutrition data: biotin (in g) per 100g (or 100ml for liquids) Note that biotin is also known as vitamin H or vitamin B7
-fluoridePer100g|Nutrition data: fluoride (in g) per 100g (or 100ml for liquids) null
-omega3Fatper100g|Nutrition data: omega 3 fat (in g) per 100g (or 100ml for liquids) null
-quantity|quantity of ingredient in any unit (unit specified in unit) e.g. 1 clove of garlic -> quantity = 1, unit = clove, ingredient = garlic (or Food object for garlic)
-sodiumPer100g|Nutrition data: sodium (in g) per 100g (or 100ml for liquids) null
-vitaminB12Per100g|Nutrition data: vitamin B12 (in g) per 100g (or 100ml for liquids) null
-vitaminB9Per100g|Nutrition data: vitamin B9 (in g) per 100g (or 100ml for liquids) Note that vitamin B9 is also known as folacin or folic acid or vitamin M
-proteinsPer100g|Nutrition data: proteins (in g) per 100g (or 100ml for liquids) null
-vitaminB1Per100g|Nutrition data: vitamin B1 (in g) per 100g (or 100ml for liquids) Note that vitamin B1 is also known as thiamin
-ironPer100g|Nutrition data: ironPer100g (in g) per 100g (or 100ml for liquids) null
-cholesterolPer100g|Nutrition data: cholesterol (in g) per 100g (or 100ml for liquids) null
-monounsaturatedFatPer100g|Nutrition data: monounsaturated fat (in g) per 100g (or 100ml for liquids) null
-carbohydratesPer100g|Nutrition data: carbohydrates (in g) per 100g (or 100ml for liquids)  null
-phosphorusPer100g|Nutrition data: phosphorus (in g) per 100g (or 100ml for liquids) null
-manganesePer100g|Nutrition data: manganese (in g) per 100g (or 100ml for liquids) null
-fatPer100g|Nutrition data: fat (in g) per 100g (or 100ml for liquids) null
-fiberPer100g|Nutrition data: fiber (in g) per 100g (or 100ml for liquids) null
-calciumPer100g|Nutrition data: calcium (in g) per 100g (or 100ml for liquids) null
-magnesiumPer100g|Nutrition data: magnesium (in g) per 100g (or 100ml for liquids) null
-seleniumPer100g|Nutrition data: selenium (in g) per 100g (or 100ml for liquids) null
-zincPer100g|Nutrition data: zinc (in g) per 100g (or 100ml for liquids) null
-bicarbonatePer100g|Nutrition data: bicarbonate (in g) per 100g (or 100ml for liquids) null
-vitaminB6Per100g|Nutrition data: vitamin B6 (in g) per 100g (or 100ml for liquids) null
-silicaPer100g|Nutrition data: silica (in g) per 100g (or 100ml for liquids) null
-netWeight|net weight of a food product (g)  null
-ingredientListAsText|Text of the list of ingredients Full text of the list of ingredients of a Food item (Product or Dish). May contain more details than what can be listed in the containsIngredient properties.
-chromiumPer100g|Nutrition data: chromium (in g) per 100g (or 100ml for liquids) null
-chloridePer100g|Nutrition data: chloride (in g) per 100g (or 100ml for liquids) null
+#The Product Types Ontology. Available online, http://www.productontology.org/
+Shower
+Motorcycle
+Fuse (electrical)
+Bollard
+Sago
+Amenity
+Isinglass
+Baumkuchen
+Toast Hawaii
+Solar panel
+Bundt cake
+Bun
+Bread bowl
+Schupfnudel
+Dinner
+Automotive battery
+Roulade
+Flat panel display
+Mole (architecture)
+Sapphire
+Finance
+Rokpol
+Schwenker
+Trumpet
+Bamboo shoot
+Pest control
+Circuit breaker
+Sofrito
+Heterocyclic compound
+Screw pump
+Hammer
+Atomic battery
+Intel 4004
+Gotland Blue
+Saw
+Cruise ship
+Arany galuska
+Graph database
+Beer
+Copperhead (climbing)
+Fire extinguisher
+Fluorescent lamp
+Golf
+Mealie bread
+Parole
+Separatory funnel
+Meat hook
+Breakfast
+Kunik cheese
+Ranch dressing
+Klippan (sofa)
+Award pin
+Crystal oscillator
+Stanley Odd Jobs
+Car
+Chocolate brownie
+Torque wrench
+Property
+Butter cake
+Tantalum capacitor
+Biryani
+Rotary cutter
+Kayak
+Candle
+Bread roll
+Renault
+Motorola 68030
+Peroxy acid
+Micrometer
+Motel
+PC game
+Exocet
+Lawn mower
+ISO 14000
+Cupcake
+Maltose
+BBC Master
+File (tool)
+Cheddar cheese
+Sauerbraten
+Drawknife
+Kefalograviera
+Laser printer
+Jig grinder
+Cummerbund
+Bonchester cheese
+Spring steel
+Gas turbine
+Souvenir
+Raincoat
+Musical instrument
+Aroma compound
+DVD
+Counsel
+Calzone
+Carpet cleaning
+Spade
+Typewriter
+Hawaiian pizza
+Absorption wavemeter
+Ejection seat
+Hataki
+Lophotrochozoa
+Cloud computing
+Socket wrench
+ZN414
+Ear pick
+Light switch
+Hollandaise sauce
+Pea
+Pig scalder
+Amiga 4000
+Fruit
+Flettner airplane
+Vulcanization
+Fixed ladder
+Pippo Baudo
+Bacon and cabbage
+Tieback (geotechnical)
+Lamp (electrical component)
+Resistor
+Ceramic capacitor
+Hand fan
+Microwave oven
+Wax comb
+GMC (automobile)
+Grinding wheel
+LED lamp
+Action film
+Sushi
+Moka pot
+Laundry ball
+Printer (computing)
+Cheese
+Kuchen
+Camcorder
+Wedding dress
+Tomato paste
+Dentist
+BMX bike
+Entrenching tool
+Electrohydraulic servo valve
+Chionoecetes
+Pfeffernüsse
+Flail
+Jerusalem stone
+Footstool
+Mitre box
+Sponge (material)
+Sukhoi Su-27
+Bread
+Ice scraper
+Hedge trimmer
+Camera
+Chainsaw
+Roland MT-32
+Pentium Pro
+Dolabra
+Chisel
+Certificate of deposit
+Coffeemaker
+Chocolate chip
+Teleme cheese
+?bejna
+Hot-melt adhesive
+Spike maul
+Thermostat
+USB flash drive
+Bigeye tuna
+Sop
+Mallet
+Die grinder
+Salad
+Medieval letter tile
+RISC Single Chip
+Chèvre noir
+Audi
+Modular synthesizer
+Fixture (tool)
+Over-the-counter drug
+Hochzeitssuppe
+Cereal germ
+Silo cleaning
+Samovar
+Concrete saw
+Pipecutter
+Photoionization detector
+Hotel
+Orange juice
+Chesdale Cheese
+Necklace
+Power transfer unit
+Broaching (metalworking)
+Wedding sari
+Vacation rental
+AAAA battery
+Stapler
+Pogácsa
+Folar
+Zwieback
+Summer camp
+Yeast extract
+Home wiring
+Crowbar (tool)
+Green goddess dressing
+Audiobook
+Alloy-junction transistor
+Perfboard
+Common bream
+Mangle (machine)
+Bebinca
+Pearlescent coating
+Air filter
+Brathering
+Sewing table
+Drawdown card
+Piton
+Originality
+Beer tap
+Buttermilk
+Fish and chips
+Traffic collision avoidance system
+Black Forest cake
+Lint roller
+T-shirt
+Tricam
+Court-bouillon
+Chura kampo
+Taxicab
+Wisconsin cheese
+Hard disk drive
+Lenovo
+London
+Cardboard furniture
+Laundry
+Lime plaster
+Candy cane
+Battenberg cake
+Kirpi
+Sauce
+Brushed DC electric motor
+OLE DB
+Resilient asphalt
+Stichelhaar
+Christmas cake
+Dress shoe
+Daktyla
+Pliers
+Knife
+Mayonnaise
+Mohnnudel
+Oscypek
+Reserve wine
+IPhone
+Soup spoon
+Film capacitor
+Writing desk
+Crosscut saw
+Lawn aerator
+Middleware
+Café au lait
+Dolcelatte
+Makówki
+Grigri (climbing)
+Gold
+Brannock Device
+Data as a Service
+Traffic barrier
+Soup
+Swiss Army knife
+Relay valve
+Gum arabic
+Film
+Ham
+Application programming interface
+Smartphone
+Main course
+Pyranometer
+Sauna
+Fire hose
+Tire
+Blade
+Storey
+Hasenpfeffer
+Apple
+Kaiser blade
+Bisquick
+Portland cement
+Steel wool
+Aerated Bread Company
+Stocking
+Saloio
+JDBC driver
+Pump
+Digital camera
+Ammeter
+AAA battery
+Manna
+Gear shaper
+Duxelles
+Auction
+Kwaito cheese
+Passenger service unit
+Sickle
+Voltmeter
+Endling
+Bathroom cabinet
+Fareham red brick
+Stroboscope
+Flagstone
+OLE DB provider
+Torch
+E-book
+Gray iron
+Soft drink
+Epoxy
+Red Windsor
+Poseidon drowning detection system
+Sussex Slipcote
+Indulgence
+Solar inverter
+LCD projector
+Lumpsucker
+Sharpening jig
+Boat
+Roncal cheese
+Cloak
+Tin soldier
+Children's literature
+Pinch valve
+Opel
+Mincemeat
+Bakery mix
+Woodchipper
+Bakewell tart
+Japanese cutlery
+Platypus
+Garden furniture
+Real estate
+Monocrete construction
+Sodium hypochlorite
+Fruit preserves
+Resettable fuse
+Concrete
+Sleeping bag
+Massage
+Sugar
+Vodka
+Tour operator
+Vienna bread
+Caesium
+Bappir
+Bouillon cube
+Cream cheese
+Höfðingi
+Masonry
+Scroll saw
+Personal injury lawyer
+Pipe cleaner
+Gold leaf
+Cheesecake
+NEMA connector
+Wall chaser
+Chinese food therapy
+Relational database management system
+Black tie
+Rumtopf
+Xenoturbella
+Stereophonic sound
+Safari
+Bohrium
+Website
+Carpet
+Prästost
+Ramandolo
+Zeitgeist
+Instant coffee
+Sclerometer
+Salsa (dance)
+Caviar
+Safety barrier
+Hartford Marathon
+Maternity clothing
+French toast
+Floro PDW
+Grocery store
+Suction cup
+Management consulting
+Relational database
+Carpenter pencil
+Cranberry sauce
+AC power plugs and sockets
+ChromaFlair
+Deposit account
+Blue cheese dressing
+Web server
+Piston pump
+Keyhole saw
+Globe valve
+Easy Edges
+Wine
+Rice paper
+Tachometer
+Road bicycle
+Human resources
+Halligan bar
+Malted milk
+Lucid (Absinthe)
+Student
+Roux
+Television set
+Knödel
+Bow drill
+Fibre cement
+Stainless steel
+Hex key
+Toyota
+Gift
+Plastic surgery
+Box-spring
+Ozone monitor
+Tawashi
+Lye roll
+IMac G4
+Hackle (wig making)
+Mett
+Bidet
+Diode
+Disinfectant
+Database
+Hand compass
+Clinker brick
+Friends
+Bicycle
+Liptauer
+Mandazi
+Beer garden
+La Serena cheese
+Marketing strategy
+Yam naem
+Stuffing
+Uniform
+Patio
+Enterprise service bus
+Rivet gun
+Silica gel
+Ignition coil
+Opgezwolle
+Broadfork
+Sideboard
+Supermarket
+Armoire desk
+Hole punch
+Photoperiodism
+Apple cake
+Building
+Maredsous Abbey
+Laptop
+ADO.NET data provider
+Funeral home
+Wire brush
+Carabiner
+Eintopf
+Potting bench
+Milling cutter
+BNC connector
+Frappé coffee
+Hair dryer
+Tipi
+Video game
+Ticagrelor
+Canadian White
+Stone and muller
+Soldering iron
+Whisky
+Tartrazine
+Corsned
+Transformer
+Strap wrench
+Bass (fish)
+Putty knife
+Pocket
+Proportioning valve
+Army men
+Penny bun
+Powidl
+Dryer ball
+Pen
+Broom
+David Letterman
+Loudspeaker
+Anthotyros
+Rotary storage
+Pita
+Anamosa Limestone
+Hendl
+African red slip
+Scissors
+Brown bread
+Copra
+Riddle (tool)
+Package tour
+Lobe pump
+Coping saw
+Comparator
+Advocacy
+Eternit
+Jig (tool)
+Egg wash
+Apfelschorle
+Internet Relay Chat bot
+Cyanoacrylate
+Phenol
+Heat pump
+Snorkeling
+Trout
+Extension cord
+Side dish
+Pruning shears
+Pecorino Romano
+Lightning rod
+Zotero
+Angel food cake
+ZX Microdrive
+Samsø cheese
+Chocolate cake
+Moving company
+Acetic acid
+Silver
+Injera
+TRIAC
+Froe
+D battery
+Tent
+Pinconning cheese
+Apple II series
+Chicken wire
+Rhubarb forcer
+Vise
+Racing bicycle
+Antonov A-1
+Crinoline
+DC motor
+Bar stool
+Flash memory
+Colin McRae Rally
+Milling machine
+LR5
+Application server
+Calcium
+Elephant gun
+Incandescent light bulb
+Toast
+Drink
+Label
+Doppio
+Hook ladder
+Zest (ingredient)
+Pixar
+Spirit level
+Maid service
+Crustless bread
+Serviced apartment
+Selective inverted sink
+Ceramic tile cutter
+Knowledge management
+Lancashire cheese
+Béarnaise sauce
+Operational definition
+Outdoor fireplace
+Faldstool
+Snail
+Cheese bun
+Lion
+Router table (woodworking)
+Hair iron
+Nail polish
+Hacking knife
+Deluge gun
+Whiteboard
+Meal
+Concrete mixer
+Health maintenance organization
+Blow torch
+Pectin
+Hose (tubing)
+Redcurrant
+Stepper motor
+Curb
+Fermented bean paste
+Framing hammer
+Server (computing)
+Phosphorous acid
+Halogen lamp
+Triplestore
+Head cheese
+Trading card
+Honey
+Browser game
+Edible ink printing
+Vark
+Clothing
+IPad
+Sex worker
+Cart
+Brush hook
+Allura Red AC
+Personal protective equipment
+Zilog Z80
+Couch
+Knackwurst
+Oscillograph
+Drawing board
+Crusher
+Stock (food)
+Spezi
+Jeans
+Router (woodworking)
+Room
+Peugeot
+Fixed-wing aircraft
+Kahlúa
+Torta del Casar
+Cadillac
+Limnognathia
+Aluminium
+Long black
+Espresso
+Drill
+Spudger
+Screw gun
+Rope
+Grana Padano
+Mascarpone
+Vinaigrette
+Buccellato
+Corrections
+Telephone
+Block plane
+Metallic paint
+Tractor
+Grouper
+Thermistor
+Moral panic
+ZX Spectrum
+Electric power distribution
+Aircraft lavatory
+ZX81
+Watch
+Synthetic vision system
+Cassareep
+Saumagen
+Chocolate Crunchies
+Search engine optimization
+Ricotta
+Chicago Rockets
+Headlamp
+Book
+Lowboy
+Field-effect transistor
+Green sauce
+Garden hose
+Master data management
+Endmill
+Lodging
+Menu
+Carrot cake
+Automotive lighting
+Jigsaw (power tool)
+Viola
+Intel 8061
+Halide
+Strained yogurt
+Roof
+Solvent
+Sweet potato
+Dampfnudel
+Steel square
+Physician
+Theremin
+Angry Birds
+Flädle
+Vacuum tube
+Map
+Automobile
+Wood shingle
+Campsite
+Framing (construction)
+Dibber
+Shanklish
+Hoop skirt
+Blu-ray Disc
+Undergarment
+Honey extractor
+Off-the-grid
+Virtuoso
+Pulaski (tool)
+Toilet roll holder
+Spiced bun
+Evansdale Cheese
+Coquetdale cheese
+Streusel
+Parking lot
+Informatica
+Butterfly
+Pizza
+Kefalotyri
+Morning dress
+Broadaxe
+Post hole digger
+Bread crumbs
+Spreewald gherkins
+Nut (climbing)
+Presta valve
+Miniature wargaming
+Lebkuchen
+Bath brick
+Fixed rope
+Television
+Croglin
+Compiler
+Clothes dryer
+Aachener Printen
+Catering
+Digital single-lens reflex camera
+Dessert
+Computer monitor
+Manure spreader
+Registered Investment Advisor
+American cheese
+Gabion
+Deviled egg
+Roast goose
+Wind turbine
+Persipan
+Rubing
+Stevedore
+Commodore VIC-20
+Himbeergeist
+Heritage tourism
+Electric watch
+Maillon
+Athlon II
+Function hall
+Vapor steam cleaner
+Mouse
+Varistor
+Rasp
+Zwiebelkuchen
+Prosecutor
+Resort
+Billhook
+Carbon monoxide detector
+Submarine
+Tequeño
+Meat extract
+Zilog Z8000
+Quotation mark
+Relay
+Diamond blade
+Kilt
+Intel MCS-48
+Flugelhorn
+Hancock air whistle
+Staffordshire blue brick
+Hyundai
+Umnumzaan
+Wedding photography
+Ball-peen hammer
+Building material
+Brush
+Leibniz-Keks
+Symbion
+Reamer
+Needle-nose pliers
+Teacake
+Shovel
+Genre
+Rye bread
+DDR2 SDRAM
+Rebar
+Arsenic
+Educational film
+Sour cherry soup
+Crouton
+Arroz con pollo
+Switch
+TRS-80
+Wurstsalat
+Clarinet
+Goat cheese
+Easter bread
+Condominium
+Korovai
+Embedded system
+Antibody
+Lap desk
+Virtuoso Universal Server
+London Bridge
+Schlachteplatte
+Autogyro
+Hacksaw
+Hand saw
+Cake
+Leberkäse
+Roman concrete
+Caesar salad
+Furniture
+Inclinometer
+Burglar alarm
+Mass flow controller
+Kassler
+Potentiometer
+Cottage loaf
+Rose water
+Chevrolet
+Schweinshaxe
+Preservative
+Beaverboard
+Shut down valve
+Backsaw
+Landjäger
+Zero-turn mower
+Aspic
+Girandole
+PIC microcontroller
+Curry
+Elbrus 2000
+Precooled jet engine
+Bradawl
+Oxygen mask
+Physical vapor deposition
+BMW
+Campus board
+Laser printing
+Electromagnetic compatibility
+Paragliding
+Marshmallow
+Jaguar
+Hydraulic motor
+Volkswagen
+Position sensor
+Stollen
+Kesong puti
+Impact wrench
+Lawn
+Bromine
+Focaccia
+Punch (tool)
+Straightedge
+Data logger
+Loppers
+Asphalt
+Ingredient
+House
+Rupture disc
+Scratch stock
+Writing
+Pneumatic torque wrench
+Heat-shrink tubing
+Anchovy
+String trimmer
+Mobile phone
+Herrgårdsost
+Online game
+Ductile iron
+Pencil
+Beer bread
+Tool bit
+Slide check
+Molbo cheese
+Transistor
+Coconut milk
+Climbing harness
+Software as a service
+Bathroom
+Mouse (computing)
+Damp proofing
+null
+Barm cake
+Formal trousers
+Band knife
+Marman clamp
+Lively Laddie
+Spritzgebäck
+Bublik
+Coffee
+Grater
+Kohlwurst
+Pecorino Siciliano
+Cello
+Coupon
+Bratwurst
+Bankruptcy
+Miniature figure (gaming)
+Billiard table
+Tea set
+Banana bread
+Burin
+Monks bench
+Dairy product
+Skillion roof
+Whole wheat bread
+Magnetic amplifier
+Angle grinder
+Duckbill valve
+Pasta
+Antivirus software
+Buick
+Induction motor
+Mercedes-Benz
+Scalpel
+Jewellery
+Libro
+General Dynamics F-16 Fighting Falcon
+Clam liquor
+Sioux City Art Center
+Sulfonamide
+Soldering
+Peanut butter
+Computer
+Floorcloth
+Tia Maria
+Liverwurst
+Wheat
+Frikadeller
+Electric torque wrench
+Bread sauce
+Pitot tube
+String cheese
+Suckling pig
+Fire brick
+Toy soldier
+Wireless
+Blachindla
+Original sin
+Mechanical rectifier
+Nightstand
+Pin
+Vacuum cleaner
+Olympus C-770 Movie
+Rhubarb
+Sensor
+AC/AC converter
+Kettle
+Chip heater
+Safety valve
+Fastener
+Loan
+Mountain Locator Unit
+Climbing shoe
+Bouq Émissaire
+Horse
+Mustard (condiment)
+Academic dress
+Vegetable
+null
+Boston cream pie
+Monel
+Musk
+Wrench
+Schrader valve
+Unemployment
+Bribery
+Workforce
+Asparagus
+Dog
+File server
+Cabbage roll
+Valdeón cheese
+Energy analyser
+GammaFax
+Analog-to-digital converter
+Eel
+K-36 trailer
+Upholstery hammer
+Rectiformer
+Vehicle
+Bonox
+Balsamic vinegar
+Cadmium
+Periodical literature
+Mop
+Phosphorescence
+Tuna
+Coconut cream
+Currywurst
+Molecular marker
+Desk
+Wine color
+Ball head
+B-17 Flying Fortress: The Mighty 8th
+Pickaxe
+Lappi cheese
+Morlacco
+Writing table
+Valve oil
+Diptych
+Bed
+Accordion
+Battery (electricity)
+Workwear
+Quantitative value
+Day of week
+Warranty scope
+Payment charge specification
+Qualitative value
+Product or services some instances placeholder (DEPRECATED)
+N-ary relations (DEPRECATED)
+Price specification
+Business function
+Brand
+null
+Payment method
+License
+Delivery method
+Delivery mode parcel service
+Delivery charge specification
+null
+Opening hours specification
+Business entity type
+Individual
+Some items
+null
+null
+Location
+Product or service model
+Type and quantity node
+Warranty promise
+Location of sales or service provisioning (DEPRECATED)
+Quantitative value float
+Unit price specification
+Business entity
+Payment method credit card
+Offering
+Product or service
+Actual product or service instance (DEPRECATED)
+Quantitative value integer
