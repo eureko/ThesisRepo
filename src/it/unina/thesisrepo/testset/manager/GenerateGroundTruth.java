@@ -15,13 +15,16 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.metal.MetalLookAndFeel;
 
 public class GenerateGroundTruth 
 {
 	static TreeSet<String> current_set = new TreeSet<String>();
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
 	
-	static final String src_file = "./ontologies/11.csv";
+	static final String src_file = "./ontologies/1.csv";
 	static final String target_file = "./ontologies/target.csv";
 	
 	static JPanel mainPanel;
@@ -34,7 +37,15 @@ public class GenerateGroundTruth
 	
 	static JFrame frame;
 	
+	
 	public static void main(String[] args) {
+		
+		try {
+			UIManager.setLookAndFeel(new MetalLookAndFeel());
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		SwingUtilities.invokeLater(new Runnable() {
 		      public void run() {
 		        createGUI();
@@ -93,7 +104,7 @@ public class GenerateGroundTruth
 	{
 		
 		frame = new JFrame();
-		frame.setMinimumSize(new Dimension(640, 820));
+		//frame.setMinimumSize(new Dimension(640, 820));
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		frame.setVisible(true);

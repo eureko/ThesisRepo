@@ -17,7 +17,7 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
-public class MainClass 
+public class FrameworkMainClass 
 {
 	static final String ontoCorpusPath = "./ontologies/urls.txt/";
 	static final String targetPath = "./ontologies/target.csv";
@@ -50,16 +50,13 @@ public class MainClass
 					OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
 					model.read("./ontologies/"+index+".owl");
 					
+					// Start flattening...
 					System.out.println("Flattening ontology " + ontoName);
 					BufferedWriter file_writer = new BufferedWriter(new FileWriter("./ontologies/"+index+".csv"));
-										
 					file_writer.write("#" + ontoName + "\n");
-					
 					ExtendedIterator<OntClass> classes = model.listNamedClasses();
-					
 					while(classes.hasNext())
 						file_writer.write(classes.next().getLabel("en") + "\n");
-					
 					file_writer.close();
 					
 					// Start measuring...

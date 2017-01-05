@@ -31,6 +31,16 @@ public class Integrator
 	static final String ncicb_uri = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#";
 	static final String int_uri = "http://integrated-ontologies/";
 	
+	static final String[] uris = new String[]{"http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+		"http://aims.fao.org/aos/agrovoc#",
+		"http://www.bbc.co.uk/ontologies/creativework#",
+		"http://data.lirmm.fr/ontologies/food#",
+		"http://www.productontology.org/id#",
+		"http://www.danfood.info/eurocode#",
+		"http://www.wandinc.com/#",
+		"http://www.iso.org/iso/catalogue_ics/foodtechnology/catalogue_ics#",
+		"http://purl.obolibrary.org/obo/foodon-edit.owl#"};
+	
 	static TreeMap<String, OntClass> classTreeMap = new TreeMap<String, OntClass>(); 
 	
 	static 
@@ -45,90 +55,67 @@ public class Integrator
 		{
 			OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
 			model.setNsPrefix("integrated", int_uri);
-			model.setNsPrefix("ncicb", ncicb_uri);
 			model.setNsPrefix("target", target_uri);
+			model.setNsPrefix("ncicb", uris[0]);
+			model.setNsPrefix("agrovc", uris[1]);
+			model.setNsPrefix("bbc", uris[2]);
+			model.setNsPrefix("lirmm", uris[3]);
+			model.setNsPrefix("prod", uris[4]);
+			model.setNsPrefix("eurocode2", uris[5]);
+			model.setNsPrefix("wand", uris[6]);
+			model.setNsPrefix("iso", uris[7]);
+			model.setNsPrefix("foodon", uris[8]);
 			
 			Ontology ont = model.createOntology("http://integrated-ontologies/");
 			ont.addComment("Automatically created through Jena APis", "en");
 			
-			
-			BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/1.alignment"));
-		    
-			String line;
-			line = file_buffer.readLine(); // Read comment line
-			
-			
-			while((line = file_buffer.readLine()) != null)
+			for (int i = 1; i <= 9; i++)
 			{
-				String[] tokens = line.split(",");
-					String src = tokens[0];
-					String dst = tokens[1];
-					double[] measures = new double[10];
-					
-					try
-					{
-						measures[0] = Double.parseDouble(tokens[2]);
-						measures[1] = Double.parseDouble(tokens[3]);
-						measures[2] = Double.parseDouble(tokens[4]);
-						measures[3] = Double.parseDouble(tokens[5]);
-						measures[4] = Double.parseDouble(tokens[6]);
-						measures[5] = Double.parseDouble(tokens[7]);
-						measures[6] = Double.parseDouble(tokens[8]); // Wup
-						measures[7] = Double.parseDouble(tokens[9]);
-						measures[8] = Double.parseDouble(tokens[10]); // ExtWup
-						String result = tokens[11];
-						
-						Alignment a = new Alignment(src, dst, measures, result);
-						linguistic_alignments.add(a);
-						total_alignments.add(a);
-						
-					}
-					catch(Exception ex)
-					{
-						ex.printStackTrace();
-					}
-			}
-			file_buffer.close();
-			
-			for (Alignment a:linguistic_alignments)
-			{
+				System.out.println("******************************* Integrating " + "./alignments/"+i+".alignment");
+				BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/"+i+".alignment"));
+			    
+				String line;
+				line = file_buffer.readLine(); // Read comment line
 				
-				if (a.result.compareTo("eqv")==0)
+				while((line = file_buffer.readLine()) != null)
 				{
-					System.out.println(a.src + " " + a.result  + " " + a.dst);
-					String src_uri = ncicb_uri + capitalizeString(a.src).replace(" ", "");
-					String dst_uri = target_uri + capitalizeString(a.dst).replace("( )+", "");
-					
-					OntClass srcClass;
-					OntClass dstClass;
-					
-					if (classTreeMap.get(src_uri) != null)
-						srcClass = classTreeMap.get(src_uri);
-					else
-					{
-						srcClass = model.createClass(src_uri);
-						classTreeMap.put(src_uri, srcClass);
-					}
-					
-					if (classTreeMap.get(dst_uri) != null)
-						dstClass = classTreeMap.get(dst_uri);
-					else
-					{
-						dstClass = model.createClass(dst_uri);
-						classTreeMap.put(dst_uri, dstClass);
-					}
-					
-					srcClass.addEquivalentClass(dstClass);
-					
+						try
+						{
+							String[] tokens = line.split(",");
+							String src = tokens[0];
+							String dst = tokens[1];
+							double[] measures = new double[10];
+							
+							measures[0] = Double.parseDouble(tokens[2]);
+							measures[1] = Double.parseDouble(tokens[3]);
+							measures[2] = Double.parseDouble(tokens[4]);
+							measures[3] = Double.parseDouble(tokens[5]);
+							measures[4] = Double.parseDouble(tokens[6]);
+							measures[5] = Double.parseDouble(tokens[7]);
+							measures[6] = Double.parseDouble(tokens[8]); // Wup
+							measures[7] = Double.parseDouble(tokens[9]);
+							measures[8] = Double.parseDouble(tokens[10]); // ExtWup
+							String result = tokens[11];
+							
+							Alignment a = new Alignment(src, dst, measures, result);
+							linguistic_alignments.add(a);
+							total_alignments.add(a);
+							
+						}
+						catch(Exception ex)
+						{
+							ex.printStackTrace();
+						}
 				}
-				//else if (a.result.compareTo("hypo")==0 && ((a.measures[6] > 0.9 && a.measures[6] < 1) || (a.measures[8] > 0.9 && a.measures[8] < 1.0)))
-				else if (a.result.compareTo("hypo")==0)
+				file_buffer.close();
+				
+				for (Alignment a:linguistic_alignments)
 				{
-					if (a.src.contains(a.dst) && a.src.endsWith(a.dst))
+					if (a.result.compareTo("eqv")==0)
 					{
 						System.out.println(a.src + " " + a.result  + " " + a.dst);
-						String src_uri = ncicb_uri + capitalizeString(a.src).replace(" ", "");
-						String dst_uri = target_uri + capitalizeString(a.dst).replaceAll("\\s+","").replace("-", "");
+						String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
+						String dst_uri = target_uri + capitalizeString(a.dst).replace("( )+", "");
 						
 						OntClass srcClass;
 						OntClass dstClass;
@@ -149,14 +136,16 @@ public class Integrator
 							classTreeMap.put(dst_uri, dstClass);
 						}
 						
-						dstClass.addSubClass(srcClass);
+						srcClass.addEquivalentClass(dstClass);
+						
 					}
-					else
+					//else if (a.result.compareTo("hypo")==0 && ((a.measures[6] > 0.9 && a.measures[6] < 1) || (a.measures[8] > 0.9 && a.measures[8] < 1.0)))
+					else if (a.result.compareTo("hypo")==0)
 					{
-						if (isHyponymOf(a.src, a.dst))
+						if (a.src.contains(a.dst) && a.src.endsWith(a.dst))
 						{
 							System.out.println(a.src + " " + a.result  + " " + a.dst);
-							String src_uri = ncicb_uri + capitalizeString(a.src).replace(" ", "");
+							String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
 							String dst_uri = target_uri + capitalizeString(a.dst).replaceAll("\\s+","").replace("-", "");
 							
 							OntClass srcClass;
@@ -180,8 +169,37 @@ public class Integrator
 							
 							dstClass.addSubClass(srcClass);
 						}
+						else
+						{
+							if (isHyponymOf(a.src, a.dst))
+							{
+								System.out.println(a.src + " " + a.result  + " " + a.dst);
+								String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
+								String dst_uri = target_uri + capitalizeString(a.dst).replaceAll("\\s+","").replace("-", "");
+								
+								OntClass srcClass;
+								OntClass dstClass;
+								
+								if (classTreeMap.get(src_uri) != null)
+									srcClass = classTreeMap.get(src_uri);
+								else
+								{
+									srcClass = model.createClass(src_uri);
+									classTreeMap.put(src_uri, srcClass);
+								}
+								
+								if (classTreeMap.get(dst_uri) != null)
+									dstClass = classTreeMap.get(dst_uri);
+								else
+								{
+									dstClass = model.createClass(dst_uri);
+									classTreeMap.put(dst_uri, dstClass);
+								}
+								
+								dstClass.addSubClass(srcClass);
+							}
+						}
 					}
-					
 				}
 			}
 			
@@ -210,14 +228,11 @@ public class Integrator
 	
 	static boolean isHyponymOf(String src, String dst)
 	{
-		
 		Vector<String> src_words = new Vector<String>();
-		
 		Synset[] synsets = wsdatabase.getSynsets(src, SynsetType.NOUN);
 		
 		for (Synset s:synsets)
 		{
-			
 			Synset[] hypernyms = ((NounSynset)s).getHypernyms();
 			for (Synset hyp:hypernyms)
 			{
