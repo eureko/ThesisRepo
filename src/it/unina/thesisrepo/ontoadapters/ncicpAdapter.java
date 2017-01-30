@@ -55,6 +55,7 @@ public class ncicpAdapter
 		{
 			if (line.contains("<owl:Class rdf:about"))
 			{
+				
 				classDescBuffer.append(line + "\n");
 				while((lineint = file_buffer.readLine()) != null)
 				{

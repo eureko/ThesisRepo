@@ -24,7 +24,7 @@ public class GenerateGroundTruth
 	static TreeSet<String> current_set = new TreeSet<String>();
 	static TreeSet<String> target_terms_set = new TreeSet<String>();
 	
-	static final String src_file = "./ontologies/1.csv";
+	static final String src_file = "./ontologies/5.csv";
 	static final String target_file = "./ontologies/target.csv";
 	
 	static JPanel mainPanel;

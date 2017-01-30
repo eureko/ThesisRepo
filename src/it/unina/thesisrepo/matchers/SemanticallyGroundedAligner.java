@@ -22,7 +22,7 @@ public class SemanticallyGroundedAligner
 {
 	OntModel model;
 	HashSet<Alignment> linguistic_alignments = new HashSet<Alignment>();
-	HashSet<Alignment> sem_gounded_alignments = new HashSet<Alignment>();
+	public HashSet<Alignment> sem_gounded_alignments = new HashSet<Alignment>();
 	HashSet<Alignment> total_alignments = new HashSet<Alignment>();
 	
 	public static void main(String[] args) {
@@ -55,12 +55,14 @@ public class SemanticallyGroundedAligner
 		
 		while((line = file_buffer.readLine()) != null)
 		{
-			String[] tokens = line.split(",");
-			String src = tokens[0];
-			String dst = tokens[1];
-			double[] measures = new double[10];
+			
 			try
 			{
+				String[] tokens = line.split(",");
+				String src = tokens[0];
+				String dst = tokens[1];
+				double[] measures = new double[10];
+				
 				measures[0] = Double.parseDouble(tokens[2]);
 				measures[1] = Double.parseDouble(tokens[3]);
 				measures[2] = Double.parseDouble(tokens[4]);
@@ -127,6 +129,18 @@ public class SemanticallyGroundedAligner
         return list;
     }
 	
+	public <T> HashSet<T> difference(HashSet<T> list1, HashSet<T> list2) {
+		HashSet<T> list = new HashSet<T>();
+
+        for (T t : list1) {
+            if(!list2.contains(t)) {
+                list.add(t);
+            }
+        }
+
+        return list;
+    }
+	
 	public <T> HashSet<T> union(HashSet<T> list1, HashSet<T> list2) {
 
         list1.addAll(list2);
@@ -156,8 +170,6 @@ public class SemanticallyGroundedAligner
 					for (Alignment a:result)
 					{
 						
-						
-						
 						if (a.result.compareToIgnoreCase("eqv") == 0 || 
 							a.result.compareToIgnoreCase("hypo") == 0)
 						{
@@ -169,13 +181,13 @@ public class SemanticallyGroundedAligner
 							sem_gounded_alignments.add(sem_a);
 							total_alignments.add(sem_a);
 						}
-						else if (a.result.compareToIgnoreCase("rel") == 0)
+						/*else if (a.result.compareToIgnoreCase("rel") == 0)
 						{
 							//System.out.println(c_label + " rel " + a.dst + " (" + supclassLabel + ")");
 							Alignment sem_a  = new Alignment(c_label, a.dst, null, "rel");
 							sem_gounded_alignments.add(sem_a);
 							total_alignments.add(sem_a);
-						}
+						}*/
 						/*else
 						{
 							//System.out.println(c_label + " dsj " + a.dst + " (" + supclassLabel + ")");
@@ -194,8 +206,11 @@ public class SemanticallyGroundedAligner
 		Vector<Alignment> result = new Vector<Alignment>();
 		for (Alignment a:total_alignments)
 		{
-			if (a.src.compareToIgnoreCase(src)==0)
-				result.add(a);
+			if (a != null && a.src != null && src != null)
+			{
+				if (a.src.compareToIgnoreCase(src)==0)
+					result.add(a);
+			}
 		}
 		return result;
 	}
@@ -204,7 +219,9 @@ public class SemanticallyGroundedAligner
 	{
 		BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 		writer.write("#Semantically grounded alignments\n");
-		for (Alignment a:sem_gounded_alignments)
+		
+		HashSet<Alignment> intersection = difference(sem_gounded_alignments, linguistic_alignments);
+		for (Alignment a:intersection)
 			writer.write(a.src + "," + a.dst + ","+ a.result + "\n");
 		writer.close();
 	}

@@ -10,3 +10,8 @@ RETURN p AS shortestPath,
                 
                 
 EXTRACT(r in FILTER(s in relationships(p): s.type = 'semantic'))
+
+
+
+MATCH (src:Word { lemma:"nutrient" }),(dst:Word { lemma:"French_dressing_for_fruit_salad"}), p = (src)-[*]-(dst)
+RETURN count(p) as Num, p

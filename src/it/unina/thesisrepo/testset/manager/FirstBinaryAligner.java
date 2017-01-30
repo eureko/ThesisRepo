@@ -36,7 +36,7 @@ import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 
-public class Aligner 
+public class FirstBinaryAligner 
 {
 	static 
 	{
@@ -82,24 +82,16 @@ public class Aligner
 		System.out.println(getAverageDepth("beverage"));
 	}
 	
-	public Aligner (String measuresFile, String fileName)
-	{
-		this(1, 0.5, 0.4,  measuresFile, fileName);
-	}
-	
-	public Aligner(double eqv_t, double hyp1_t, double dsj_t, String measuresFile, String fileName) 
+	public FirstBinaryAligner(double eqv_t, double hyp1_t, String measuresFile, String fileName) 
 	{
 		this.eqv_t = eqv_t;
 		this.hyp1_t = hyp1_t;
-		this.dsj_t = dsj_t;
 		
 		this.measuresFile = measuresFile;
 		this.outputfileName = fileName;
 		
 		for (int i = 0; i < singularizerStoWordList.length; i++)
 			singularizedStopWordListObj.add(singularizerStoWordList[i]);
-		
-		
 	}
 	
 	public void startAligning()
@@ -107,10 +99,10 @@ public class Aligner
 		String line = "";
 		try
 		{
-			System.out.println("Starting alignment...");
+			//System.out.println("Starting binary alignment...");
 			BufferedReader file_buffer = new BufferedReader(new FileReader(measuresFile));
 			BufferedWriter file_buffer_writer = new BufferedWriter(new FileWriter(outputfileName));
-			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWupAvg,extWupMin,exp,ground\n");
+			file_buffer_writer.write("#Test Alignment src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,exp,ground\n");
 		    
 			
 			line = file_buffer.readLine(); // Read comment line
@@ -130,20 +122,19 @@ public class Aligner
 				double cosyno_g = Double.parseDouble(tokens[7]);
 				double wupalm = Double.parseDouble(tokens[8]);;
 				double path = Double.parseDouble(tokens[9]);
-				double extWupAvg = Double.parseDouble(tokens[10]);
-				double extWupMin = Double.parseDouble(tokens[11]);
-				String ground = tokens[12];
+				double extWup = Double.parseDouble(tokens[10]);
+				String ground = tokens[11];
 				//double extlesk = 0.0;
 				//double exthso = 0.0;
 				
-				boolean srcUnknown = (tokens[13].compareTo("unknown")==0)?true:false;
-				boolean dstUnknown = (tokens[14].compareTo("unknown")==0)?true:false;
+				boolean srcUnknown = (tokens[12].compareTo("unknown")==0)?true:false;
+				boolean dstUnknown = (tokens[13].compareTo("unknown")==0)?true:false;
 				
 				file_buffer_writer.write(src + "," + dst + "," +exactMatch + "," + levMatch + "," +
 				jaccardMatch + "," + fuzzyMatch + "," + syno_g + "," + cosyno_g + "," + wupalm + "," + path + "," +
-						extWupAvg + "," + extWupMin + ",");
+						extWup + ",");
 				
-				// Classifier decision tree
+				//First binary decision tree
 				if (exactMatch == eqv_t || syno_g == eqv_t || jaccardMatch == 1.0)
 				{
 					file_buffer_writer.write("eqv,");
@@ -154,33 +145,12 @@ public class Aligner
 						file_buffer_writer.write("unknown,");
 					else
 					{
-						if ((wupalm >= hyp1_t && wupalm < 1) || (extWupAvg >= hyp1_t && extWupAvg < 1)) // Compensate WS4J error on wupalm measure
+						if ((wupalm >= hyp1_t || extWup >= hyp1_t)) // Compensate WS4J error on wupalm measure
 						{
-							if (src.toLowerCase().contains(dst.toLowerCase()) || dst.toLowerCase().contains(src.toLowerCase()))
-							{
-								if (src.toLowerCase().contains(dst.toLowerCase()))
-									file_buffer_writer.write("hypo,");
-								else
-									file_buffer_writer.write("hyper,");
-							}
-							else
-							{
-								if ((getAverageDepth(src) >= getAverageDepth(dst)))
-								{
-									file_buffer_writer.write("hypo,");
-								}
-								else
-								{
-									file_buffer_writer.write("hyper,");
-								}
-							}
-						}
-						else if ((wupalm >= dsj_t && wupalm < hyp1_t) || (extWupMin >= dsj_t && extWupMin < hyp1_t))
-						{
-							file_buffer_writer.write("rel,");
+							file_buffer_writer.write("hypo+,");
 						}
 						else
-							file_buffer_writer.write("dsj,");
+							file_buffer_writer.write("rel-,");
 					}
 				}
 				file_buffer_writer.write(ground + "\n");

@@ -1,6 +1,8 @@
 package it.unina.thesisrepo.matchers;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -21,6 +23,12 @@ import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
+import edu.cmu.lti.lexical_db.ILexicalDatabase;
+import edu.cmu.lti.lexical_db.NictWordNet;
+import edu.cmu.lti.lexical_db.data.Concept;
+import edu.cmu.lti.ws4j.util.DepthFinder;
+import edu.cmu.lti.ws4j.util.WS4JConfiguration;
+import edu.cmu.lti.ws4j.util.DepthFinder.Depth;
 import edu.mit.jwi.Dictionary;
 import edu.mit.jwi.IDictionary;
 import edu.mit.jwi.item.IIndexWord;
@@ -39,8 +47,10 @@ public class SemanticNetwork
 	TreeMap<Integer, ISynset> synsetMap = new TreeMap<Integer, ISynset>();
 	//TreeMap<Integer, Node>
 	static Vector<String> terms = new Vector<String>();
+	static Vector<String> ext_target_terms = new Vector<String>();
+	static Vector<String> ext_input_terms = new Vector<String>();
 	
-	GraphDatabaseService graphDb;
+	static GraphDatabaseService graphDb;
 	
 	Label synsetLabel = DynamicLabel.label("Synset");;
 	Label wordLabel = DynamicLabel.label("Word");
@@ -48,10 +58,23 @@ public class SemanticNetwork
 	double sg_alpha = 0.5;
 	double sg_beta = 0.5;
 	
+	static Vector<String> inputLexicalChain = new Vector<String>();
+	static Vector<String> targetLexicalChain = new Vector<String>();
+	
+	static ILexicalDatabase db = new NictWordNet();
+	DepthFinder depthFinder = new DepthFinder(db);
+	
+	TreeMap<String, Node> targetNodeMap = new TreeMap<String, Node>();
+	TreeMap<String, Node> inputNodeMap = new TreeMap<String, Node>();
+	
+	TreeMap<String, Node> termsNodeMap = new TreeMap<String, Node>();
+		
+	
 	public static void main(String[] args) 
 	{
 		try 
 		{
+			WS4JConfiguration.getInstance().setMFS(true);
 			
 			File wordnetDir = new File(WN_DICT_FOLDER);
 			
@@ -59,11 +82,23 @@ public class SemanticNetwork
 			dictionary = new Dictionary(wordnetDir);
 			dictionary.open();
 			
-			SemanticNetwork sen = new SemanticNetwork();
+			BufferedReader file_buffer = new BufferedReader(new FileReader("./ontologies/target.csv"));
+			String line = "";
+			
+			file_buffer.readLine(); // skip the first
+			while((line = file_buffer.readLine()) != null)
+			{
+				String[] tokens = line.split("\\|");
+				//System.out.println("*" + tokens[0] + "*");
+				targetLexicalChain.add(tokens[0].toLowerCase());
+			}
+			file_buffer.close();
 			
 			
-			//for (int i = 0; i < terms.size(); i++)
-				//System.out.println(terms.get(i));
+			SemanticNetwork sen = new SemanticNetwork("./ontologies/1.csv");
+			sen.createSN("/Users/caldarola/Documents/Neo4j/test1");
+			
+			
 			
 			
 			
@@ -74,63 +109,143 @@ public class SemanticNetwork
 		}
 	}
 	
-	public SemanticNetwork() 
+	void retrieveShared()
+	{
+		System.out.println(ext_input_terms.size());
+		System.out.println(ext_target_terms.size());
+		
+		int c = 0;
+		for (String s:ext_target_terms)
+		{
+			if (ext_input_terms.contains(s))
+			{
+				Node n = termsNodeMap.get(s);
+				n.setProperty("type", "sharedWord");
+				c++;
+			}
+		}
+		
+		System.out.println(c);
+	}
+	
+	public SemanticNetwork(String inputLexicalChainPath) 
+	{
+		try
+		{
+			BufferedReader file_buffer = new BufferedReader(new FileReader(inputLexicalChainPath));
+			String line = "";
+			
+			file_buffer.readLine(); // skip the first
+			
+			while((line = file_buffer.readLine()) != null)
+			{
+				//System.out.println(tokens[0]);
+				String inputStr = line.trim().toLowerCase();
+				//System.out.println("*"+inputStr+"*");
+				if (targetLexicalChain.contains(inputStr))
+					System.out.println(">" + inputStr);
+				inputLexicalChain.add(inputStr);
+			}
+			file_buffer.close();	
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+	
+	public void createSN(String graphDB)
 	{
 		//Access Neo4J running server 
 		
-		graphDb = new GraphDatabaseFactory().newEmbeddedDatabase("/Users/caldarola/Documents/Neo4j/test");
-		registerShutdownHook(graphDb);
-		
-		System.out.println("Hook Registered");
-		
-		try ( Transaction tx = graphDb.beginTx() )
-		{
-			addTerm("food");
-			//addTerm("foodstuff");
-			System.out.println("Before commit");
-			tx.success();
-			System.out.println("After commit");
+			graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(graphDB);
+			registerShutdownHook(graphDb);
 			
-			// Read Access
-			System.out.println("Traversing the graph...");
+			System.out.println("Hook Registered");
 			
-			ResourceIterator<Node> src_iter = graphDb.findNodes(wordLabel, "lemma", "food");
-			ResourceIterator<Node> dst_iter = graphDb.findNodes(wordLabel, "lemma", "water");
-			
-			
-			while(src_iter.hasNext())
+			try ( Transaction tx = graphDb.beginTx() )
 			{
-				Node current_src = src_iter.next();
-				while(dst_iter.hasNext())
+				for (String s:inputLexicalChain)
+					addTerm(s, false); 
+				
+				for (String s:targetLexicalChain)
+					addTerm(s, true);
+				
+				
+				
+				System.out.println("Before commit");
+				tx.success();
+				System.out.println("After commit");
+				
+				/*double semantic_grade = 0.0;
+				
+				
+				for (String src:inputLexicalChain)
 				{
-					Node current_dst = dst_iter.next();
-					
-					PathFinder<WeightedPath> shortestPathFinder = GraphAlgoFactory.dijkstra(PathExpanders.allTypesAndDirections(), "w");
-					Iterable<WeightedPath> paths = shortestPathFinder.findAllPaths( current_src, current_dst );
-					
-					//System.out.println(paths);
-					Iterator<WeightedPath> iter_path = paths.iterator();
-					while(iter_path.hasNext())
+					for (String dst:targetLexicalChain)
 					{
-						WeightedPath p = iter_path.next();
-						System.out.print(p + "\n");
+						//System.out.println("Find path between " + src + " " + dst);
+						semantic_grade += calculatePath(src, dst);
+						System.out.println(semantic_grade);
 					}
+				}*/
+				
+				retrieveShared();
+			}
+			graphDb.shutdown();
+			System.out.println("OK!");
+			
+	}
+	
+	double calculatePath(String srcLabel, String dstLabel)
+	{
+		// Read Access
+		//System.out.println("Traversing the graph...");
+		double semantic_grade_partial = 0.0;
+		ResourceIterator<Node> src_iter = graphDb.findNodes(wordLabel, "lemma", srcLabel);
+		ResourceIterator<Node> dst_iter = graphDb.findNodes(wordLabel, "lemma", dstLabel);
+		
+		PathFinder<WeightedPath> shortestPathFinder = GraphAlgoFactory.dijkstra(PathExpanders.allTypesAndDirections(), "w");
+		
+		while(src_iter.hasNext())
+		{
+			Node current_src = src_iter.next();
+			while(dst_iter.hasNext())
+			{
+				Node current_dst = dst_iter.next();
+							
+				Iterable<WeightedPath> paths = shortestPathFinder.findAllPaths( current_src, current_dst );
+				
+				//System.out.println(paths);
+				Iterator<WeightedPath> iter_path = paths.iterator();
+				while(iter_path.hasNext())
+				{
+					WeightedPath p = iter_path.next();
+					//p.weight();
+					System.out.print("Short Path between: " + srcLabel + " and " + dstLabel + " (weight: " + p.weight()+ ")\n");
+					semantic_grade_partial += SemanticGradeCalc(p.weight(), lcsDepth(srcLabel, dstLabel));
+					//System.out.println(semantic_grade_partial);
+					
 				}
 			}
 		}
-		graphDb.shutdown();
-		System.out.println("OK!");
-		   
-				
-				
+		return semantic_grade_partial;
 	}
 	
-	void addTerm(String s)
+	void addTerm(String s, boolean target)
 	{
+		System.out.println("Adding terms: " + s);
+		
+		if (target)
+			ext_target_terms.add(s);
+		else
+			ext_input_terms.add(s);
+		
 		if (!terms.contains(s))
 		{
 			terms.add(s);
 			
+						
 			/*Node w_node = graphDb.createNode();
 			long w_nodeId = w_node.getId();	
 			
@@ -140,26 +255,104 @@ public class SemanticNetwork
 			
 			
 			IIndexWord idxWord = dictionary.getIndexWord(s, POS.NOUN);
-			List<IWordID> wordsID = idxWord.getWordIDs();
-			
-			for( IWordID wid : wordsID)
+			if (idxWord != null)
 			{
-				IWord word = dictionary.getWord(wid);
-				ISynset synset = word.getSynset();
+				List<IWordID> wordsID = idxWord.getWordIDs();
 				
-				Node s_node = graphDb.createNode();
-				long nodeId = s_node.getId();	
-				
-				s_node.setProperty("label", synset.getWords().toString());
-				s_node.setProperty("type", "synset");
-				s_node.addLabel(synsetLabel);
-				
-				addTermsFromSynsetHyponymyHierarchy(synset, s_node);
+				for( IWordID wid : wordsID)
+				{
+					IWord word = dictionary.getWord(wid);
+					ISynset synset = word.getSynset();
+					
+					Node s_node = graphDb.createNode();
+					long nodeId = s_node.getId();	
+					
+					s_node.setProperty("label", synset.getWords().toString());
+					s_node.setProperty("lemma", synset.getID().toString());
+					s_node.setProperty("type", "synset");
+					s_node.addLabel(synsetLabel);
+					
+					addMeronyms(synset, s_node, true);
+					addTermsFromSynsetHyponymyHierarchy(synset, s_node, target);
+				}
+			}
+			else
+			{
+				System.out.print(" not found!\n");
 			}
 		}
 	}
 	
-	void addTermsFromSynsetHyponymyHierarchy(ISynset s, Node s_node)
+	void addMeronyms(ISynset s, Node n, boolean target)
+	{
+		List < ISynsetID > meronyms = s.getRelatedSynsets(Pointer.MERONYM_PART);
+		
+		
+		 // print out each hyponyms id and synonyms
+		 for( ISynsetID sid : meronyms)
+		 {
+			ISynset meronym = dictionary.getSynset(sid);
+			
+			Node mero_node = graphDb.createNode();
+			long mero_nodeId = mero_node.getId();	
+				
+			mero_node.setProperty("label", meronym.getWords().toString());
+			mero_node.setProperty("lemma", meronym.getID().toString());
+			mero_node.setProperty("type", "synset");
+			mero_node.addLabel(synsetLabel);
+			
+			Relationship relationship = n.createRelationshipTo(mero_node, RelTypes.Meronym);
+			relationship.setProperty("type", "semantic");
+			relationship.setProperty("name", "meronym");
+			relationship.setProperty("w", 0.5);
+			
+		 }
+		 
+		 List < ISynsetID > meronyms1 = s.getRelatedSynsets(Pointer.MERONYM_MEMBER);
+		// print out each hyponyms id and synonyms
+		for( ISynsetID sid : meronyms1)
+		 {
+			ISynset meronym = dictionary.getSynset(sid);
+			
+			Node mero_node = graphDb.createNode();
+			long mero_nodeId = mero_node.getId();	
+				
+			mero_node.setProperty("label", meronym.getWords().toString());
+			mero_node.setProperty("lemma", meronym.getID().toString());
+			mero_node.setProperty("type", "synset");
+			mero_node.addLabel(synsetLabel);
+			
+			Relationship relationship = n.createRelationshipTo(mero_node, RelTypes.Meronym);
+			relationship.setProperty("type", "semantic");
+			relationship.setProperty("name", "meronym");
+			relationship.setProperty("w", 0.5);
+			
+		 }
+		
+		 List < ISynsetID > meronyms2 = s.getRelatedSynsets(Pointer.MERONYM_SUBSTANCE);
+		 for( ISynsetID sid : meronyms2)
+		 {
+			ISynset meronym = dictionary.getSynset(sid);
+			
+			Node mero_node = graphDb.createNode();
+			long mero_nodeId = mero_node.getId();	
+				
+			mero_node.setProperty("label", meronym.getWords().toString());
+			mero_node.setProperty("lemma", meronym.getID().toString());
+			mero_node.setProperty("type", "synset");
+			mero_node.addLabel(synsetLabel);
+			
+			Relationship relationship = n.createRelationshipTo(mero_node, RelTypes.Meronym);
+			relationship.setProperty("type", "semantic");
+			relationship.setProperty("name", "meronym");
+			relationship.setProperty("w", 0.5);
+			
+		 }
+		 
+		 
+	}
+	
+	void addTermsFromSynsetHyponymyHierarchy(ISynset s, Node s_node, boolean target)
 	{
 		//System.out.println(s + ": " + s.getID() + " " + s.getID().getOffset());
 		if (!synsetMap.containsKey(s.getID().getOffset()))
@@ -176,6 +369,8 @@ public class SemanticNetwork
 				Node w_node = graphDb.createNode();
 				long w_nodeId = w_node.getId();	
 				
+				termsNodeMap.put(current_term, w_node);
+				
 				w_node.setProperty("lemma", current_term);
 				w_node.setProperty("type", "word");
 				w_node.addLabel(wordLabel);
@@ -185,7 +380,17 @@ public class SemanticNetwork
 				relationship.setProperty("name", "hasWord");
 				relationship.setProperty("w", 0);
 				
-				
+				if (target)
+				{
+					if (!ext_target_terms.contains(current_term))
+						ext_target_terms.add(current_term);
+				}
+				else
+				{
+					if (!ext_input_terms.contains(current_term))
+						ext_input_terms.add(current_term);
+				}
+								
 				if (!terms.contains(current_term))
 				{
 					terms.add(current_term);
@@ -204,6 +409,7 @@ public class SemanticNetwork
 				long hypo_nodeId = hypo_node.getId();	
 					
 				hypo_node.setProperty("label", hyponym.getWords().toString());
+				hypo_node.setProperty("lemma", hyponym.getID().toString());
 				hypo_node.setProperty("type", "synset");
 				hypo_node.addLabel(synsetLabel);
 				
@@ -212,11 +418,12 @@ public class SemanticNetwork
 				relationship.setProperty("name", "hyponym");
 				relationship.setProperty("w", 0.75);
 				
-				addTermsFromSynsetHyponymyHierarchy(hyponym, hypo_node);
+				addTermsFromSynsetHyponymyHierarchy(hyponym, hypo_node, target);
 			 }
 		}
 	}
 	
+		
 	double SemanticGradeCalc(double l, int d)
 	{
 		return Math.exp(-sg_alpha*l)*(Math.exp(sg_beta*d) - Math.exp(-sg_beta*d))/(Math.exp(sg_beta*d) + Math.exp(-sg_beta*d));
@@ -237,10 +444,34 @@ public class SemanticNetwork
 	    } );
 	}
 	
+	int lcsDepth(String src_label, String dst_label)
+	{
+		int max = 0;
+		List<Concept> synsets1 = (List<Concept>)db.getAllConcepts(src_label, "n");
+		 List<Concept> synsets2 = (List<Concept>)db.getAllConcepts(dst_label, "n");
+		 
+		 for (Concept src:synsets1)
+		 {
+			 for (Concept dst:synsets2)
+			 {
+				 
+				 List<Depth> lcsList = depthFinder.getRelatedness( src, dst, null );
+				 int depth = lcsList.get(0).depth; // sorted by depth (asc)
+				 
+				 if (depth > max)
+					 max = depth;
+			 }
+			
+		 }
+		 
+		 return max;
+	}
+	
 	private static enum RelTypes implements RelationshipType
 	{
 	    hasWord,
 	    Hyponym,
+	    Meronym,
 	    Synonym
 	}
 }

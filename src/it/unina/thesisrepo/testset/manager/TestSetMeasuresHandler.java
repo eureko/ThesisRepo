@@ -76,10 +76,10 @@ public class TestSetMeasuresHandler
 		try
 		{
 			System.out.println("Starting measuring groundtruth test set...");
-			BufferedReader file_buffer_reader = new BufferedReader(new FileReader("./alignments/groundtruth.csv"));
-			BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment_measures.csv"));
+			BufferedReader file_buffer_reader = new BufferedReader(new FileReader("./alignments/groundtruth_ext.csv"));
+			BufferedWriter file_buffer = new BufferedWriter(new FileWriter(alignmentFolder + "/test_alignment_measures_ext.csv"));
 			
-			file_buffer.write("#Test Alignment similarity measures src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWup,ground,srcunk,dstunk\n");
+			file_buffer.write("#Test Alignment similarity measures src,dst,str,lev,jac,fuz,syn,cos,wup,path,extWupAvg,extWupMin,ground,srcunk,dstunk\n");
 			
 			//line = file_buffer_reader.readLine(); // Read comment line
 			while((line = file_buffer_reader.readLine()) != null)
@@ -92,7 +92,8 @@ public class TestSetMeasuresHandler
 				double cosyno_g = 0.0;
 				double wupalm = 0.0;
 				double path = 0.0;
-				double extWup = 0.0;
+				double extWupAvg = 0.0;
+				double extWupMin = 0.0;
 				double extlesk = 0.0;
 				double exthso = 0.0;
 				
@@ -188,7 +189,9 @@ public class TestSetMeasuresHandler
 				
 				if ((srcMulti || dstMulti) && (srcUnknown || dstUnknown)) // Multiple and unknown
 				{
-					extWup = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
+					extWupAvg = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
+					//extWup = extendedMaxWuPalmerMatching(src, dst, regex1, regex1);
+					extWupMin = extendedMinWuPalmerMatching(src, dst, regex1, regex1);
 					//extlesk = extendedLeskMatching(src, dst, regex1, regex1);
 					//exthso = extendedHirstMatching(src, dst, regex1, regex1);
 					
@@ -208,9 +211,12 @@ public class TestSetMeasuresHandler
 					}
 					else
 					{
-						if (srcMulti || dstMulti) // Multiple and known
-							extWup = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
-						
+						if (srcMulti || dstMulti)
+						{// Multiple and known
+							extWupAvg = extendedAvarageWuPalmerMatching(src, dst, regex1, regex1);
+							extWupMin = extendedMinWuPalmerMatching(src, dst, regex1, regex1);
+							//extWup = extendedMaxWuPalmerMatching(src, dst, regex1, regex1);
+						}
 						//Single and known
 						if (!singularizedStopWordListObj.contains(src.toLowerCase()))
 							src = inflactor.singularize(src);
@@ -230,7 +236,8 @@ public class TestSetMeasuresHandler
 					}
 				}
 				
-				file_buffer.write(extWup + ",");
+				file_buffer.write(extWupAvg + ",");
+				file_buffer.write(extWupMin + ",");
 				file_buffer.write(ground + ",");
 				if (srcUnknown)
 					file_buffer.write("unknown,");
@@ -434,8 +441,8 @@ public class TestSetMeasuresHandler
 	 }
 	static double WuPalmerMatching(String word1, String word2)
 	{
-		List<POS[]> posPairs = wprc.getPOSPairs();
-		 double maxScore = -1D;
+		//List<POS[]> posPairs = wprc.getPOSPairs();
+		 double maxScore = 0.0;
 		 
 		 //System.out.println("posPairs :" + posPairs.size());
 
@@ -458,6 +465,8 @@ public class TestSetMeasuresHandler
 		 if (maxScore == -1D) {
 		     maxScore = 0.0;
 		 }
+		 else if (maxScore > 1)
+			 maxScore = 1.0 - (maxScore - 1); // correcting wrong WS4J measure
 
 		 return maxScore;
 	}
@@ -487,6 +496,64 @@ public class TestSetMeasuresHandler
 			}
 		}
 		return sum/count;
+		
+		//stemArrayofString(words1);
+		//stemArrayofString(words2);
+	}
+	
+	static double extendedMaxWuPalmerMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1 = src.split(regex1);
+		String[] words2 = dst.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		double max = 0.0;
+		for (String s1:words1)
+		{
+			for(String s2:words2)
+			{
+				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
+				
+				double v = WuPalmerMatching(s1, s2);
+				if (v > max)
+					max = v;
+			}
+		}
+		return max;
+		
+		//stemArrayofString(words1);
+		//stemArrayofString(words2);
+	}
+	
+	static double extendedMinWuPalmerMatching(String src, String dst, String regex1, String regex2)
+	{
+		String[] words1 = src.split(regex1);
+		String[] words2 = dst.split(regex2);
+		
+		toLowerCase(words1);
+		toLowerCase(words2);
+		
+		singolarizeArrayofString(words1);
+		singolarizeArrayofString(words2);
+		
+		double min = 1.0;
+		for (String s1:words1)
+		{
+			for(String s2:words2)
+			{
+				//System.out.println("WuPalmer tra: " + s1 + "," + s2);
+				
+				double v = WuPalmerMatching(s1, s2);
+				if (v < min)
+					min = v;
+			}
+		}
+		return min;
 		
 		//stemArrayofString(words1);
 		//stemArrayofString(words2);

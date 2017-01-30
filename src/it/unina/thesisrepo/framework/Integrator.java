@@ -69,10 +69,13 @@ public class Integrator
 			Ontology ont = model.createOntology("http://integrated-ontologies/");
 			ont.addComment("Automatically created through Jena APis", "en");
 			
-			for (int i = 1; i <= 9; i++)
+			
+			int indexes[] = {1,2,6};
+			
+			for (int i = 0; i<indexes.length; i++)
 			{
-				System.out.println("******************************* Integrating " + "./alignments/"+i+".alignment");
-				BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/"+i+".alignment"));
+				System.out.println("******************************* Integrating " + "./alignments/"+indexes[i]+".alignment");
+				BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/"+indexes[i]+".alignment"));
 			    
 				String line;
 				line = file_buffer.readLine(); // Read comment line
@@ -114,7 +117,7 @@ public class Integrator
 					if (a.result.compareTo("eqv")==0)
 					{
 						System.out.println(a.src + " " + a.result  + " " + a.dst);
-						String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
+						String src_uri = uris[indexes[i]-1] + capitalizeString(a.src).replace(" ", "");
 						String dst_uri = target_uri + capitalizeString(a.dst).replace("( )+", "");
 						
 						OntClass srcClass;
@@ -145,7 +148,7 @@ public class Integrator
 						if (a.src.contains(a.dst) && a.src.endsWith(a.dst))
 						{
 							System.out.println(a.src + " " + a.result  + " " + a.dst);
-							String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
+							String src_uri = uris[indexes[i]-1] + capitalizeString(a.src).replace(" ", "");
 							String dst_uri = target_uri + capitalizeString(a.dst).replaceAll("\\s+","").replace("-", "");
 							
 							OntClass srcClass;
@@ -174,7 +177,7 @@ public class Integrator
 							if (isHyponymOf(a.src, a.dst))
 							{
 								System.out.println(a.src + " " + a.result  + " " + a.dst);
-								String src_uri = uris[i-1] + capitalizeString(a.src).replace(" ", "");
+								String src_uri = uris[indexes[i]-1] + capitalizeString(a.src).replace(" ", "");
 								String dst_uri = target_uri + capitalizeString(a.dst).replaceAll("\\s+","").replace("-", "");
 								
 								OntClass srcClass;
@@ -203,7 +206,7 @@ public class Integrator
 				}
 			}
 			
-			FileWriter ncicpOntoFile = new FileWriter("./ontologies/integration_ontology.owl");
+			FileWriter ncicpOntoFile = new FileWriter("./ontologies/integration_ontology1.owl");
 			model.write(ncicpOntoFile, "RDF/XML-ABBREV");
 		}
 		catch(IOException ioe)

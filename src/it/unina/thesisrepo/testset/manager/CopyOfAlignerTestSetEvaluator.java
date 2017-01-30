@@ -6,8 +6,11 @@ import it.unina.thesisrepo.testset.manager.AlignmentHandler.Alignment;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Vector;
 
 import org.apache.jena.ontology.OntModel;
@@ -19,7 +22,7 @@ import weka.classifiers.evaluation.Prediction;
 import weka.gui.visualize.plugins.ConfusionMatrix;
 import weka.gui.visualize.plugins.HeatmapVisualization;
 
-public class AlignerTestSetEvaluator 
+public class CopyOfAlignerTestSetEvaluator 
 {
 	static final String alignmentFolder = "./alignments";
 	static HashSet<Alignment> allAlignments = new HashSet<Alignment>();
@@ -34,28 +37,35 @@ public class AlignerTestSetEvaluator
 	
 	
 	
-	double[][] symmetricRecallRelaxationMatrix = new double[][]{{1.0,	0.0,	0.0,	0.0,	0.0,	0.0},
+	static double[][] symmetricRecallRelaxationMatrix = new double[][]{{1.0,	0.0,	0.0,	0.0,	0.0,	0.0},
 																{0.0,	1.0,	0.0,	0.0,	0.0,	0.0},
 																{0.0,	0.0,	1.0,	0.0,	0.0,	0.0},
 																{0.0,	0.0,	0.0,	1.0,	0.0,	0.0},
 																{0.0,	0.0,	0.0,	0.0,	1.0,	0.0},
 																{1.0,	1.0,	1.0,	1.0,	1.0,	1.0}};
 	
-	double[][] asymPrecisionEditRelaxationMatrix = new double[][]{{1.0,	0.0,	0.0,	0.0,	0.0,	1.0},
+	/*static double[][] asymPrecisionEditRelaxationMatrix = new double[][]{{1.0,	0.0,	0.0,	0.0,	0.0,	1.0},
 																{0.0,	1.0,	1.0,	1.0,	1.0,	1.0},
 																{0.0,	0.0, 	1.0,	0.0,	0.0,	1.0},
 																{0.0,	1.0, 	0.75,	1.0, 	1.0,	1.0},
 																{0.0,	1.0,	0.5,	1.0,	1.0,	1.0},
-																{0.0,	0.0,	0.0,	0.0,	0.0,	0.0}};
+																{0.0,	0.0,	0.0,	0.0,	0.0,	0.0}};*/
+	
+	static double[][] asymPrecisionEditRelaxationMatrix = new double[][]{{1.0,	0.0,	0.0,	0.0,	0.0,	1.0},
+																	 	{0.0,	1.0,	1.0,	1.0,	1.0,	1.0},
+																	 	{0.0,	0.0, 	1.0,	0.0,	0.0,	1.0},
+																	 	{0.0,	1.0, 	0.75,	1.0, 	1.0,	1.0},
+																		{0.0,	0.0,	0.5,	0.0,	1.0,	1.0},
+																		{0.0,	0.0,	0.0,	0.0,	0.0,	0.0}};
 	
 	
 	static SimpleMatrix C;
 	SimpleMatrix symPRM = new SimpleMatrix(symmetricPrecisionRelaxationMatrix);
-	SimpleMatrix asymRRM = new SimpleMatrix(symmetricRecallRelaxationMatrix);
-	SimpleMatrix editPRM = new SimpleMatrix(asymPrecisionEditRelaxationMatrix);
+	static SimpleMatrix asymRRM = new SimpleMatrix(symmetricRecallRelaxationMatrix);
+	static SimpleMatrix editPRM = new SimpleMatrix(asymPrecisionEditRelaxationMatrix);
 	
-	static final String measuresFile = alignmentFolder + "/test_alignment_measures_ext.csv";
-	static final String testAlignment = alignmentFolder + "/test_alignment_ext.csv";
+	static final String measuresFile = alignmentFolder + "/test_alignment_measures.csv";
+	static final String testAlignment = alignmentFolder + "/test_alignment.csv";
 	
 	static Vector<Double[]> eqv_evaluations = new Vector<Double[]>();
 	static Vector<Double[]> hype_evaluations = new Vector<Double[]>();
@@ -64,34 +74,83 @@ public class AlignerTestSetEvaluator
 	static Vector<Double[]> dsj_evaluations = new Vector<Double[]>();
 	
 	static final double hyp_t_low_index = 0.0;
-	static final double hyp_t_high_index = 0.5;
-	static final double hyp_t_step = 0.0125;
+	static final double hyp_t_high_index = 1.0;
+	static final double hyp_t_step = 0.1;
+	
+	static DecimalFormat formatter = (DecimalFormat) DecimalFormat.getInstance(Locale.UK);
+	static NumberFormat form = new DecimalFormat("#0.00"); 
 	
 	
 	public static void main(String[] args) 
 	{
 		try
 		{
-				Aligner aligner = new Aligner(1.0, 0.6, 0.25, measuresFile, testAlignment);
+			for (double i = hyp_t_low_index; i <= hyp_t_high_index; i = i + hyp_t_step)
+			{
+				Aligner aligner = new Aligner(1.0, 1.1, 0.0+i, measuresFile, testAlignment);
+				//Aligner aligner = new Aligner(1.0, 0.5, 0.4, measuresFile, testAlignment);
 				aligner.startAligning();
 				collectAllAlignments();
 				
 				//OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM_TRANS_INF);
-				//model.read("./ontologies/1.owl");
+				//model.read("./ontologies/2.owl");
 				
 				//System.out.println("Start semantically grounded aligning on 2.owl");
-				/*SemanticallyGroundedAligner sem_alig = new SemanticallyGroundedAligner(model, testAlignment);
-				sem_alig.inferAlphaConsequences();
-				sem_alig.getStats();
-				sem_alig.writeSemanticallyGrounded("./alignments/test_alignment_1.sem");
-				for (it.unina.thesisrepo.matchers.Alignment as:sem_alig.sem_gounded_alignments)
-					allAlignments.add(new Alignment(as.src, as.dst, null, as.result, null));*/
+				//SemanticallyGroundedAligner sem_alig = new SemanticallyGroundedAligner(model, testAlignment);
+				//sem_alig.inferAlphaConsequences();
+				//sem_alig.getStats();
+				//sem_alig.writeSemanticallyGrounded("./alignments/test_alignment.sem");
+				//for (it.unina.thesisrepo.matchers.Alignment as:sem_alig.sem_gounded_alignments)
+					//allAlignments.add(new Alignment(as.src, as.dst, null, as.result, null));
 				
-				AlignerTestSetEvaluator testSetEvaluator = new AlignerTestSetEvaluator();
+				CopyOfAlignerTestSetEvaluator testSetEvaluator = new CopyOfAlignerTestSetEvaluator();
 				//testSetEvaluator.getStatisticsV2();
-				testSetEvaluator.visualizeConfusionMatrix();
-				testSetEvaluator.getStatisticsV2();
+				//testSetEvaluator.visualizeConfusionMatrix();
+				//testSetEvaluator.getStatisticsV2();
 				
+				SimpleMatrix accuracies = getAccuracies(C, null);
+				SimpleMatrix recall = getRecall(C, null);
+				
+				eqv_evaluations.add(new Double[]{
+					accuracies.get(0), 
+					recall.get(0), 
+					2*(accuracies.get(0)*recall.get(0))/(accuracies.get(0) + recall.get(0))
+					});
+				
+				hype_evaluations.add(new Double[]{
+						accuracies.get(1), 
+						recall.get(1), 
+						2*(accuracies.get(1)*recall.get(1))/(accuracies.get(1) + recall.get(1))
+						});
+				
+				hyp_evaluations.add(new Double[]{
+						accuracies.get(2), 
+						recall.get(2), 
+						2*(accuracies.get(2)*recall.get(2))/(accuracies.get(2) + recall.get(2))
+						});
+				
+				rel_evaluations.add(new Double[]{
+						accuracies.get(3), 
+						recall.get(3), 
+						2*(accuracies.get(3)*recall.get(3))/(accuracies.get(3) + recall.get(3))
+						});
+				
+				dsj_evaluations.add(new Double[]{
+						accuracies.get(4), 
+						recall.get(4), 
+						2*(accuracies.get(4)*recall.get(4))/(accuracies.get(4) + recall.get(4))
+						});
+				
+				
+				
+				//testSetEvaluator.visualizeConfusionMatrix();
+				//testSetEvaluator.getStatisticsV2();
+				allAlignments = new HashSet<Alignment>();
+			}
+				
+			//getStatisticsV3();
+			getPrecisionRecallCoords();
+			
 			
 		}
 		catch(Exception ex)
@@ -101,10 +160,10 @@ public class AlignerTestSetEvaluator
 		
 	}
 	
-	public AlignerTestSetEvaluator() throws IOException
+	public CopyOfAlignerTestSetEvaluator() throws IOException
 	{
 		System.out.println("Reading ground file...");
-		BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/groundtruth_ext.csv"));
+		BufferedReader file_buffer = new BufferedReader(new FileReader("./alignments/groundtruth.csv"));
 		String line;
 		//line = file_buffer.readLine(); // Read comment line
 		
@@ -315,8 +374,8 @@ public class AlignerTestSetEvaluator
 					String[] tokens = line.split(",");
 					String src = tokens[0];
 					String dst = tokens[1];
-					String exp = tokens[12];
-					String ground = tokens[13];
+					String exp = tokens[11];
+					String ground = tokens[12];
 					
 					Alignment a = new Alignment(src, dst, null, exp, null);
 					allAlignments.add(a);
@@ -444,6 +503,46 @@ public class AlignerTestSetEvaluator
 		//System.out.println("dsj\t" + String.format("%.3g", accuracies.get(3)) +  "\t" + String.format("%.3g", rel_accuracies.get(3)));
 	}
 	
+	static void getPrecisionRecallCoords()
+	{
+		for (double i =  hyp_t_low_index; i <= hyp_t_high_index; i = i + hyp_t_step)
+			System.out.print("" + String.format("%.3g", i) + "\t");
+		
+		System.out.println();
+		
+		for (int i = 0; i < hyp_evaluations.size(); i++)
+		{
+			System.out.print("(" + String.format("%.3g", hyp_evaluations.get(i)[1]).replace(',','.') + ","+
+					String.format("%.3g", hyp_evaluations.get(i)[0]).replace(',','.')+")");
+		}
+		System.out.println();
+		for (int i = 0; i < rel_evaluations.size(); i++)
+		{
+			System.out.print("(" + String.format("%.3g", rel_evaluations.get(i)[1]).replace(',','.') + ","+
+					String.format("%.3g", rel_evaluations.get(i)[0]).replace(',','.')+")");
+		}
+		
+		System.out.println();
+		for (int i = 0; i < dsj_evaluations.size(); i++)
+		{
+			System.out.print("(" + String.format("%.3g", dsj_evaluations.get(i)[1]).replace(',','.') + ","+
+					String.format("%.3g", dsj_evaluations.get(i)[0]).replace(',','.')+")");
+		}
+		
+		System.out.println("\nMacro averge:");
+		
+		for (int i = 0; i < rel_evaluations.size(); i++)
+		{
+			
+			double acc_average =  (rel_evaluations.get(i)[0] + dsj_evaluations.get(i)[0])/2;
+			double rec_average =  (rel_evaluations.get(i)[1] + dsj_evaluations.get(i)[1])/2;
+			
+			System.out.print("(" + String.format("%.3g", acc_average).replace(',','.') + ","+
+					String.format("%.3g", rec_average).replace(',','.')+")");
+		}
+	}
+	
+	
 	static void getStatisticsV3()
 	{
 		System.out.println("Classes Accuracy, Recall and F-measure (no relax):");
@@ -452,14 +551,24 @@ public class AlignerTestSetEvaluator
 		for (double i =  hyp_t_low_index; i <= hyp_t_high_index; i = i + hyp_t_step)
 			System.out.print("" + String.format("%.3g", i) + "\t");
 		System.out.println();
-		/*for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 3; j++)
 		{
 			for (int i = 0; i < eqv_evaluations.size(); i++)
 			{
 				System.out.print(String.format("%.3g", eqv_evaluations.get(i)[j]) + "\t");
 			}
 			System.out.println();
-		}*/
+		}
+		
+		System.out.println();
+		for (int j = 0; j < 3; j++)
+		{
+			for (int i = 0; i < hype_evaluations.size(); i++)
+			{
+				System.out.print(String.format("%.3g", hype_evaluations.get(i)[j]) + "\t");
+			}
+			System.out.println();
+		}
 		
 		System.out.println();
 		for (int j = 0; j < 3; j++)

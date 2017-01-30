@@ -19,6 +19,7 @@ import edu.cmu.lti.ws4j.RelatednessCalculator;
 import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
 import edu.cmu.lti.ws4j.util.DepthFinder;
+import edu.cmu.lti.ws4j.util.DepthFinder.Depth;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
 import edu.smu.tspell.wordnet.NounSynset;
 import edu.smu.tspell.wordnet.Synset;
@@ -69,15 +70,14 @@ public class LinguisticMatcher
 		
 		//System.out.println(getPolysemy("book"));
 		
-		 List<Concept> synsets1 = (List<Concept>)db.getAllConcepts("food", "n");
-		 List<Concept> synsets2 = (List<Concept>)db.getAllConcepts("food_product", "n");
+		 
 		 
 		 DepthFinder depthFinder = new DepthFinder(db);
 		 
 		 //System.out.println(synsets1.size());
 		 //System.out.println(synsets2.size());
 		 
-		 for (Concept src:synsets1)
+		 /*for (Concept src:synsets1)
 		 {
 			 System.out.println(src + " " + depthFinder.getShortestDepth(src));
 		 }
@@ -85,29 +85,43 @@ public class LinguisticMatcher
 		 for (Concept dst:synsets2)
 		 {
 			 System.out.println(dst + " " + depthFinder.getShortestDepth(dst));
-		 }
+		 }*/
 		 
-		 /*for (Concept src:synsets1)
+		 
+		 List<Concept> synsets1 = (List<Concept>)db.getAllConcepts("food", "n");
+		 List<Concept> synsets2 = (List<Concept>)db.getAllConcepts("food_product", "n");
+		 
+		 for (Concept src:synsets1)
 		 {
 			 for (Concept dst:synsets2)
 			 {
-				 System.out.println("src depth: " + depthFinder.getShortestDepth(src));
-				 System.out.println("dst depth: " + depthFinder.getShortestDepth(dst));
+				 //System.out.println("src depth: " + );
+				 //System.out.println("dst depth: " + depthFinder.getShortestDepth(dst));
 				 
 				 List<Depth> lcsList = depthFinder.getRelatedness( src, dst, null );
-				 int depth = lcsList.get(0).depth; // sorted by depth (asc)
+				// int depth = lcsList.get(0).depth; // sorted by depth (asc)
 				 
-				 //System.out.println("lcs depth: " + depth);
+
+				 for (Depth d:lcsList)
+				 {
+					 System.out.println(db.getGloss(src, "n") + " " + depthFinder.getShortestDepth(src));
+					 System.out.println(db.getGloss(dst, "n") + " " +depthFinder.getShortestDepth(dst));
+					 System.out.println(d.root + " " + d.leaf + " " + d.depth);
+					 
+					 
+				 }
+				 
+				// System.out.println("lcs depth: " + depth);
 			 }
 			
-		 }*/
+		 }
 		 
 		
 		//System.out.println("****" + linguisticMatching("food", "butter"));
 		 
-		 System.out.println("****************************");
+		 //System.out.println("****************************");
 		 
-		 System.out.println(isHyponymOf("breakfast food", "food"));
+		 //System.out.println(isHyponymOf("breakfast food", "food"));
 		
 	}
 	

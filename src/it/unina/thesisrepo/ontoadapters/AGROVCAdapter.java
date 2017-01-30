@@ -44,7 +44,7 @@ public class AGROVCAdapter
 			rootClass.addLabel(rootClassNameLabel,"en");
 			rootClass.addVersionInfo(root_resource_uri.substring(root_resource_uri.lastIndexOf('/')+1));
 			
-			getSpecialised(root_resource_uri, rootClass);
+			getNarrower(root_resource_uri, rootClass);
 			
 			FileWriter ncicpOntoFile = new FileWriter(resultOntoFilePath);
 			model.write(ncicpOntoFile, "RDF/XML-ABBREV");
@@ -143,7 +143,7 @@ public class AGROVCAdapter
 		file_buffer.close();
 	}
 	
-	static Vector<String> getSpecialised(String resource, OntClass c) throws IOException
+	static Vector<String> getNarrower(String resource, OntClass c) throws IOException
 	{
 		System.out.println(c);
 		BufferedReader file_buffer = new BufferedReader(new FileReader(sourceFilePath));
@@ -189,7 +189,7 @@ public class AGROVCAdapter
 			newC.addVersionInfo(s.substring(s.lastIndexOf('/')+1));
 			newC.addLabel(label,"en");
 			c.addSubClass(newC);
-			getSpecialised(s, newC);
+			getNarrower(s, newC);
 			
 		}
 		file_buffer.close();
