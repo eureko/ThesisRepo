@@ -15,3 +15,26 @@ EXTRACT(r in FILTER(s in relationships(p): s.type = 'semantic'))
 
 MATCH (src:Word { lemma:"nutrient" }),(dst:Word { lemma:"French_dressing_for_fruit_salad"}), p = (src)-[*]-(dst)
 RETURN count(p) as Num, p
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst:Word {lemma: 'milk'}),  p = (src)-[*]->(dst)
+RETURN w_src, w_dst, length(p) as l, reduce(w=0, r in relationships(p) |  w+r.w) AS totalDistance ORDER BY totalDistance ASC
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst:Word {lemma: 'milk'}),  p = shortestPath((src)-[*]->(dst))
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst: Word),  p = (src)-[*]->(dst)
+RETURN w_src, w_dst, count(p) AS num, reduce(w=0, r in relationships(p) |  w+r.w) AS totalDistance ORDER BY num desc
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst: Word),  p = (src)-[*]->(dst), sp = shortestPath((src)-[*]->(dst))
+RETURN w_src, w_dst, count(p) AS num, count(sp) AS s_num ORDER BY num desc
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst: Word), p = (src)-[*]->(dst),  p = shortestPath((src)-[*]->(dst))
+RETURN w_src, w_dst, count(p) AS num,  AS s_num ORDER BY num desc
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst:Word {lemma: 'pudding'}), p = (src)-[*]->(dst) RETURN p, w_src, w_dst
+
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst:Word {lemma: 'pudding'}),  p = (src)-[*]->(dst)
+RETURN w_src, w_dst, p, length(p) as l, reduce(w=0, r in relationships(p) |  w+r.w) AS totalDistance ORDER BY totalDistance ASC
+
+MATCH (src: Synset)-[r:hasWord]->(w_src:Word {lemma: 'food'}),(dst: Synset)-[s:hasWord]->(w_dst:Word {lemma: 'pudding'}),  p = (src)-[*]->(dst)
+RETURN w_src.lemma, w_dst.lemma, length(p) as l, reduce(w=0, r in relationships(p) |  w+r.w) AS totalDistance ORDER BY totalDistance ASC
